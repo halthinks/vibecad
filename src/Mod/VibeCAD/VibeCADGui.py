@@ -2712,7 +2712,11 @@ def _render_assistant_run_state(dock: Any, text: str | None = None) -> None:
         prompt_starters.setEnabled(internal_available and document_ready and not busy)
     if interaction_mode is not None:
         try:
-            supports_plan = get_service().provider_name() in {"openai", "chatgpt"}
+            supports_plan = get_service().provider_name() in {
+                "openai",
+                "chatgpt",
+                "grok",
+            }
         except Exception:
             supports_plan = False
         if not supports_plan and interaction_mode.currentData() == "plan":
