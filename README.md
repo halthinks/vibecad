@@ -256,6 +256,12 @@ The local server must already be running and expose an OpenAI-compatible API. So
 
 VibeCAD is under active development. The current focus is reliable, readable AI-assisted part design with explicit human control over the document, workbench, and design direction.
 
+A local desktop agent (for example Grok Bot on Windows) can open documents,
+run Python or VibeScript, show Preferences, and read auth status without
+clicking menus. That loopback CLI / HTTP channel is documented in
+[docs/vibecad-agent-control.md](docs/vibecad-agent-control.md). It does not
+disable the in-app Assistant and it is not MCP.
+
 Release packaging details are documented in [docs/vibecad-release-packaging.md](docs/vibecad-release-packaging.md).
 
 The single-workbench Part and Part Design model, compatibility boundary, and

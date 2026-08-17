@@ -5122,7 +5122,9 @@ def _run_session_turn(
     if clean_interaction_mode == "plan" and not isinstance(
         active_provider, CodexProvider
     ):
-        raise ProviderUnavailable("Plan mode requires an OpenAI Codex provider.")
+        raise ProviderUnavailable(
+            "Plan mode requires a Codex-backed provider (ChatGPT, OpenAI, or Grok)."
+        )
     provider_name = active_provider.__class__.__name__
     provider_runtime = provider_execution_identity(active_provider)
     provider_runtime["interaction_mode"] = clean_interaction_mode

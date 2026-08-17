@@ -2730,7 +2730,7 @@ def _render_assistant_run_state(dock: Any, text: str | None = None) -> None:
                 "making changes"
             )
             if supports_plan
-            else "Plan mode requires an OpenAI provider running through Codex"
+            else "Plan mode requires ChatGPT, OpenAI, or Grok running through Codex"
         )
     if authoring_mode is not None:
         _refresh_authoring_mode_selector(dock)
