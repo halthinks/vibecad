@@ -11,7 +11,7 @@ import pytest
 from VibeCADGeometryInspection import complete_geometry_read
 
 
-REPO = Path(__file__).resolve().parents[3]
+REPO = Path(__file__).resolve().parents[4]
 
 
 class _Vector:
