@@ -4,11 +4,13 @@
 
 from __future__ import annotations
 
+import json
 from typing import Any
 
 REPORT_NAME = "AeroReport"
 SHEET_NAME = "AeroSpreadsheet"
 MARKDOWN_NAME = "AeroReportMarkdown"
+ASSISTANT_JSON_NAME = "AeroAssistantJson"
 
 _FIELDS = (
     ("CL", "App::PropertyFloat", "Lift coefficient"),
@@ -28,6 +30,7 @@ _FIELDS = (
     ("JSBSimPlantPath", "App::PropertyString", "Exported JSBSim XML path"),
     ("JSBSimBootError", "App::PropertyString", "JSBSim boot error, empty when loaded"),
     ("Notes", "App::PropertyString", "Solver notes"),
+    ("Corrections", "App::PropertyString", "Change list for the in-app assistant"),
     ("span_mm", "App::PropertyFloat", "Span used for the solve, mm"),
     ("chord_mm", "App::PropertyFloat", "Chord used for the solve, mm"),
     ("span_m", "App::PropertyFloat", "Span used for the solve, m"),
@@ -92,7 +95,10 @@ def write_report(
             _add_result_properties(obj)
     else:
         _add_result_properties(obj)
+    assistant = assistant_payload(payload, jsbsim_path=jsbsim_path)
+    payload["corrections"] = list(assistant.get("corrections") or [])
     _apply_payload(obj, payload, jsbsim_path, jsbsim_boot_error)
+    _write_assistant_json(doc, assistant)
     view = getattr(obj, "ViewObject", None)
     if view is not None and getattr(view, "Proxy", None) is None:
         try:
@@ -136,6 +142,8 @@ def format_markdown(payload: dict[str, Any], jsbsim_path: str | None = None) -> 
         f"- P_cruise (W): {payload.get('P_cruise')} (prop η = 0.65)",
         f"- Pitch unstable: {payload.get('PitchUnstable')}",
     ]
+    for item in corrections_for(payload):
+        lines.append(f"- Correction: {item}")
     if jsbsim_path:
         lines.append(f"- JSBSim plant: `{jsbsim_path}`")
     lines.append("")
@@ -199,6 +207,7 @@ def _row_values(payload: dict[str, Any], jsbsim_path: str | None) -> list[tuple[
         ("PitchUnstable", payload.get("PitchUnstable")),
         ("HoverSource", hover.get("source", "momentum-theory")),
         ("Airfoil", payload.get("airfoil")),
+        ("Corrections", "\n".join(corrections_for(payload))),
     ]
     if jsbsim_path:
         rows.append(("JSBSimPlantPath", jsbsim_path))
@@ -235,6 +244,7 @@ def _apply_payload(
             else payload.get("jsbsim_boot_error") or ""
         ),
         "Notes": "Hover is momentum-theory, not CFD.",
+        "Corrections": "\n".join(corrections_for(payload)),
         "span_mm": payload.get("span_mm"),
         "chord_mm": payload.get("chord_mm"),
         "span_m": payload.get("span_m"),
@@ -251,6 +261,96 @@ def _apply_payload(
             setattr(obj, name, value)
         except Exception:
             pass
+
+
+def corrections_for(payload: dict[str, Any]) -> list[str]:
+    """Return a short, deterministic change list from one solve."""
+
+    existing = _corrections_list(payload.get("corrections"))
+    if existing:
+        return existing
+    if payload.get("PitchUnstable"):
+        return [
+            "PitchUnstable: Cmα > 0. Increase decalage, add tail volume, "
+            "or move CG forward until Cmα < 0."
+        ]
+    return ["Pitch stable (Cmα ≤ 0). No pitch-stiffness correction required."]
+
+
+def assistant_payload(
+    payload: dict[str, Any],
+    *,
+    jsbsim_path: str | None = None,
+) -> dict[str, Any]:
+    """Bounded JSON the signed-in in-app Grok turn can reuse."""
+
+    result: dict[str, Any] = {
+        "CL": payload.get("CL"),
+        "CD": payload.get("CD"),
+        "CM": payload.get("CM"),
+        "CLalpha": payload.get("CLalpha"),
+        "Cmalpha": payload.get("Cmalpha"),
+        "PitchUnstable": bool(payload.get("PitchUnstable")),
+        "source": payload.get("source"),
+        "corrections": corrections_for(payload),
+    }
+    if jsbsim_path:
+        result["jsbsim_path"] = jsbsim_path
+    return result
+
+
+def format_human_report(payload: dict[str, Any], title: str = "Aero Analyze") -> str:
+    """Human-readable Analyze text for the dialog and in-app Grok chat."""
+
+    unstable = (
+        "PITCH UNSTABLE (Cmα > 0)" if payload.get("PitchUnstable") else "pitch stable"
+    )
+    source = payload.get("source") or ""
+    heading = f"{title} ({source})" if source else title
+    lines = [
+        heading,
+        f"CL={payload.get('CL')}  CD={payload.get('CD')}  CM={payload.get('CM')}",
+        f"CLα={payload.get('CLalpha')}  Cmα={payload.get('Cmalpha')}  {unstable}",
+        f"Re={payload.get('Re')}  V_loaf={payload.get('V_loaf')} m/s",
+        f"P_hover={payload.get('P_hover')} W (momentum-theory)",
+        f"P_cruise={payload.get('P_cruise')} W (η=0.65)",
+        f"Airfoil={payload.get('airfoil')} from {payload.get('airfoil_source')}",
+    ]
+    if payload.get("jsbsim_path"):
+        lines.append(f"JSBSim: {payload['jsbsim_path']}")
+        if payload.get("jsbsim_boot_error"):
+            lines.append(f"JSBSim boot: {payload['jsbsim_boot_error']}")
+    corrections = corrections_for(payload)
+    if corrections:
+        lines.append("Corrections:")
+        lines.extend(f"- {item}" for item in corrections)
+    return "\n".join(lines)
+
+
+def _write_assistant_json(doc: Any, assistant: dict[str, Any]) -> Any:
+    encoded = json.dumps(assistant, ensure_ascii=True, indent=2)
+    try:
+        obj = _get_or_create(doc, "App::TextDocument", ASSISTANT_JSON_NAME)
+        obj.Text = encoded
+    except Exception:
+        obj = None
+    _set_doc_attr(doc, ASSISTANT_JSON_NAME, encoded)
+    return obj
+
+
+def _corrections_list(value: Any) -> list[str]:
+    if isinstance(value, (list, tuple)):
+        return [str(item).strip() for item in value if str(item).strip()]
+    text = str(value or "").strip()
+    if not text:
+        return []
+    try:
+        parsed = json.loads(text)
+    except Exception:
+        parsed = None
+    if isinstance(parsed, list):
+        return [str(item).strip() for item in parsed if str(item).strip()]
+    return [line.strip().lstrip("- ") for line in text.splitlines() if line.strip()]
 
 
 def _xyz_ref_components(payload: dict[str, Any]) -> tuple[Any, Any, Any]:

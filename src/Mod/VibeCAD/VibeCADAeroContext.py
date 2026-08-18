@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import json
 from typing import Any
 
 _RESULT_FIELDS = (
@@ -31,6 +32,8 @@ _GEOMETRY_FIELDS = (
 )
 _MAX_PATH = 240
 _MAX_TEXT = 80
+_MAX_CORRECTION = 160
+_MAX_CORRECTIONS = 8
 
 
 def document_aero_summary(doc: Any | None) -> dict[str, Any]:
@@ -62,6 +65,12 @@ def document_aero_summary(doc: Any | None) -> dict[str, Any]:
         "geometry_source": geometry_source,
         "jsbsim_path": _jsbsim_path(doc, report),
     }
+    assistant = _assistant_json(doc, report)
+    if assistant:
+        summary["assistant_json"] = assistant
+    corrections = _corrections(report, doc)
+    if corrections:
+        summary["corrections"] = corrections
     if not solved:
         return summary
 
@@ -78,6 +87,84 @@ def document_aero_summary(doc: Any | None) -> dict[str, Any]:
     if boot:
         summary["jsbsim_boot"] = boot
     return summary
+
+
+def _assistant_json(doc: Any, report: Any | None) -> dict[str, Any]:
+    raw = getattr(doc, "AeroAssistantJson", None)
+    if raw in (None, ""):
+        obj = _named(doc, "AeroAssistantJson")
+        if obj is not None:
+            raw = getattr(obj, "Text", None) or getattr(obj, "AeroAssistantJson", None)
+    if raw in (None, "") and report is not None:
+        raw = getattr(report, "AeroAssistantJson", None)
+    parsed = _parse_assistant_json(raw)
+    if parsed:
+        return parsed
+    return {}
+
+
+def _parse_assistant_json(raw: Any) -> dict[str, Any]:
+    if isinstance(raw, dict):
+        payload = raw
+    else:
+        text = str(raw or "").strip()
+        if not text:
+            return {}
+        try:
+            loaded = json.loads(text)
+        except Exception:
+            return {}
+        if not isinstance(loaded, dict):
+            return {}
+        payload = loaded
+    result: dict[str, Any] = {}
+    for key in ("CL", "CD", "CM", "CLalpha", "Cmalpha"):
+        value = _as_float(payload.get(key))
+        if value is not None:
+            result[key] = value
+    if "PitchUnstable" in payload:
+        result["PitchUnstable"] = bool(payload.get("PitchUnstable"))
+    source = _clip(payload.get("source") or "", _MAX_TEXT)
+    if source:
+        result["source"] = source
+    corrections = _bounded_corrections(payload.get("corrections"))
+    if corrections:
+        result["corrections"] = corrections
+    return result
+
+
+def _corrections(report: Any | None, doc: Any) -> list[str]:
+    if report is not None:
+        items = _bounded_corrections(getattr(report, "Corrections", None))
+        if items:
+            return items
+    assistant = _parse_assistant_json(getattr(doc, "AeroAssistantJson", None))
+    return list(assistant.get("corrections") or [])
+
+
+def _bounded_corrections(value: Any) -> list[str]:
+    if isinstance(value, (list, tuple)):
+        items = [str(item).strip() for item in value]
+    else:
+        text = str(value or "").strip()
+        if not text:
+            return []
+        try:
+            loaded = json.loads(text)
+        except Exception:
+            loaded = None
+        if isinstance(loaded, list):
+            items = [str(item).strip() for item in loaded]
+        else:
+            items = [line.strip().lstrip("- ") for line in text.splitlines()]
+    result: list[str] = []
+    for item in items:
+        clean = _clip(item, _MAX_CORRECTION)
+        if clean:
+            result.append(clean)
+        if len(result) >= _MAX_CORRECTIONS:
+            break
+    return result
 
 
 def _named(doc: Any, name: str) -> Any | None:
