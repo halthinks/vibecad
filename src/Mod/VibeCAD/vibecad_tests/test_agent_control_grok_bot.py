@@ -64,3 +64,17 @@ def test_detect_grok_bot_returns_none_when_missing(monkeypatch) -> None:
     # Empty PATH so the default candidate names cannot resolve.
     monkeypatch.setenv("PATH", "")
     assert agent.detect_grok_bot_command("/no/such/grok-bot/binary") is None
+
+
+def test_windows_default_candidates_target_grok_bot_desktop(monkeypatch) -> None:
+    monkeypatch.setattr(agent.sys, "platform", "win32")
+    monkeypatch.setenv("ProgramFiles", r"C:\Program Files")
+
+    candidates = agent._default_grok_bot_candidates()
+
+    # The installed Grok Bot desktop app, at Program Files.
+    assert r"C:\Program Files\Grok Bot\Grok Bot.exe" in candidates
+    assert any(c.endswith(r"\Grok Bot\Grok Bot.exe") for c in candidates)
+    # Never probe the bare Grok Build CLI (grok.exe) or a plain "grok" name.
+    assert "grok" not in candidates
+    assert not any(c.endswith(r"\grok.exe") for c in candidates)

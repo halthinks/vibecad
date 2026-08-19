@@ -217,30 +217,25 @@ def _resolve_command(candidate: str) -> str | None:
 
 
 def _default_grok_bot_candidates() -> list[str]:
-    candidates: list[str] = ["grok-bot", "grokbot", "grok"]
+    """Well-known locations for the Grok Bot desktop app.
+
+    Deliberately narrow: the Grok Bot desktop app is ``Grok Bot.exe`` under
+    ``Program Files`` on Windows. We do not probe bare names like ``grok``
+    because that resolves to the separate Grok Build CLI (``grok.exe``), which
+    is a different tool and must not be launched here.
+    """
+
+    candidates: list[str] = []
     if sys.platform == "win32":
-        roots = [
-            os.environ.get("LOCALAPPDATA", ""),
-            os.environ.get("ProgramFiles", ""),
-            os.environ.get("ProgramFiles(x86)", ""),
-        ]
-        subpaths = [
-            "Grok Bot\\GrokBot.exe",
-            "GrokBot\\GrokBot.exe",
-            "Grok\\Grok.exe",
-        ]
-        for root in roots:
-            if not root:
-                continue
-            for sub in subpaths:
-                candidates.append(str(Path(root) / sub))
+        program_files = os.environ.get("ProgramFiles", "") or r"C:\Program Files"
+        candidates.append(program_files.rstrip("\\") + r"\Grok Bot\Grok Bot.exe")
+        literal = r"C:\Program Files\Grok Bot\Grok Bot.exe"
+        if literal not in candidates:
+            candidates.append(literal)
     elif sys.platform == "darwin":
-        candidates.extend(
-            [
-                "/Applications/Grok Bot.app/Contents/MacOS/Grok Bot",
-                "/Applications/Grok.app/Contents/MacOS/Grok",
-            ]
-        )
+        candidates.append("/Applications/Grok Bot.app/Contents/MacOS/Grok Bot")
+    else:
+        candidates.extend(["grok-bot", "grokbot"])
     return candidates
 
 
