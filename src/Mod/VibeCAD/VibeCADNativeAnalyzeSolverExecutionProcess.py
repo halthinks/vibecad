@@ -31,6 +31,11 @@ def run_solver_processes(
 ) -> tuple[dict[str, Any], ...]:
     if not commands:
         raise NativeAnalyzeError("The detached FEM solver has no executable command.")
+    if not Path(working_directory).is_dir():
+        raise NativeAnalyzeError(
+            f"{backend} stage 1 could not be started.",
+            error_code="NATIVE_ANALYZE_SOLVER_START_FAILED",
+        )
 
     def stage_started(stage: int, total: int) -> None:
         base_progress = 12 + int(65 * (stage - 1) / total)
