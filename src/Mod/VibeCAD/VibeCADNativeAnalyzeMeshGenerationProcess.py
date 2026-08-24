@@ -11,17 +11,7 @@ from typing import Any
 
 from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
 from VibeCADNativeBackground import NativeBackgroundCancelled
-
-
-def stop_process(process: subprocess.Popen[Any]) -> None:
-    if process.poll() is not None:
-        return
-    process.terminate()
-    try:
-        process.wait(timeout=2.0)
-    except subprocess.TimeoutExpired:
-        process.kill()
-        process.wait(timeout=2.0)
+from VibeCADNativeExternalProcess import stop_process
 
 
 def run_mesh_process(
