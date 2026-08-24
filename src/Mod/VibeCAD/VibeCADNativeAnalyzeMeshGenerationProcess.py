@@ -11,7 +11,7 @@ from typing import Any
 
 from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
 from VibeCADNativeBackground import NativeBackgroundCancelled
-from VibeCADNativeExternalProcess import stop_process
+from VibeCADScriptedProcess import terminate_process
 
 
 def run_mesh_process(
@@ -36,11 +36,11 @@ def run_mesh_process(
             )
             while process.poll() is None:
                 if cancelled():
-                    stop_process(process)
+                    terminate_process(process)
                     raise NativeBackgroundCancelled()
                 elapsed = time.monotonic() - started
                 if elapsed > timeout_seconds:
-                    stop_process(process)
+                    terminate_process(process)
                     raise NativeAnalyzeError(
                         f"{backend} exceeded timeout_seconds before producing a mesh.",
                         error_code="NATIVE_ANALYZE_MESH_TIMEOUT",
