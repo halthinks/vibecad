@@ -8,9 +8,11 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
-from VibeCADNativeExternalProcess import (
-    NativeExternalProcessError,
-    run_external_process_sequence,
+from VibeCADNativeBackground import NativeBackgroundCancelled
+from VibeCADScriptedProcess import (
+    ExternalProcessCancelled,
+    ExternalProcessError,
+    run_process_sequence,
 )
 
 
@@ -35,17 +37,19 @@ def run_solver_processes(
         progress(base_progress, f"Running {backend} stage {stage}/{total}")
 
     try:
-        stages = run_external_process_sequence(
+        stages = run_process_sequence(
             commands,
             working_directory=working_directory,
             environment=environment,
             timeout_seconds=timeout_seconds,
-            cancelled=cancelled,
+            cancellation_check=cancelled,
             log_name=lambda stage: f"solver-{stage}.log",
             stage_started=stage_started,
             maximum_log_bytes=MAX_SOLVER_LOG_BYTES,
         )
-    except NativeExternalProcessError as exc:
+    except ExternalProcessCancelled as exc:
+        raise NativeBackgroundCancelled() from exc
+    except ExternalProcessError as exc:
         if exc.reason == "timeout":
             raise NativeAnalyzeError(
                 f"{backend} exceeded timeout_seconds before producing results.",
