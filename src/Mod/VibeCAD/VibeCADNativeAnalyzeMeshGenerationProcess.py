@@ -13,6 +13,9 @@ from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
 from VibeCADNativeBackground import NativeBackgroundCancelled
 from VibeCADScriptedProcess import terminate_process
 
+# Compatibility seam for callers that imported the former FEM-local helper.
+stop_process = terminate_process
+
 
 def run_mesh_process(
     command: tuple[str, ...],
@@ -36,11 +39,11 @@ def run_mesh_process(
             )
             while process.poll() is None:
                 if cancelled():
-                    terminate_process(process)
+                    stop_process(process)
                     raise NativeBackgroundCancelled()
                 elapsed = time.monotonic() - started
                 if elapsed > timeout_seconds:
-                    terminate_process(process)
+                    stop_process(process)
                     raise NativeAnalyzeError(
                         f"{backend} exceeded timeout_seconds before producing a mesh.",
                         error_code="NATIVE_ANALYZE_MESH_TIMEOUT",
