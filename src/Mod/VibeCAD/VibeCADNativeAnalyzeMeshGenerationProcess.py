@@ -11,10 +11,17 @@ from typing import Any
 
 from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
 from VibeCADNativeBackground import NativeBackgroundCancelled
-from VibeCADScriptedProcess import terminate_process
 
-# Compatibility seam for callers that imported the former FEM-local helper.
-stop_process = terminate_process
+
+def stop_process(process: subprocess.Popen[Any]) -> None:
+    if process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=2.0)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait(timeout=2.0)
 
 
 def run_mesh_process(
