@@ -178,6 +178,36 @@ def test_calculix_timeout_mapping_is_legacy_exact(
     }
 
 
+def test_calculix_start_failure_mapping_is_legacy_exact(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    request = _request(tmp_path)
+    prepared = adapter.PreparedFEMSolverExecution(object(), request)
+
+    def start_failed(*_args, **_kwargs):
+        raise ExternalProcessError(
+            "start_failed",
+            stage=1,
+            program="/solver/ccx",
+        )
+
+    monkeypatch.setattr(adapter._LOCAL_PROCESS_PROVIDER, "run_sequence", start_failed)
+    monkeypatch.setattr(legacy, "discard_solver_execution_request", lambda _value: None)
+
+    with pytest.raises(NativeAnalyzeError) as caught:
+        adapter.run_solver_execution(
+            prepared,
+            cancelled=lambda: False,
+            progress=lambda _percent, _message: None,
+        )
+
+    assert caught.value.failure() == {
+        "error_code": "NATIVE_ANALYZE_SOLVER_START_FAILED",
+        "message": "Calculix stage 1 could not be started.",
+    }
+
+
 def test_calculix_provider_cancellation_maps_to_native_background_cancel(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
