@@ -8,6 +8,12 @@ from typing import Any, Mapping
 
 from VibeCADNativeAnalyzeErrors import NativeAnalyzeError
 try:
+    from VibeCADAnalysisRuntime import AnalysisRuntime
+except ModuleNotFoundError as exc:
+    if exc.name != "VibeCADAnalysisRuntime":
+        raise
+    AnalysisRuntime = None  # type: ignore[assignment,misc]
+try:
     from VibeCADNativeAnalyzeSolverExecutionAdapter import (
         commit_solver_execution,
         discard_solver_execution_request,
@@ -86,17 +92,27 @@ class NativeAnalyzeSolverExecutionRuntime:
                 verify=verify_solver_execution,
             )
 
+        submission = {
+            "capability_name": "analyze.solver_execution.run",
+            "prepare": prepare,
+            "validate_before_commit": context.guard,
+            "commit": commit,
+            "finalize_message": "Importing verified FEM results",
+            "cleanup": lambda _prepared: discard_solver_execution_request(request),
+        }
         try:
-            snapshot = manager.submit(
-                document_uid=context.document_uid,
-                capability_name="analyze.solver_execution.run",
-                prepare=prepare,
-                validate_before_commit=context.guard,
-                commit=commit,
-                dispatch_to_document_thread=dispatcher,
-                finalize_message="Importing verified FEM results",
-                cleanup=lambda _prepared: discard_solver_execution_request(request),
-            )
+            if AnalysisRuntime is None:
+                snapshot = manager.submit(
+                    document_uid=context.document_uid,
+                    dispatch_to_document_thread=dispatcher,
+                    **submission,
+                )
+            else:
+                snapshot = AnalysisRuntime(
+                    manager,
+                    document_uid=context.document_uid,
+                    dispatch_to_document_thread=dispatcher,
+                ).submit(**submission)
         except NativeBackgroundError as exc:
             discard_solver_execution_request(request)
             raise NativeAnalyzeError(
