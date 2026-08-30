@@ -1,8 +1,16 @@
 # VibeCADAero advanced-plan recovery
 
-This directory is the project-owned preservation record for the recovered Advanced VibeCAD / VibeCADAero plan.
+> **HISTORICAL / NON-NORMATIVE RECORD — NOT THE ACTIVE ROADMAP.** Start with the
+> [canonical VibeCADAero roadmap](../vibecadaero-roadmap.md) for current Steps
+> 0-11 scope and with the
+> [governed engineering roadmap](../vibecad-governed-engineering-roadmap.md) for
+> the separately governed, VibeCAD-owned VC-DG direct-geometry lane. Nothing in
+> this recovery tree reactivates Steps 12-20 or creates a current release
+> obligation.
 
-The active, current-source-reconciled implementation plan is the repository's [VibeCADAero canonical roadmap](../vibecadaero-roadmap.md). This directory is its complete preserved evidence and design record; it is not a competing current-status document.
+This directory is the project-owned historical preservation record for the recovered Advanced VibeCAD / VibeCADAero plan.
+
+The repository's [VibeCADAero canonical roadmap](../vibecadaero-roadmap.md) owns the active bounded Steps 0-11 public plan and classifies Steps 12-20 as historical/non-normative. This directory is the complete preserved evidence and advanced design record; it is not a competing current-status document and does not create release blockers.
 
 It exists so that the architecture, roadmap, FluidX3D first-use behavior, migration contracts, known hazards, reference code, tests, and original source package remain searchable and recoverable from the VibeCAD project itself rather than depending on a ChatGPT conversation or an external handoff directory.
 
@@ -13,7 +21,7 @@ It exists so that the architecture, roadmap, FluidX3D first-use behavior, migrat
 - [Second-pass no-loss preservation supplement](VIBECADAERO_SECOND_PASS_PRESERVATION_SUPPLEMENT.md)
 - [FluidX3D first-use notice and vendor-policy contract](RECOVERED_FLUIDX3D_FIRST_USE_GATE.md)
 
-The supplement contains the detailed architecture and complete 21-step dependency-ordered implementation sequence. The shorter roadmap is an executive grouping and current-state handoff; it must not replace the detailed contracts.
+The supplement contains the detailed architecture and complete 21-step historical sequence. The canonical roadmap preserves and classifies those contracts while limiting the active public completion boundary to Steps 0-11. Historical records must not be mistaken for current release obligations.
 
 ## Original recovered source
 
@@ -44,4 +52,4 @@ The ZIP is the byte-for-byte archival source. `source-package/` is its expanded 
 
 Do not silently delete, condense, or replace this package with a smaller handoff. Future corrections should be additive, identify what they supersede, preserve the prior evidence, and update this index.
 
-This documentation package does not itself authorize implementation or claim production readiness. It changes no runtime behavior.
+This documentation package does not itself authorize implementation, reactivate historical Steps 12-20, or claim production readiness. It changes no runtime behavior.

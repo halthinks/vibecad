@@ -1,16 +1,100 @@
 # VibeCAD governed engineering roadmap
 
-**Roadmap status:** active and canonical for the cross-domain governed
-engineering extension
+**Roadmap status:** active and canonical for bounded public host closure,
+retained current capability, and the VC-DG direct-geometry lane
 
 **Audited baseline:**
 `93500486c1515eac2ee98121e16a96a3038c0299` on 2026-08-26
 
 **Current implementation checkpoint:** the dependency-ordered roadmap stack
 #90 through #135 reaches `c0157d9a6b4a6bc4d54130025ec9dfaf5c7fbbda`
-and was reconciled on 2026-08-27 with `10-X-eng/vibecad@60b8f3fd` for the daily
-fork integration. Milestone status below remains evidence-bounded and does not
-claim full program completion.
+and was reconciled on 2026-08-27 with `10-X-eng/vibecad@60b8f3fd` as a bounded
+fork checkpoint. Milestone status below remains evidence-bounded and does not
+claim completion of the active public boundary.
+
+**Latest observable stabilization checkpoint:** the 2026-08-28 working tranche
+based on `75917cf660cf100a09fc2d7cae033145b4661bea` proves the repo-local
+one-click GUI/control/file-tour loop and matched three-cycle installed Windows
+and Linux x86-64 physical CalculiX solve/import/persistence burn-ins, matched
+exact-source identity/refusal/rebind burn-ins, and matched physical CalculiX
+active-close/publication-refusal burn-ins. The tranche also repairs the
+rattler-build Pixi lock so strict lock freshness and locked dependency installs
+pass without bypassing the solver. An additive one-cycle Windows checkpoint now
+also carries a real physical CalculiX result through durable G2 verification,
+content-addressed completed-workspace bundle admission, a production FEM
+publisher, and Native document-thread transaction authority. It proves
+write-once receipt persistence, duplicate-free save/reopen replay, rollback,
+and unknown-outcome refusal. The installed host and solver are exact, but the
+new publisher is still loaded from the source checkout, so package rebuild and
+repeated cross-platform acceptance remain. The
+[FEM compatibility report](vibecad-analysis-fem-compatibility-report.md)
+records the detailed boundary. The new one-cycle path advances G2 but is not a
+G5 workflow submission and does not close either milestone.
+
+## 2026-08-29 public-scope classification
+
+This roadmap remains canonical for bounded public host closure, retained current
+capability, shared architectural contracts, and the VC-DG direct-geometry lane.
+It no longer makes every preserved G/X research milestone a public release
+obligation. Current source and already-landed behavior are retained; a historical
+classification changes future completion obligations, not existing code,
+compatibility, tests, documents, or user data.
+
+**Bounded direct-geometry exception.** The owner has explicitly retained
+VC-DG-0 through VC-DG-6 in VibeCAD as a narrow active lane. The exception covers
+only the direct-geometry structural/thermal core defined by the repository
+specification and, if separately authorized after VC-DG-6, the optional VC-DG-7
+preview. It does not make nonlinear/composites/fatigue programs, generalized
+multiphysics, broad solver registries, remote execution, high-fidelity Aero, or
+other advanced engineering expansion part of current VibeCAD completion.
+Shared contracts may be reused without changing this scope; each implementation
+and completion claim still has one named owner.
+
+| Lane | Public classification | Active public obligation |
+| --- | --- | --- |
+| G0 | **STAYS PUBLIC / SHARED LINEAGE** | Repeat source, owner, package, test, and roadmap reconciliation at each bounded tranche. |
+| G1 | **STAYS PUBLIC / SHARED LINEAGE** | Finish only contracts required by retained public behavior and VC-DG. |
+| G2 | **COMPLETE CURRENT PUBLIC DEPENDENCIES** | Close durability, recovery, currentness, and publish-once behavior required by current FEM, low-order Aero, and VC-DG. Generalized expansion is not an active public gate. |
+| G3 | **HISTORICAL / NON-NORMATIVE** | Preserve the remote-provider design record; no current public completion obligation. |
+| G4 | **STAYS PUBLIC / SHARED LINEAGE** | Fix authority/preview inconsistencies affecting shipped behavior and support bounded VC-DG selector preview/acceptance. |
+| G5 | **RETAIN CURRENT CAPABILITY / SHARED LINEAGE** | Preserve landed bounded workflow behavior. Advanced orchestration closure is not an active public gate. |
+| G6 | **HISTORICAL / NON-NORMATIVE** | Preserve landed foundations and design record; no future public optimization completion obligation. |
+| G7 | **RETAIN CURRENT CAPABILITY** | Preserve current Manufacture/CAM and landed evidence seams; advanced runtime integration is not an active public gate. |
+| G8 | **RETAIN CURRENT CAPABILITY** | Preserve current Assembly/mechanism/fastener behavior and landed identity/evidence seams; advanced consolidation is not an active public gate. |
+| McMasterInsert | **COMPLETE AND RETAIN CURRENT CAPABILITY** | Finish any already-started catalog/import/cache/placement, packaging, or acceptance work and preserve the current workbench. This is separate from bundled standard fasteners. Procurement intelligence, supplier comparison, automated sourcing, and generalized catalog expansion are not active VibeCAD gates. |
+| G9-G12 | **HISTORICAL / NON-NORMATIVE** | Preserve proposals, sequencing, service, and Robot projection records without making them public release blockers. |
+| X0 | **SHARED LINEAGE** | Retain the verified target and GUI inventory. |
+| X1 | **STAYS PUBLIC / SHARED LINEAGE** | Preserve and finish the generic result/presentation surface needed by retained public behavior and VC-DG. |
+| X2 | **RETAIN CURRENT CAPABILITY** | Preserve current result/activity/artifact UI; generalized extension is not an active public gate. |
+| X3 | **HISTORICAL / NON-NORMATIVE** | Preserve remote-execution UI design only. |
+| X4 | **STAYS PUBLIC / SHARED LINEAGE** | Preserve generic preview evidence and extend only where active public lanes require it. |
+| X5-X6 | **HISTORICAL / NON-NORMATIVE** | Preserve landed projections and design records; no future public completion obligation. |
+| X7-X8 | **RETAIN CURRENT CAPABILITY** | Preserve current Manufacture and Assembly projections; advanced UI expansion is not an active public gate. |
+| X9-X12 | **HISTORICAL / NON-NORMATIVE** | Preserve advanced proposal/sequence/service/Robot UI records without active public completion obligations. |
+| VC-DG-0 through VC-DG-6 | **ACTIVE PUBLIC LANE** | Deliver the bounded structural/thermal direct-geometry core through the existing G1/G2/G4 and Analysis authorities. |
+| VC-DG-7 | **OPTIONAL PUBLIC LANE** | Proposed fixed-boundary incompressible embedded-flow preview after VC-DG-6; non-blocking for VC-DG core and unrelated to historical Aero Steps 12-20. |
+
+### Active public completion boundary
+
+Current public completion requires:
+
+1. exact-checkout, frozen-lock, visible GUI development acceptance with the
+   plain cyan in-application pointer and native file round trip;
+2. current Native authority and compatibility closure;
+3. package-contained and repeatable current FEM/CalculiX lifecycle,
+   verification, recovery, currentness, and publish-once closure;
+4. low-order Aero Steps 0-11 closure in the Aero owner roadmap;
+5. retained generic Engineering Experience X1/X2/X4 surfaces working against
+   their actual owners;
+6. completion and regression protection of the already-started current
+   McMasterInsert catalog/import/cache/placement and package-acceptance slice;
+   and
+7. VC-DG-0 through VC-DG-6 closure under the direct-geometry specification.
+
+The boundary does not require G3, advanced G5, G6, advanced G7/G8, G9-G12,
+X3, advanced X5-X12, historical Aero Steps 12-20, or optional VC-DG-7. Every
+already-landed capability and compatibility seam remains protected against
+regression even when its future expansion is historical/non-normative.
 
 ## 1. Purpose
 
@@ -44,14 +128,26 @@ Use this precedence when implementation and documents disagree:
    and closure gates.
 3. Domain roadmaps and specifications determine domain semantics and acceptance
    details. In particular:
-   - [VibeCADAero canonical roadmap](vibecadaero-roadmap.md) owns Aero physics,
-     solver integration, qualification, and the original host persistence and
-     publication milestones;
+   - [VibeCADAero canonical roadmap](vibecadaero-roadmap.md) owns retained
+     low-order Aero physics and Steps 0-11 acceptance, and preserves later
+     advanced solver/qualification records as historical/non-normative;
    - [Assembly and Mechanism Integration](assembly-mechanism-integration-spec.md)
      owns the authoritative Assembly graph, mechanism evaluation, and Part
      Design verification facade;
-   - [Bundled Standard Fasteners](standard-fasteners-integration-spec.md) owns
-     standard-component packaging, catalogs, and supported fastener geometry.
+    - [Bundled Standard Fasteners](standard-fasteners-integration-spec.md) owns
+      standard-component packaging, catalogs, and supported fastener geometry.
+    - [McMaster-Carr insert](../src/Mod/McMasterInsert/README.md) and its
+      executable module own the retained live vendor-catalog, downloaded-CAD
+      import/cache, component metadata, and placement workflow. McMasterInsert
+      is not the bundled standard-fastener catalog and does not establish a
+      procurement, sourcing, supplier-comparison, or purchasing authority.
+   - [Direct-Geometry, No-Body-Fitted-Meshing Analysis for VibeCAD](direct-geometry/VIBECAD_DIRECT_GEOMETRY_ANALYSIS_WHITEPAPER.md)
+     preserves the accepted source specification and owns the unaffected VC-DG
+     numerical, validation, and definition-of-done requirements;
+   - the [direct-geometry reconciliation addendum](direct-geometry/VIBECAD_DIRECT_GEOMETRY_RECONCILIATION_ADDENDUM.md)
+     owns repository-specific integration clarifications for the reusable tester,
+     separate VC-DG-7 authorization, generic CfdOF, and McMasterInsert; this
+     roadmap owns VC-DG package status, dependencies, and order.
 4. The
    [whitepaper evaluation](vibecad-governed-engineering-whitepaper-evaluation.md)
    explains why the submitted proposal was accepted, bounded, reframed, or
@@ -72,6 +168,9 @@ to an earlier revision.
 | **Design-ready** | Owners, dependencies, compatibility boundaries, and acceptance gates are defined; production implementation has not closed them. |
 | **Blocked by prerequisite** | Work must not become a production path until a named earlier gate closes. |
 | **Unverified** | Current evidence is insufficient or contradictory. |
+| **Retain current capability** | Existing behavior remains supported and regression-protected; generalized future expansion is not an active closure gate. |
+| **Historical/non-normative** | Preserved design provenance; not a current public completion obligation unless explicitly reactivated. |
+| **Optional proposed** | Separately gated work that does not block the required active public boundary. |
 
 An interface, schema, mock provider, preview, queued job, solver exit code,
 plausible output, screenshot, generated report, focused unit test, or design
@@ -213,6 +312,48 @@ without adopting SARIF as VibeCAD's engineering schema.
   upgrade evidence before release.
 - No roadmap tranche removes an old API merely because a replacement exists.
 
+### 4.9 Observable exact-checkout development is a delivery gate
+
+Every user-visible governed-engineering slice is developed and accepted in the
+same visible local GUI that a human can watch. On Windows, the canonical path is
+the repo-root one-click launcher in
+[developer-launch-windows.md](developer-launch-windows.md). It builds only the
+exact checkout, visibly marks its source SHA, scopes the authenticated loopback
+agent endpoint to that checkout, and refuses an installed-product fallback.
+
+The development agent may drive bounded application routes, `/v1/native`,
+domain routes such as `/v1/aero`, or the repo's Qt GUI harness. Those mechanisms
+do not enlarge authority: Native mutation, previews, fresh authorization,
+domain verification, publication, document-thread ownership, and receipts
+remain mandatory. A qualifying checkpoint combines a human-watchable workflow
+with before/after context or screenshots where relevant, exact owning
+receipts/artifacts, and proportional automated tests. A screenshot, mock,
+headless proxy, installed build, or privileged unreceipted Python mutation is
+not a substitute.
+
+When the workflow needs menu or ribbon interaction, the canonical Windows tour
+uses a plain cyan virtual cursor overlay and semantic `/v1/ui/click` targets. It
+must not call `SetCursorPos`, `SendInput`, or otherwise move, click, confine,
+hide, or block the human's physical cursor. File-workflow checkpoints must also
+prove the real open/save-as/save/close/reopen lifecycle, default overwrite
+protection, and a clean final document state in the same exact GUI process.
+
+### 4.10 Direct-geometry representation and method locks
+
+The VC-DG lane keeps the accepted BREP and Native document authoritative. A
+tessellation, signed-distance field, background grid, cut-cell classification,
+or solver deck is derived, immutable, source-revision-bound evidence. A
+`GeometryRepresentationDescriptor`, semantic selector, numerical method, solver,
+provider, resolution, result, qualification record, and publication receipt are
+distinct identities and may not substitute for one another.
+
+The user is not required to create or manage a body-fitted mesh. The numerical
+method may use a background grid, lattice, cells, or integration points; the
+roadmap must not call the whole lane meshless. CalculiX, Elmer, and Gmsh remain
+conforming references/fallbacks/oracles and cannot earn direct-geometry credit.
+Ambiguous, empty, or stale selectors fail closed, unsupported physics refuses
+before execution, and no execution success can promote a qualification ceiling.
+
 ## 5. Verified baseline and honest boundary
 
 The 2026-08-26 audit of `93500486c1515eac2ee98121e16a96a3038c0299`
@@ -229,7 +370,8 @@ found these foundations:
 | Manufacture/CAM | Jobs, tools, operations, posts, simulation, retained simulation result, templates, outputs | No common Analysis-backed durable manufacturing-task orchestration. |
 | Assembly | occurrences, all current joint kinds, joint graph, solve/diagnosis, simulation/playback, BOM, fasteners, component interfaces, rigid static mechanism checks | Continuous-motion certification, flexible coverage, full interface taxonomy, sequencing, and service planning remain. |
 | Robot | setup, tool shape, home state, trajectory/waypoints/features, simulation, KUKA export | No verified Assembly-step-to-Robot-task projection. |
-| Aero host plan | canonical Steps 8/8A define durable jobs/artifacts/publication before remote compute | Those steps are design-ready, not implemented. |
+| Direct-geometry lane | host/FEM/tessellation/publication foundations only | No unfitted or immersed structural, thermal, or flow route is implemented; VC-DG-0 through VC-DG-7 remain open. |
+| Aero host plan | canonical Steps 8/8A define durable jobs/artifacts/publication for retained low-order Aero | Those steps are partial and remain active only through the bounded Steps 0-11 public lane. |
 
 ### Post-baseline implementation reconciliation
 
@@ -239,18 +381,18 @@ Subsequent post-baseline work through fork PR #100 adds truthful roadmap
 reconciliation, common engineering contracts, the Native authority census, the
 durable workflow-DAG core, and governed-optimization contracts. Each remains
 partial at the real domain/runtime/installed acceptance gates stated below.
-The Engineering Experience pivot was incorporated after PR #100 reached a
+The Engineering Experience source update was incorporated after PR #100 reached a
 checked boundary; it does not retroactively alter the historical audit or claim
 that the north-star UI exists.
 
-The same pivot source and north-star image were resupplied on 2026-08-27 after
+The same planning source and north-star image were resupplied on 2026-08-27 after
 fork PR #121 reached its review boundary. Their hashes match the already
 preserved repository copies exactly. This reconfirms, rather than replaces, the
-X-track direction. EVS-01 through EVS-09 are now the active Analyze delivery
-slices inside the X-track specification, dependency-bound to G1/G2/G5/G6 and
-the existing domain presentation owners; they do not replace X0-X12.
+X-track design direction. Under the current classification, only X1/X2/X4
+closure remains active. Landed EVS slices keep their regression obligations;
+advanced workflow/optimization projections remain non-blocking provenance.
 
-Fork PRs #101 through #105 preserve the Engineering Experience source pivot,
+Fork PRs #101 through #105 preserve the Engineering Experience planning source,
 add the common projection facade, project durable Analysis/workflow/optimization
 records, bind the first Manufacture post-evidence seam to exact G2/G5 records,
 and project bounded Assembly simulation evidence without creating a second
@@ -265,75 +407,82 @@ document-thread and post-state checks but are performed by one installed host
 surface authority owner. This closes those two discovered regressions only; it
 does not complete G7, G8, or the repository-wide acceptance gates.
 
+The 2026-08-28 durable FEM publication tranche adds a domain-owned production
+adapter that freezes runtime preferences with the prepared FEM dependency set,
+seals every completed-workspace path in a deterministic
+`canonical-zip-stored-v1` bundle, independently revalidates the live and
+content-addressed bytes, and delegates the unchanged production FEM importer to
+the existing Native mutation authority. One physical Windows CalculiX cycle
+proves a receipt-backed success/save/reopen/replay lane and a separate
+transaction-rollback/unknown-outcome lane at the `model_unqualified` claim
+ceiling. Because the new adapter is source-loaded beside exact installed host
+and solver binaries, this advances but does not close G2 or its installed,
+restart, provider, cross-platform, and normal-route acceptance gates.
+
 ## 6. Dependency graph
+
+The solid graph is the current public completion program. Dashed nodes are
+preserved historical or optional continuation and do not block the solid graph.
 
 ```mermaid
 flowchart TD
-    G0[G0 live reconciliation] --> G1[G1 identity, result, finding, provenance contracts]
-    G1 --> G2[G2 durable jobs, artifacts, recovery, publication]
-    G2 --> G3[G3 real remote provider]
-    G1 --> G4[G4 authority-policy census and preview evidence]
-    G2 --> G5[G5 durable workflow DAG]
-    G1 --> G5
-    G4 --> G6[G6 governed optimization]
-    G5 --> G6
-    G2 --> G7[G7 Manufacture runtime integration]
-    G5 --> G7
-    G0 --> G8[G8 Assembly state/interface/validation consolidation]
-    G8 --> G9[G9 propose-only joint inference]
-    G8 --> G10[G10 verified assembly sequencing]
-    G9 --> G10
-    G10 --> G11[G11 service and disassembly planning]
-    G10 --> G12[G12 Robot task projection]
-    G1 --> G12
-    G0 --> X0[X0 target and GUI inventory]
+    G0[G0 live reconciliation] --> G1[G1 active common contracts]
+    G1 --> G2[G2 current FEM/Aero/DG durability and publication]
+    G1 --> G4[G4 current authority and preview closure]
+    G0 --> X0[X0 retained GUI inventory]
     G1 --> X1[X1 common engineering presentation]
-    G2 --> X2[X2 durable activity and artifacts]
-    G3 --> X3[X3 remote execution state]
+    G2 --> X2[X2 current durable activity and artifacts]
     G4 --> X4[X4 governed preview evidence]
-    G5 --> X5[X5 workflow visualization]
-    G6 --> X6[X6 optimization comparison]
-    G7 --> X7[X7 Manufacture evidence]
-    G8 --> X8[X8 Assembly evidence]
-    G9 --> X9[X9 joint proposals]
-    G10 --> X10[X10 sequence visualization]
-    G11 --> X11[X11 service visualization]
-    G12 --> X12[X12 Robot task visualization]
-    X0 --> X1 --> X2
-    X1 --> X4
-    X2 --> X3
-    X2 --> X5 --> X6 --> X7
-    X8 --> X9 --> X10 --> X11
-    X10 --> X12
+    G2 --> DG0[VC-DG-0 exact visible development gate]
+    G4 --> DG1[VC-DG-1 contracts and VC-DG-2 selectors]
+    DG0 --> DG1
+    DG1 --> DG3[VC-DG-3 sealed representation]
+    DG3 --> DG4[VC-DG-4 structural and thermal prototype]
+    DG4 --> DG5[VC-DG-5 production backend]
+    DG5 --> DG6[VC-DG-6 qualification]
+    DG6 -. optional .-> DG7[VC-DG-7 bounded embedded flow]
+    G3[historical G3 remote]:::historical
+    G5[retained current G5 workflow]:::historical
+    G6[historical G6 optimization]:::historical
+    G7[retained current G7 Manufacture]:::historical
+    G8[retained current G8 Assembly]:::historical
+    G9[historical G9-G12 advanced domains]:::historical
+    XH[historical X3 and advanced X5-X12]:::historical
+    classDef historical stroke-dasharray: 5 5,color:#666;
 ```
 
-G4 and G8 may proceed in parallel with G2 because they have independent state
-owners. G3 may be prototyped against inert fixtures before G2 closes, but it
-must not become a production route. G7 does not replace existing Manufacture
-behavior while it waits for host persistence/workflows.
+G0, G1, G2, G4, X1, X2, X4, and VC-DG-0 through VC-DG-6 are
+dependency-ordered active public work. G5, G7, and G8 retain landed behavior and
+regression obligations without requiring their generalized advanced closure.
+G3, G6, G9-G12, X3, and advanced X5-X12 remain searchable design provenance.
+VC-DG-7 is optional after VC-DG-6.
 
 ## 7. Roadmap at a glance
 
-| Milestone | Whitepaper mapping | Current status | What remains before closure |
-| --- | --- | --- | --- |
-| G0 — live reconciliation | prerequisite | **Verified complete for this baseline** | Repeat at the start of every implementation tranche and record drift. |
-| G1 — common engineering contracts | C, D, E | **Partial** | Define versioned identities, result envelope, finding taxonomy/profile, provenance graph, compatibility rules, and cross-domain fixtures. |
-| G2 — durable Analysis and publication | A plus C/E | **Partial** | Migration/discovery/restart evidence, bounded provider reconnect/status/collect, attempt-bound collection receipts, immutable local-transport admission with file-content hash verification, idempotent `collecting` resume, per-analysis quotas, and live publication references are implemented; integrate authenticated real-provider transport, domain verification and `verifying` resume, future migration-chain expansion, governed cleanup, Native/domain publication wiring, compact references, corruption/restore acceptance, and installed cross-platform acceptance. |
-| G3 — remote provider | B | **Blocked by G2** | One real target, reconnect/cancel/poll/event semantics, credential isolation, verified bundle/output transport, real restart acceptance. |
-| G4 — authority policy and preview evidence | F, G | **Partial** | The executable registry-bound census classifies all current operations; add bounded domain preview evidence where justified and prove authoritative installed/runtime integration. |
-| G5 — workflow DAG | H | **Partial** | The bounded durable DAG, scheduler, restart, cancellation, retry, and publish-once core is implemented; wire real G2 jobs/domain adapters and prove installed/runtime and real five-stage FEM acceptance. |
-| G6 — optimization | I | **Partial** | Bounded deterministic candidate contracts, durable evaluation, explicit exceptional-result ranking, exact-source human selection, publish-once intent, and exact read-only G5 workflow-run provenance are implemented; real mutation-owner execution/G3 integration and installed acceptance remain. |
-| G7 — Manufacture runtime integration | J | **Partial runtime integration** | Post, CAMotics, live GL simulation and retained simulation now create exact durable G2 Analysis/G5 workflow records and bounded X7 evidence while preserving owner-specific claim ceilings; A/B, stale/restart and authoritative installed closure remain. |
-| G8 — Assembly consolidation | K, L, N | **Partial identity/interface/currentness/evidence foundation** | New Native-authored graph objects receive write-once persisted identities; component interfaces expose expanded semantic, fit, versioned explicit relation-parameter, and per-family coupling-parameter contracts plus conservative LCS-support geometry bindings with current/stale/unbound/indeterminate evidence. Exact bound subelements are now classified for axis/plane/point/bore/shaft/bearing/thread semantic families, and explicitly incompatible publication is refused. The existing simulation-state/solver projection remains. Legacy migration, real reopen/rename proof, stable graph revision, richer pattern/port/fixture/tool geometry, topology-stable references beyond conservative whole-support invalidation, catalog fit evaluation, continuous motion, flexible/closed-loop/contact and Part Design gates remain. |
-| G9 — joint inference | M | **Partial live scenario/joint/relation/coupling-decision foundation** | The installed mutation-free planning facade binds deterministic ranked proposals to the exact persisted-identity graph revision and reports ambiguous/no-candidate outcomes. A document-owned reader extracts occurrences and published native interfaces from the human-active Assembly, includes only joints whose exact connector paths resolve to two distinct published interface identities, reports unresolved joints as bounded omissions, and rejects an active Assembly that changes during the read. Versioned interface declarations now carry explicit per-family rack-pinion, screw, belt, and gear parameters into live Slider/Revolute records only when one non-grounded moving occurrence is exact; existing coupling dependencies suppress duplicate proposals. Acceptance revalidates proposals and can delegate fixed/revolute/cylindrical/slider/ball creation, distance/parallel/perpendicular/angle relations, or explicit-contract couplings exactly once through the matching ordinary Native Assembly runtime and receipt path. No numeric value, interface mapping, moving component, or coupling relation is fabricated. Ranked joint proposals reject explicitly incompatible or indeterminate semantic geometry while preserving legacy/unrecorded evidence at a bounded ceiling. Rejections can be recorded in a bounded, append-only, revision-bound Assembly document log; that log deliberately cannot claim acceptance without the mutation receipt. Richer semantic geometry families, provider/UI reachability, real installed-host acceptance and broader adversarial coverage remain. |
-| G10 — assembly sequencing | O | **Partial contract foundation** | The installed bounded planner now validates exact graph currentness and precedence, deterministically enumerates explicit-evidence orders, and separates sampled, continuous, collision, inaccessible, unsupported and indeterminate verdicts; real insertion/access/fastener/fixture/contact extraction, native collision/continuous-motion evidence, durable records and runtime/GUI integration remain. |
-| G11 — service/disassembly | P | **Partial projection foundation; closure blocked by G10** | Current G10 alternatives can now be reversed for explicit targets under protected-component constraints, with a bounded-model-only ceiling and equal-optimum reporting; full removal constraints, fastener/tool/fixture/access and replacement policy, minimum-set search, failed reverse-step verification, durable evidence and runtime/GUI integration remain. |
-| G12 — Robot task projection | Q | **Partial foundation** | Versioned step-to-task contract, frames/units/tool/TCP/force/torque/tolerance, traceability, Robot-domain validation and downstream boundary. |
-| X0-X12 — Engineering Experience | cross-cutting presentation | **X0 documented; X1/X2/X5/X6/X7/X8 projection foundations partial** | Bounded no-authority common, durable, workflow, optimization, Manufacture-post and Assembly-state projections exist; real wiring, Qt shell/views, remaining domain slices, GUI/accessibility and installed acceptance remain dependency-bound. |
+| Milestone | Public classification | Whitepaper mapping | Current status | What remains before closure |
+| --- | --- | --- | --- | --- |
+| G0 — live reconciliation | **STAYS PUBLIC / SHARED LINEAGE** | prerequisite | **Verified complete for this baseline** | Repeat at the start of every implementation tranche and record drift. |
+| G1 — common engineering contracts | **STAYS PUBLIC / SHARED LINEAGE** | C, D, E | **Partial** | Define versioned identities, result envelope, finding taxonomy/profile, provenance graph, compatibility rules, and cross-domain fixtures. |
+| G2 — durable Analysis and publication | **COMPLETE CURRENT PUBLIC DEPENDENCIES** | A plus C/E | **Partial** | Generic persistence/reconnect/admission/verification/publication foundations and one physical production-FEM cycle exist. Active closure is limited to exact-package normal-route current FEM, retained low-order Aero, VC-DG support, true process-crash reconstruction, governed cleanup/compact references/corruption restore, and applicable installed cross-platform acceptance. Production remote transport and generalized expansion are non-blocking historical continuations. |
+| G3 — remote provider | **HISTORICAL / NON-NORMATIVE** | B | **Preserved design; prior production plan blocked by G2** | No active public closure obligation. Preserve the real-target/reconnect/credential/transport/restart design record for any separately authorized future work. |
+| G4 — authority policy and preview evidence | **STAYS PUBLIC / SHARED LINEAGE** | F, G | **Partial** | The executable registry-bound census classifies all current operations; add bounded domain preview evidence where justified and prove authoritative installed/runtime integration. |
+| G5 — workflow DAG | **RETAIN CURRENT CAPABILITY** | H | **Partial retained capability** | Preserve the landed bounded DAG/scheduler/restart/cancel/retry/publish-once core and its tests. Generalized five-stage production workflow closure is not an active public gate. |
+| G6 — optimization | **HISTORICAL / NON-NORMATIVE** | I | **Partial retained foundation** | Preserve landed contracts/evaluation/ranking/selection/provenance. No active public mutation-owner, remote, or installed optimization closure obligation. |
+| G7 — Manufacture runtime integration | **RETAIN CURRENT CAPABILITY** | J | **Partial retained runtime integration** | Preserve current Post/CAMotics/live simulation, durable evidence seams, claim ceilings, and regressions. Generalized A/B, stale/restart, and installed expansion is non-blocking. |
+| G8 — Assembly consolidation | **RETAIN CURRENT CAPABILITY** | K, L, N | **Partial retained identity/interface/currentness/evidence foundation** | Preserve current Native graph, interface, semantic geometry, simulation, mechanism, fastener, and evidence behavior. Broader migration/topology/catalog/continuous/flexible/contact consolidation is non-blocking. |
+| G9 — joint inference | **HISTORICAL / NON-NORMATIVE** | M | **Partial live scenario/joint/relation/coupling-decision foundation** | Preserved if separately reactivated: the installed mutation-free planning facade binds deterministic ranked proposals to the exact persisted-identity graph revision and reports ambiguous/no-candidate outcomes. A document-owned reader extracts occurrences and published native interfaces from the human-active Assembly, includes only joints whose exact connector paths resolve to two distinct published interface identities, reports unresolved joints as bounded omissions, and rejects an active Assembly that changes during the read. Versioned interface declarations now carry explicit per-family rack-pinion, screw, belt, and gear parameters into live Slider/Revolute records only when one non-grounded moving occurrence is exact; existing coupling dependencies suppress duplicate proposals. Acceptance revalidates proposals and can delegate fixed/revolute/cylindrical/slider/ball creation, distance/parallel/perpendicular/angle relations, or explicit-contract couplings exactly once through the matching ordinary Native Assembly runtime and receipt path. No numeric value, interface mapping, moving component, or coupling relation is fabricated. Ranked joint proposals reject explicitly incompatible or indeterminate semantic geometry while preserving legacy/unrecorded evidence at a bounded ceiling. Rejections can be recorded in a bounded, append-only, revision-bound Assembly document log; that log deliberately cannot claim acceptance without the mutation receipt. Richer semantic geometry families, provider/UI reachability, real installed-host acceptance and broader adversarial coverage remain. |
+| G10 — assembly sequencing | **HISTORICAL / NON-NORMATIVE** | O | **Partial contract foundation** | Preserved if separately reactivated: the installed bounded planner now validates exact graph currentness and precedence, deterministically enumerates explicit-evidence orders, and separates sampled, continuous, collision, inaccessible, unsupported and indeterminate verdicts; real insertion/access/fastener/fixture/contact extraction, native collision/continuous-motion evidence, durable records and runtime/GUI integration remain. |
+| G11 — service/disassembly | **HISTORICAL / NON-NORMATIVE** | P | **Partial projection foundation; closure blocked by G10** | Preserved if separately reactivated: current G10 alternatives can now be reversed for explicit targets under protected-component constraints, with a bounded-model-only ceiling and equal-optimum reporting; full removal constraints, fastener/tool/fixture/access and replacement policy, minimum-set search, failed reverse-step verification, durable evidence and runtime/GUI integration remain. |
+| G12 — Robot task projection | **HISTORICAL / NON-NORMATIVE** | Q | **Partial foundation** | Preserved if separately reactivated: versioned step-to-task contract, frames/units/tool/TCP/force/torque/tolerance, traceability, Robot-domain validation and downstream boundary. |
+| X0-X12 — Engineering Experience | **MIXED; X1/X2/X4 ACTIVE** | cross-cutting presentation | **X0 documented; X1/X2/X5/X6/X7/X8 projection foundations partial** | Close only X1/X2/X4 for active public work; preserve every landed projection and keep X3/advanced X5-X12 historical/non-blocking. |
+| VC-DG-0 through VC-DG-6 | **ACTIVE PUBLIC LANE** | direct-geometry specification | **No package complete; foundations partial** | Close visible development, contracts, selectors, representation, structural/thermal method, packaged backend, and qualification gates. |
+| VC-DG-7 | **OPTIONAL PUBLIC LANE** | direct-geometry specification | **Proposed; not started; blocked by VC-DG-6** | Optional bounded fixed-boundary embedded-flow preview; no core or Aero completion credit. |
 
 ## 8. Dependency-ordered implementation roadmap
 
 ### G0 — live reconciliation and owner map
+
+**Public classification: STAYS PUBLIC / SHARED LINEAGE.**
 
 **Status: Verified complete for baseline `93500486c`; repeat per tranche.**
 
@@ -351,7 +500,11 @@ claim that the entire repository was revalidated.
 
 ### G1 — common engineering identity, result, finding, and provenance contracts
 
+**Public classification: STAYS PUBLIC / SHARED LINEAGE.**
+
 **Status: Partial.**
+
+Active closure covers only common contracts required by shipped behavior, current FEM, retained low-order Aero, and VC-DG. Landed Manufacture, Assembly, Robot, workflow, and optimization records remain regression fixtures; this section does not require generalized new domain expansion.
 
 Current Native receipts and Analysis prepared contracts provide real pieces,
 but no one versioned host profile spans mutation, analysis, manufacturing,
@@ -397,12 +550,18 @@ require G2 persistence.
 
 ### G2 — durable Analysis jobs, artifacts, recovery, and publication
 
+**Public classification: COMPLETE CURRENT PUBLIC DEPENDENCIES.**
+
 **Status: Partial on the current roadmap execution branch.**
+
+For active public closure, G2 is bounded to package-contained current FEM/CalculiX, retained low-order Aero, and VC-DG lifecycle, recovery, currentness, artifact, and publish-once needs. The remote-provider and generalized multi-domain requirements below remain preserved design constraints but are not active closure gates.
 
 This milestone consolidates VibeCADAero Steps 8 and 8A as a host capability;
 the Aero roadmap remains the detailed compatibility and first-consumer owner.
 
-Implemented post-baseline slices include immutable artifact descriptors and admission, content-addressed storage, protected cleanup, per-analysis quotas, exact live publication references, versioned atomic metadata and migration, per-user application-data ownership, locking, legal lifecycle transitions, attempt/provider identity, retry, retention metadata, runtime lifecycle binding, and an independent publication coordinator. Latest-attempt restart classification requires persisted reconnect support, client-exit survivability and an external job ID. Provider-facing recovery revalidates the exact live provider, reconnects only that attempt, consumes strict bounded status evidence, validates a generic returned manifest, persists an attempt-bound collection receipt, and advances only to `collecting`. Separate receipt-bound output admission resolves files beneath an owned local transport root, rejects path/symlink escape, bounds reads by declared size, independently verifies hashes and byte counts, admits immutable content-addressed objects, records exact metadata under a state guard, and advances only to `verifying`. Missing transport/storage/metadata availability preserves state; integrity failures become explicit terminal evidence; pre-transition crash retry is idempotent. Neither coordinator can mutate CAD or authorize publication. Existing records remain conservatively compatible, and malformed recovery/collection evidence fails closed. This is still fixture-proven rather than a production remote route: real credentials, authenticated network and portable-bundle upload/download are absent, and domain verification/resume beyond `verifying` remains. Remaining closure requirements include those integrations, later phase/crash reconciliation, future migrations, governed cleanup, compact references, corruption/restore acceptance, real Native rebind/transaction wiring, domain migration, and authoritative cross-platform packaging acceptance.
+Implemented post-baseline slices include immutable artifact descriptors and admission, content-addressed storage, protected cleanup, per-analysis quotas, exact live publication references, versioned atomic metadata and migration, per-user application-data ownership, locking, legal lifecycle transitions, attempt/provider identity, retry, retention metadata, runtime lifecycle binding, and independent verification/publication coordinators. Latest-attempt restart classification requires persisted reconnect support, client-exit survivability and an external job ID. Provider-facing recovery revalidates the exact live provider, reconnects only that attempt, consumes strict bounded status evidence, validates a generic returned manifest, persists an attempt-bound collection receipt, and advances only to `collecting`. Separate receipt-bound output admission resolves files beneath an owned local transport root, rejects path/symlink escape, bounds reads by declared size, independently verifies hashes and byte counts, admits immutable content-addressed objects, records exact metadata under a state guard, and advances only to `verifying`. Domain verification rechecks those immutable bytes, binds one bounded engineering-result receipt to the exact attempt/dependency/artifact identities, and safely resumes to `waiting_to_publish` without mutation authority. Verified publication requires that receipt, exact currentness and authorization, acquires one owner, delegates only through Native authority, persists a write-once receipt, finalizes receipt-backed transition failure without remutation, and refuses unknown mutation outcomes. Existing records remain conservatively compatible, and malformed recovery/collection/verification/publication evidence fails closed.
+
+The additive production FEM path now packages the complete logical workspace in one deterministic, path-preserving content-addressed bundle so equal-content files at different required paths are not collapsed. It revalidates that bundle and the frozen FEM dependency set before the unchanged production importer constructs the draft, then revalidates again before evidence and Native commit. A physical CalculiX integration proves one successful save/reopen/replay lane and one rollback/unknown-outcome lane with real exact-UID transactions. This is not yet a production remote route or full G2 closure: real credentials, authenticated network and portable-bundle upload/download remain absent; the FEM route is integration-orchestrated and source-loaded rather than normal-route, final-package evidence; Aero migration, true process-crash reconstruction, future migrations, governed cleanup, compact references, corruption/restore acceptance, and authoritative cross-platform packaging remain.
 
 Durable metadata must record:
 
@@ -458,7 +617,15 @@ First acceptance fixture:
 7. restore/re-run from the accepted source and publish once;
 8. restart again and prove no duplicate publication.
 
+The current physical FEM checkpoint advances the real-analysis and publish-once
+parts of this fixture and proves duplicate-free in-process save/reopen replay.
+It does not substitute that reopen for a host process crash: controlled
+termination, independent restart reconstruction, artifact rematerialization,
+and the full stale/current dependency sequence remain required.
+
 ### G3 — one real reconnectable remote provider
+
+**Public classification: HISTORICAL / NON-NORMATIVE.**
 
 **Status: Blocked by G2 for production.**
 
@@ -500,6 +667,8 @@ verified current APIs, licensing, quotas, authentication, platform support,
 and operational cost. This roadmap does not invent or pre-approve one.
 
 ### G4 — Native authority-policy census and preview evidence
+
+**Public classification: STAYS PUBLIC / SHARED LINEAGE.**
 
 **Status: Partial.**
 
@@ -548,7 +717,217 @@ Required invariants:
 - `/v1/run` is explicitly classified as privileged compatibility execution,
   not a safe immediate Native mutation.
 
+### VC-DG — direct-geometry structural, thermal, and optional bounded-flow lane
+
+**Canonical technical specification:**
+[Direct-Geometry, No-Body-Fitted-Meshing Analysis for VibeCAD](direct-geometry/VIBECAD_DIRECT_GEOMETRY_ANALYSIS_WHITEPAPER.md).
+This roadmap owns implementation status, dependency order, and closure claims;
+the technical specification owns the detailed contracts, algorithms, test
+matrix, and definition of done. Current executable source wins over both.
+
+**Program status: no VC-DG work package is complete.** The current tree contains
+important host, FEM, tessellation, publication, developer-control, and conforming
+reference-solver foundations. It does not contain an implemented unfitted or
+immersed structural, thermal, or flow route. In particular, the current
+Gmsh-to-CalculiX path is a conventional body-fitted reference/fallback/oracle;
+its success must never be reported as direct-geometry completion.
+
+**Scope lock.** The required public core is three-dimensional linear static,
+homogeneous isotropic, small-strain structures and steady linear isotropic
+thermal conduction on simple closed solids, with semantic selectors, fields,
+quantities of interest, systematic resolution evidence, and an independent
+conforming comparison. "No body-fitted meshing" means that the user is not
+required to create, repair, convert, or manage a boundary-conforming mesh. The
+numerical method may and normally will use a background grid, lattice, cells,
+integration points, or another derived discretization. The roadmap must not call
+this universally meshless.
+
+The lane is additive to G1/G2/G4 and the existing Analysis Runtime. Native CAD
+remains the only accepted mutation owner; host-side services resolve selectors,
+seal geometry representations, verify and qualify results, and publish through
+the existing coordinator; a provider only executes immutable prepared work. No
+VC-DG package creates a second job lifecycle, artifact store, publication owner,
+CAD authority, field viewer, or solver-selection authority.
+
+#### VC-DG-0 — direct-geometry profile for the reusable visible tester
+
+**Status: Partial; the reusable tester exists, but the VC-DG acceptance profile
+and exact-package evidence remain open.**
+
+VC-DG-0 does not own or fork the development-control system. It consumes the
+independently owned, repository-wide visible tester through a domain-specific
+acceptance profile. Present generic foundations include the repository-local
+Windows launcher, checkout-scoped agent control, guarded native file operations,
+semantic live-Qt navigation, screenshots, and the plain cyan in-application tour
+pointer. The pointer does not move or click the human's physical Windows cursor.
+The generic tester is versioned independently from every domain profile; no
+VC-DG algorithm, roadmap rule, product boundary, or profile-specific physics
+requirement belongs in its reusable core.
+
+VC-DG-0 closes when one deterministic exact-checkout package and one-click launch
+use the frozen dependency graph, visibly identify the source revision, refuse
+installed fallback, expose authenticated readiness, and register a versioned
+VC-DG profile against the generic tester. The generic layer discovers semantic
+menus and tabs; the VibeCAD profile requires File/Tools/Macro and the currently
+installed Aero/Model/McMaster surfaces without hard-coding those profile-specific
+names as requirements for the reusable generic tester. The same profile contract
+must require a real save-as/save/close/reopen round trip, overwrite/discard refusal,
+bounded cancel/result/currentness behavior, screenshot receipts, no unintended
+open documents, and zero physical pointer or keyboard injection. Later VC-DG
+packages add their own selector, solve, result, persistence, and currentness cases
+to this profile and cannot close until those cases pass. Focused contracts,
+package evidence, and direct visual inspection are all required; source-only or
+headless evidence is insufficient. Closing the generic tester alone does not
+claim any direct-geometry numerical capability.
+
+#### VC-DG-1 — terminology and contracts
+
+**Status: Partial foundation; the direct-geometry contract set is open.**
+
+Canonical hashing, generic Analysis preparation/artifact/currentness contracts,
+provider separation, and durable result/publication foundations exist. Closure
+requires versioned, bounded contracts for:
+
+- `GeometryRepresentationDescriptor`;
+- `SelectorDefinition` and `SelectorResolution`;
+- `NumericalMethodDescriptor` distinct from solver and provider;
+- `DirectGeometryPreparedInput`;
+- `MethodQualificationRecord`;
+- resolution-study identity and results; and
+- result metadata that carries representation, method, resolution,
+  enforcement, stabilization, qualification, and claim ceiling.
+
+Serialization must be deterministic, finite, secret-free, path-bounded,
+forward-compatible under the repository policy, and registered for source,
+build, and installed-tree use where public facades are introduced.
+
+#### VC-DG-2 — semantic selector resolution
+
+**Status: Partial foundation; durable engineering selectors are not implemented.**
+
+`VibeCADGeometrySelector` and current FEM assignment helpers can match geometry
+and resolve explicit subelements, but they do not provide the required persisted
+selector identity and lifecycle. Implement host-side, source-revision-bound
+selectors with stable ID, semantic role, version, rule parameters, source
+revision, and resolution digest. Resolution must distinguish `resolved`,
+`empty`, `ambiguous`, and `stale`; must never silently choose among ambiguous
+surfaces; and must support preview, explicit acceptance where consequential,
+save, close, reopen, and re-resolution evidence.
+
+The first bounded fixtures are plane-proximity fixed support and traction or
+pressure selection on a box and cantilever. Face numbers may appear only as an
+ephemeral resolved output, never as the long-lived engineering definition.
+
+#### VC-DG-3 — sealed geometry representation pipeline
+
+**Status: Partial foundation; no direct representation pipeline is implemented.**
+
+The current background tessellation job records BREP identity, settings, hashes,
+bounds, cache, cancellation, and staleness, but "background" there describes
+asynchronous execution, not a nonconforming numerical grid. Implement an
+immutable source-revision-bound representation pipeline that proves units,
+placements, deterministic tessellation, closure/orientation/degeneracy status,
+feature-size and memory estimates, explicit failure findings, artifact identity,
+and currentness. Optional signed-distance or sparse-volume artifacts may be
+added only with deterministic bounds and provenance.
+
+Closure requires save/reopen, cache/replay, cancellation, geometry-change
+staleness, malformed/open-shell refusal, and installed cross-platform evidence.
+The accepted BREP remains authoritative; every tessellation, field, background
+domain, and cut-cell classification is derived evidence.
+
+#### VC-DG-4 — structural and thermal plumbing prototype
+
+**Status: Partial host and conforming-reference foundation; the direct route is
+not started and remains `preview_unqualified`.**
+
+Existing Analysis FEM adapters, local provider execution, durable publication,
+and physical CalculiX evidence are retained. Implement one bounded background-
+grid prototype that classifies inside/outside/cut cells, integrates the physical
+subdomain, applies immersed or weak boundary conditions through resolved
+selectors, reports stabilization and conditioning diagnostics, parses sidecar
+fields, and publishes only a low-claim result through existing authorities.
+
+The first structural fixture is a linear isotropic cantilever; the first thermal
+fixture is a steady isotropic conduction block. Both require reaction or energy
+balance, explicit method/resolution identity, cancel/reopen/stale behavior, and
+comparison-ready quantities of interest. Plumbing success cannot promote the
+claim ceiling above `preview_unqualified`.
+
+#### VC-DG-5 — production open-backend integration
+
+**Status: Partial packaging/reference-solver foundation; no selected production
+unfitted or immersed backend is integrated.**
+
+CalculiX, Elmer, and Gmsh remain valuable conforming references and fallbacks,
+not the direct method. Select an open-capable backend only after a pinned API,
+license, supported-physics, Windows build/package, process-control, cancellation,
+artifact, parser, deterministic-replay, and maintenance audit. Add it through the
+method and provider registries without changing existing solver behavior or
+making a restricted-use or paid dependency mandatory for the core route.
+
+Closure requires an exact packaged Windows route, every additionally supported
+platform, license inventory, process-tree cleanup, bounded logs/artifacts,
+replay, failure mapping, and reference-adapter evidence.
+
+#### VC-DG-6 — qualification and claim ceilings
+
+**Status: Blocked by VC-DG-5; not started for a direct method.**
+
+A physical CalculiX `model_unqualified` receipt and generic verification
+contracts do not qualify an unfitted method. Close this package only with
+analytical or manufactured tests, structural and thermal benchmark suites,
+three-level systematic resolution studies, reaction/force and heat/energy
+balance, small-cut conditioning and integration sensitivity, geometry-
+representation sensitivity, CalculiX/Elmer independent comparisons, exact
+context of use, known limitations, and evidence-bound claim promotion.
+
+Allowed claim ceilings remain independent of process success:
+`plumbing_only`, `preview_unqualified`, `software_verified`,
+`numerically_benchmarked`, `independently_cross_verified`, and
+`validated_for_context`. A zero exit code never promotes a claim.
+
+#### VC-DG-7 — optional bounded fixed-boundary embedded flow
+
+**Status: Proposed; not started; blocked by VC-DG-6; optional and non-blocking
+for VC-DG core completion.**
+
+After VC-DG-6, VibeCAD may evaluate an open-capable local embedded-flow method
+for simple closed fixed-boundary incompressible domains. The bounded target is a
+straight duct or obstacle channel with pressure, velocity, pressure drop,
+residual history, mass and momentum checks, method/resolution identity, and an
+independent OpenFOAM comparison. It remains `preview_unqualified` until its own
+benchmark, refinement, conservation, sensitivity, and reference evidence
+supports a higher ceiling.
+
+VC-DG-7 excludes turbulence/high-Re automation, compressibility, moving
+boundaries, propulsion interaction, unsteady or six-degree-of-freedom dynamics,
+fluid-structure interaction, general multiphysics, remote compute, autonomous
+routing, and the advanced common CFD viewer. It neither reactivates nor earns
+completion credit for historical VibeCADAero Steps 12-20.
+
+#### VC-DG closure invariants
+
+The direct-geometry initiative closes only when the technical specification's
+full definition of done is evidenced in the exact package. At minimum:
+
+- structural and thermal examples run without user-managed body-fitted meshing;
+- selectors, representations, method, solver, provider, artifacts, results,
+  currentness, qualification, and publication remain separately identified;
+- unsupported physics fails before execution with actionable findings;
+- save, close, reopen, rerun, cancel, recover, stale preservation, and
+  publish-once behavior are proven;
+- large fields remain immutable sidecars while FCStd contains compact links and
+  decisions;
+- a conforming CalculiX or Elmer comparison and systematic resolution studies
+  exist;
+- the required core uses no paid or noncommercial-only dependency and records
+  its license obligations; and
+- no unresolved issue remains inside the declared VC-DG core scope.
+
 ### G5 — durable workflow DAG
+
+**Public classification: RETAIN CURRENT CAPABILITY; ADVANCED CLOSURE NON-BLOCKING.**
 
 **Status: Partial on the current roadmap execution branch.**
 
@@ -562,8 +941,15 @@ upstream state eligibility, deterministic condition skipping, retry limits,
 publish-once receipts, bounded summaries, and a failure-injected five-stage
 contract benchmark. Read-only discovery now finds validated runs by both current
 and prior node-attempt Analysis identities, without invoking recovery or
-scheduling. Production G2 submission/domain wiring and a real local FEM
-benchmark remain before closure.
+scheduling. Separate installed Windows and Linux x86-64 checkpoints now each
+prove three independent physical CalculiX solve/import/persistence lifecycles
+and three independent exact-source identity/refusal/rebind lifecycles. A third
+checkpoint on each platform proves three real physical CalculiX jobs close their
+exact active source after snapshot authentication, finish the solver afterward,
+refuse publication at the exact-document guard, and clean every owned resource.
+None is submitted or resumed through this DAG. Production G2 submission/domain
+wiring and the real local FEM five-stage workflow benchmark remain before
+closure.
 
 One workflow definition contains bounded nodes and edges with:
 
@@ -595,6 +981,8 @@ verify, using real local Analysis jobs and injected failure/restart at every
 edge. Remote execution is not required to close the local workflow slice.
 
 ### G6 — governed optimization
+
+**Public classification: HISTORICAL / NON-NORMATIVE.**
 
 **Status: Partial.**
 
@@ -647,6 +1035,8 @@ installed VibeCAD deployment. See
 [VibeCAD governed optimization](vibecad-governed-optimization.md).
 
 ### G7 — Manufacture runtime integration
+
+**Public classification: RETAIN CURRENT CAPABILITY; ADVANCED CLOSURE NON-BLOCKING.**
 
 **Status: Partial foundation.**
 
@@ -704,6 +1094,8 @@ existing behavior passes A/B GUI acceptance, and authoritative build/install
 packaging is exercised.
 
 ### G8 — Assembly state, interface, and validation consolidation
+
+**Public classification: RETAIN CURRENT CAPABILITY; ADVANCED CLOSURE NON-BLOCKING.**
 
 **Status: Partial.**
 
@@ -798,6 +1190,8 @@ semantics, interface-aware graph revision, and real rename/reorder/reopen tests
 remain required before stable graph identity is claimed.
 
 ### G9 — propose-only joint inference
+
+**Public classification: HISTORICAL / NON-NORMATIVE.**
 
 **Status: Partial live joint/relation/coupling-decision foundation.**
 
@@ -912,6 +1306,8 @@ Required gates:
 
 ### G10 — verified assembly sequencing
 
+**Public classification: HISTORICAL / NON-NORMATIVE.**
+
 **Status: Partial contract foundation.**
 
 Sequencing consumes a validated G8 graph plus explicitly declared assembly
@@ -957,6 +1353,8 @@ Required behavior:
 
 ### G11 — service and disassembly planning
 
+**Public classification: HISTORICAL / NON-NORMATIVE.**
+
 **Status: Partial projection foundation; closure blocked by G10.**
 
 Service planning reverses or modifies the sequencing problem for an explicit
@@ -984,6 +1382,8 @@ optimal fixtures, inaccessible targets, multiple equal optima, stale graphs,
 failed reverse steps, and service-specific human review.
 
 ### G12 — verified Assembly-step to Robot-task projection
+
+**Public classification: HISTORICAL / NON-NORMATIVE.**
 
 **Status: Partial foundation.**
 
@@ -1014,6 +1414,8 @@ traceability through trajectory/export, and no direct generation of accepted
 motion from unverified assembly inference.
 
 ### X0-X12 — Engineering Experience presentation track
+
+**Public classification: MIXED; X1/X2/X4 ACTIVE, OTHER LANDED SLICES RETAINED, ADVANCED EXPANSION NON-BLOCKING.**
 
 The Engineering Experience layer is the visible, human-facing projection of
 the corresponding G milestone. It does not introduce a visualization
@@ -1102,6 +1504,7 @@ gates are canonicalized in the
 
 | Area | Required unit/contract evidence | Required integrated evidence |
 | --- | --- | --- |
+| Observable exact-checkout workflow | one-click launcher, repo-local executable, Python user-site quarantine, visible identity, checkout-scoped endpoint/auth/readiness, independent-cursor, and semantic-target contracts | real visible GUI driven through the owning route or Qt harness while a human can watch, with a plain cyan virtual cursor where UI interaction is needed, no physical-cursor control, real file round trip where applicable, before/after capture, and exact receipts/artifacts |
 | Common contracts | canonical serialization, bounds, unknown versions, identity non-substitution, redaction | representative Native/FEM/Aero/Manufacture/Assembly/Robot records |
 | Persistence | migrations, transactions, locks, state machine, fault points, corruption diagnostics | real packaged restart/recovery with exact project/document identity |
 | Artifacts | descriptor/hash/size/count, traversal, symlink, archive, decompression, quarantine, cleanup | real large input/output retention and recovery |
@@ -1115,7 +1518,19 @@ gates are canonicalized in the
 | Sequencing/service | precedence, access/collision bounds, optimal small fixtures, no-solution cases | verified sequence and service target on real Assembly documents |
 | Robot projection | frames, units, task schema, currentness, unsupported assumptions | Assembly step -> Robot validation -> traceable trajectory/export handoff |
 | Engineering Experience | projection/view-model bounds, independent state axes, semantic color separation, accessibility, no authority | real structural/flow/workflow/optimization/Manufacture/Assembly/Robot state rendered from exact current contracts |
-| Packaging | source/build/installed imports, resource lists, component behavior, upgrades | supported Windows/Linux/macOS package matrix as applicable |
+| Packaging | source/build/installed imports, resource lists, component behavior, strict Pixi lock freshness, and upgrades | supported Windows/Linux/macOS package matrix as applicable |
+
+The matrix is applicability-aware. Remote, advanced workflow, optimization,
+advanced Manufacture/Assembly, sequencing/service, and Robot rows protect
+already-landed behavior or preserved design records; they are not active closure
+gates. The following VC-DG rows are active in addition to the retained G1/G2/G4
+rows:
+
+| Area | Required unit/contract evidence | Required integrated evidence |
+| --- | --- | --- |
+| Direct-geometry selectors/representation | deterministic selector lifecycle, ambiguity/staleness refusal, representation hashes, units/placement/closure/size bounds | save/reopen/re-resolve, cache/replay/cancel/stale, malformed/open-shell refusal in exact packages |
+| Direct-geometry structural/thermal | method/solver/provider separation, cut-cell and boundary-enforcement diagnostics, field/QOI parsing, balance checks | cantilever and conduction block without user-managed body-fitted mesh, plus conforming comparison |
+| Direct-geometry qualification | three-level resolution studies, conditioning/integration sensitivity, claim-ceiling promotion rules | packaged cross-platform benchmark and independent CalculiX/Elmer comparison |
 
 Documentation-only roadmap changes do not require red/green production tests.
 They do require source-bound claim checks, link checks, baseline consistency,
@@ -1125,12 +1540,16 @@ Markdown integrity, forbidden-name checks, and a clean diff review.
 
 ### 10.1 Restart-safe local analysis
 
+**Public classification: Active for current FEM, low-order Aero, and VC-DG dependencies.**
+
 VibeCAD prepares a real supported FEM job, crashes at every injected lifecycle
 boundary, restarts, recovers exact identities, truthfully classifies the
 attempt, validates artifacts/currentness, and publishes exactly once or refuses
 with an exact reason.
 
 ### 10.2 Remote analysis
+
+**Public classification: Historical/non-normative; not a current public closure gate.**
 
 VibeCAD seals one real domain case, launches it on the selected real provider,
 restarts, reconnects without creating a second provider attempt, rejects a
@@ -1139,12 +1558,16 @@ source publication, and publishes once after an accepted fresh re-run.
 
 ### 10.3 Consequential Native mutation
 
+**Public classification: Active for shipped Native behavior and VC-DG.**
+
 The authority census classifies the operation. A preview-required mutation
 produces bounded evidence without accepted-state mutation, rejects apply after
 source/authority drift, and applies once through the owning dispatcher when
 fresh.
 
 ### 10.4 Durable workflow
+
+**Public classification: Retain current capability; advanced closure is non-blocking.**
 
 A five-node engineering workflow survives restart and node retry, never runs a
 dependent node from disallowed upstream state, preserves node/result
@@ -1153,6 +1576,8 @@ permit it.
 
 ### 10.5 Governed optimization
 
+**Public classification: Historical/non-normative.**
+
 The system explores a bounded independently enumerable design, records every
 candidate and failure, recovers after restart, ranks deterministically under
 the declared objectives/constraints, and leaves accepted CAD unchanged until a
@@ -1160,11 +1585,15 @@ human-authorized publication.
 
 ### 10.6 Manufacture integration
 
+**Public classification: Retain current capability; advanced closure is non-blocking.**
+
 A selected expensive Manufacture task runs detached from an exact current Job,
 returns verified artifacts, refuses stale attachment, preserves current domain
 objects and public behavior, and publishes one receipt-bound result.
 
 ### 10.7 Assembly sequence and service plan
+
+**Public classification: Historical/non-normative.**
 
 The system produces a sequence only from a current validated Assembly graph,
 reports insertion/access/collision evidence per step, returns `indeterminate`
@@ -1173,12 +1602,16 @@ claiming unmodeled shop feasibility.
 
 ### 10.8 Robot task handoff
 
+**Public classification: Historical/non-normative.**
+
 One verified assembly step projects into a unit/frame-explicit task with exact
 source and tool identities. The Robot domain accepts or rejects the handoff
 without treating projection as reachability or motion-plan proof, and every
 later trajectory/export remains traceable to the source step.
 
 ### 10.9 External-agent authority
+
+**Public classification: Active compatibility and authority boundary.**
 
 `/v1/native` and held sessions continue to share the frozen dispatcher,
 revision checks, previews, receipts, undo scope, limits, and expiry. Product
@@ -1188,6 +1621,8 @@ that every local automation path is dispatcher-only.
 
 ### 10.10 Governed Engineering Experience
 
+**Public classification: Active only for X1/X2/X4; other landed projections remain regression-protected.**
+
 The Analyze workspace selects a real published structural or flow result,
 displays an exact field through the existing owning presentation path with a
 named unit/range/scale, and separately displays execution, verification,
@@ -1196,6 +1631,32 @@ attempt, G5 workflow progression, G6 candidate comparison and G7 Manufacture
 evidence without creating new authority. Stale source remains visibly
 historical, scientific red is not presented as a failed verdict, and every
 displayed item can reach its exact provenance and claim ceiling.
+
+### 10.11 Observable exact-checkout development
+
+**Public classification: Active and mandatory.**
+
+The one-click development launcher builds and opens the exact current checkout,
+the GUI visibly reports its source SHA, and the checkout-scoped authenticated
+agent endpoint reports ready. An external development agent then performs the
+scenario under test in that same visible window through the authoritative route
+or Qt harness. A human can watch the state change, and the checkpoint preserves
+before/after capture, exact receipts/artifacts, and automated-test output without
+granting the harness any additional authority.
+
+### 10.12 Direct-geometry structural and thermal core
+
+**Public classification: Active through VC-DG-0 to VC-DG-6.**
+
+In the exact visible package, a user selects a simple closed solid, resolves
+semantic support/load or thermal selectors, runs structural and thermal cases
+without creating or managing a body-fitted mesh, cancels and repeats safely,
+views source-bound fields and quantities of interest, saves/closes/reopens the
+document, and sees stale historical evidence after source change. The route
+records representation, method, solver, provider, resolution, enforcement,
+stabilization, balance, qualification, and publication identities separately;
+unsupported or ambiguous input refuses before execution. Systematic resolution
+evidence and a conforming reference comparison bound every promoted claim.
 
 ## 11. Hazards and forbidden shortcuts
 
@@ -1234,6 +1695,13 @@ displayed item can reach its exact provenance and claim ceiling.
   optimization, and multiple domain adapters in one change.
 - Do not remove compatibility routes or alter public schemas without separately
   approved migration and rollback.
+- Do not call the conforming Gmsh-to-CalculiX route direct geometry, or call
+  background-grid/cut-cell methods universally meshless.
+- Do not persist face indices as durable engineering selectors, silently resolve
+  ambiguity, or let representation, method, solver, and provider identities
+  substitute for one another.
+- Do not promote a VC-DG claim from solver success without the required balance,
+  resolution, sensitivity, benchmark, and independent-comparison evidence.
 
 ## 12. Stop conditions
 
@@ -1258,103 +1726,66 @@ Stop the affected tranche and resolve explicitly if:
 - a sequence uses sampled frames but claims continuous accessibility;
 - a robot task omits frame, units, tool/TCP identity, tolerance, or source step;
 - platform packaging or installed-tree imports are missing;
+- the exact checkout cannot be built, visibly identified, authenticated, and
+  controlled through the required one-click live-development path;
 - implementation would require an unapproved API/document migration or
-  destructive history rewrite.
+  destructive history rewrite;
+- a VC-DG selector is empty, ambiguous, or stale; geometry is open, malformed,
+  or unbounded; representation identity is missing; or the selected method
+  lacks pinned license, API, or package evidence;
+- direct-geometry balance, conditioning, resolution, sensitivity, or
+  conforming-reference evidence cannot support the requested claim ceiling.
 
 ## 13. Next executable tranches
 
-Keep the first changes small, reversible, and source-bound:
+The active public work remains small, reversible, and dependency-ordered:
 
-1. **EVS-01 / X1 shell — implemented:** the inert Analyze-hosted Engineering
-   shell and both theme surfaces are present without moving or removing current
-   FEM, VTK or OpenFOAM behavior. Real installed GUI acceptance remains.
-2. **EVS-02 / X1 field registry — implemented contract slice:** bounded legacy
-   FEM, VTK and OpenFOAM adapters, explicit facade packaging registration and
-   focused contract coverage are present. Actual configured build/install-tree
-   execution remains a packaging acceptance gate.
-3. **EVS-03 and EVS-04 / X1 results and presentation — partial/next:** real
-   cross-result field discovery/cards are present and unsupported governance
-   axes remain explicitly unavailable. Next attach exact G1 envelopes,
-   metrics/provenance, complete owner-supported field routing, and prove the
-   result browser through installed GUI acceptance.
-4. **EVS-05 and EVS-06 / X1 scientific view controls:** add truthful legends,
-   validated colormaps, deformation and scoped Technical/Analysis presets as
-   presentation state only. The bounded state contract is present; next add
-   owner-capability-aware controls and scoped application without global
-   preference changes.
+1. **Close the reusable tester and VC-DG-0 acceptance profile:** finish the
+   frozen-lock exact package, one-click launcher, authenticated exact-process
+   control, semantic discovered-tab and configured VibeCAD cyan-pointer tours,
+   native file round trip, screenshots, collision-safe receipts, and zero
+   physical pointer/keyboard control. Register VC-DG as a consumer profile; do
+   not create a second tester or treat generic tester success as physics credit.
+2. **Close current FEM/CalculiX G2 dependencies:** promote the production FEM
+   verifier/publisher into the normal route, rebuild and repeat package-contained
+   Windows/Linux gates, prove true process-crash recovery and publish-once
+   behavior, and finish applicable remaining-platform/current-backend evidence.
+3. **Finish and retain the current McMasterInsert slice:** close any already-
+   started catalog/import/cache/placement, platform-package, and visible
+   acceptance work without conflating it with bundled standard fasteners or
+   expanding it into procurement intelligence, supplier comparison, automated
+   sourcing, or generalized purchasing workflows.
+4. **Close low-order Aero Steps 0-11:** converge Native repair authority, finish
+   frames/readiness/source correspondence/currentness/claim ceilings, migrate the
+   retained low-order client through the durable host path, and prove installed
+   visible save/reopen/cancel/publication acceptance.
+5. **Close retained X1/X2/X4 presentation:** render actual current result,
+   activity/artifact, and preview evidence without adding authority; preserve
+   landed X5-X8 projections against regression without expanding them.
+6. **Implement VC-DG-1 through VC-DG-3:** land the minimal direct-geometry
+   contracts, semantic selector lifecycle, representation pipeline, and
+   conforming-reference method registration before any production prototype.
+7. **Implement VC-DG-4 through VC-DG-6:** deliver the bounded structural and
+   thermal prototype, audited open backend, exact packaging, resolution studies,
+   balance/sensitivity evidence, conforming comparisons, UI/persistence, and
+   evidence-bound qualification.
+8. **Evaluate VC-DG-7 only after VC-DG-6 and separate authorization:** optional
+   fixed-boundary incompressible embedded-flow preview; never use it as Aero
+   Steps 12-20 credit.
 
-The first EVS-06 owner-capability increment exposes bounded deformation scale
-only when the selected object is a legacy FEM result. The value is passed to
-the existing `femresult.resultpresentation` validation/application path; VTK and
-flow results keep the control disabled because their current owners do not
-advertise that capability. Mesh-edge/undeformed controls, scoped presets and
-installed GUI evidence remain.
-5. **EVS-07 through EVS-09 / X2/X5/X6:** connect real chart series, durable
-   Analysis activity/workflow state and exact comparable-result projections.
-   The first EVS-07 increment now discovers the existing FEM post table,
-   histogram and line-plot owners in the selected Analysis, presents bounded
-   axis/unit/range/sample descriptors, and delegates display to those owners
-   only after a full bounded table-state freshness check. It does not copy
-   scientific value arrays or claim dedicated convergence/history/comparison
-   association. Those associations, governed G1/G2/G5 series and installed GUI
-   acceptance remain. Do not fabricate data or grant scheduling, ranking,
-   selection, mutation or publication authority.
+G3, advanced G5, G6, advanced G7/G8, G9-G12, X3, advanced X5-X12, and
+historical Aero Steps 12-20 are not active public completion tranches. Their
+landed code and preserved records remain intact and regression-protected.
 
-   The first EVS-08 increment uses the exact-identity G2/G5 discovery path to
-   show durable Analysis and workflow identities, lifecycle state,
-   attempt/artifact counts and owner timestamps for the active document. Empty
-   discovery and read failures are explicit. Expandable rows show the bounded
-   attempt, admitted-artifact, restart, currentness, publication-axis and
-   workflow-node details from the same validated snapshots. The projection
-   carries no recovery, scheduling, retry or publication authority. The visible
-   Study Setup surface now re-arms a debounced filesystem-event watcher as
-   durable directories appear and refreshes from the authoritative snapshots
-   after atomic record changes without polling lifecycle state. Installed GUI
-   acceptance remains.
-   The first EVS-09 increment adds exact-source generic result comparison over
-   the normalized presentation owners. Metric deltas require matching IDs,
-   units and qualifiers; field-extrema deltas require matching semantics,
-   association, components, units and presentation. Both owner-state SHA-256
-   identities are mandatory. Pointwise differences remain explicitly
-   unavailable without a shared mesh/array owner, and the projection grants no
-   ranking, selection, mutation, publication or export authority.
-   Exact-document G6 discovery now reconstructs and hash-checks each persisted
-   definition before requesting the owning store's deterministic ranking. The
-   Analyze shell displays ranked and excluded candidates with variables,
-   metrics, findings, constraint failures, workflow attempts and exact
-   selection/publication evidence; it has no independent ranking, acceptance or
-   publication action. Result comparison provenance now carries the recorded
-   Analysis, post-pipeline and timeline
-   owner branches and mesh-object identity. The current result-state contract
-   has no topology digest or per-array content identities; mesh names and
-   point/cell counts are therefore explicitly insufficient for pointwise
-   subtraction. Shared-mesh pointwise comparison, restart/staleness GUI and
-   installed acceptance remain. G6 candidate projections now retain every
-   persisted workflow-run identity, resolve existing records through the
-   durable G5 owner, display the exact workflow state and nodes, and label
-   missing durable references unresolved. This view does not schedule, retry,
-   select, mutate or publish. Mutation-owner execution provenance and real
-   G3 integration remain.
-6. **Continue G-track closure in dependency order:** next add domain-owned
-   verification receipts and resume `verifying` safely across injected crashes
-   without granting publication authority. Integrate a real provider only after
-   its authenticated credential/network and
-   portable-bundle boundaries are proven; then complete governed cross-record
-   cleanup, compact references,
-   corruption/restore and installed cross-platform acceptance. Continue G5
-   acceptance, G7 stale/restart/installed behavior, and the current G8/G9
-   Assembly identity/interface/inference acceptance from their authoritative
-   owners. Advance X3/X4 and X7-X12 only from the corresponding authoritative
-   contracts.
-
-No tranche claims a later milestone because it introduces an interface the
-later milestone may eventually consume.
+No tranche may claim completion of a later package merely because an interface,
+reference solver, successful process, screenshot, or plausible field exists.
 
 ## 14. Roadmap maintenance rules
 
 Every pull request that changes status must:
 
-- name the exact milestone and bounded slice;
+- name the exact G, X, or VC-DG milestone, bounded slice, and public
+  classification;
 - record current baseline SHA/date if it performed a new reconciliation;
 - link source, tests, packaging evidence, fixtures, and real integrations that
   support the status;
@@ -1363,7 +1794,11 @@ Every pull request that changes status must:
   migration;
 - update the Aero or Assembly owner document when their detailed status
   changes;
-- add newly discovered hazards, stop conditions, and dependency drift;
+- add newly discovered hazards, stop conditions, dependency drift, and any
+  explicitly authorized public-classification change;
+- for every user-visible status change, link the exact-checkout launcher run,
+  authenticated control result, watchable workflow capture, and owning
+  receipts/artifacts in addition to automated tests;
 - keep historical audit evidence separate from post-baseline changes.
 
 Do not mark a milestone complete from prose, stubs, mocks alone, source-tree
@@ -1372,23 +1807,23 @@ report.
 
 ## 15. Programs A-Q and X-track traceability index
 
-| Original program | Canonical milestone |
-| --- | --- |
-| A — Persistent Analysis Jobs | G2 |
-| B — Remote Execution Provider | G3 |
-| C — Analysis Result Envelope | G1, then G2 |
-| D — Verification Findings | G1 |
-| E — Unified Provenance | G1, then every later milestone |
-| F — Preview Coverage Audit | G4 |
-| G — Preview Evidence | G4 |
-| H — Workflow DAG | G5 |
-| I — Optimization | G6 |
-| J — Manufacturing Jobs | G7, extending current Manufacture |
-| K — Canonical Assembly Graph | G8, extending current Assembly |
-| L — Component Interfaces | G8, extending current component interfaces |
-| M — Joint Inference | G9 |
-| N — Assembly Validation | G8 and the Assembly specification |
-| O — Assembly Sequencing | G10 |
-| P — Service and Disassembly | G11 |
-| Q — Robot Task Projection | G12, adapting into current Robot |
-| X0-X12 — Engineering Experience | Presentation projection paired with G0-G12; never a new domain owner |
+| Original program | Canonical milestone | Current public classification |
+| --- | --- | --- |
+| A — Persistent Analysis Jobs | G2 | **ACTIVE THROUGH G2 CURRENT DEPENDENCIES** |
+| B — Remote Execution Provider | G3 | **HISTORICAL / NON-NORMATIVE** |
+| C — Analysis Result Envelope | G1, then G2 | **ACTIVE THROUGH G1/G2 CURRENT DEPENDENCIES** |
+| D — Verification Findings | G1 | **ACTIVE THROUGH G1 CURRENT DEPENDENCIES** |
+| E — Unified Provenance | G1, then every later milestone | **ACTIVE ONLY WHERE AN ACTIVE OR RETAINED LANE CONSUMES IT** |
+| F — Preview Coverage Audit | G4 | **ACTIVE THROUGH G4** |
+| G — Preview Evidence | G4 | **ACTIVE THROUGH G4** |
+| H — Workflow DAG | G5 | **RETAIN CURRENT CAPABILITY** |
+| I — Optimization | G6 | **HISTORICAL / NON-NORMATIVE** |
+| J — Manufacturing Jobs | G7, extending current Manufacture | **RETAIN CURRENT CAPABILITY** |
+| K — Canonical Assembly Graph | G8, extending current Assembly | **RETAIN CURRENT CAPABILITY** |
+| L — Component Interfaces | G8, extending current component interfaces | **RETAIN CURRENT CAPABILITY** |
+| M — Joint Inference | G9 | **HISTORICAL / NON-NORMATIVE** |
+| N — Assembly Validation | G8 and the Assembly specification | **RETAIN CURRENT CAPABILITY** |
+| O — Assembly Sequencing | G10 | **HISTORICAL / NON-NORMATIVE** |
+| P — Service and Disassembly | G11 | **HISTORICAL / NON-NORMATIVE** |
+| Q — Robot Task Projection | G12, adapting into current Robot | **HISTORICAL / NON-NORMATIVE** |
+| X0-X12 — Engineering Experience | Presentation projection paired with G0-G12; never a new domain owner | **MIXED; X1/X2/X4 ACTIVE, LANDED SLICES RETAINED** |

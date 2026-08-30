@@ -319,6 +319,19 @@ for current platform-specific details.
 
 ## Developer Tests
 
+On Windows, launch and visibly test the exact current checkout by
+double-clicking `RUN-VIBECAD-DEV.cmd`. The repo-local build, visible commit
+identity, checkout-scoped authenticated control endpoint, screenshot/receipt
+evidence loop, and `-SkipRebuild` reopen path are documented in
+[docs/developer-launch-windows.md](docs/developer-launch-windows.md).
+
+For a watchable UI tour, run `Invoke-VibeCAD-VisibleTour.ps1` after the launcher
+reports agent-control readiness. It moves a plain cyan virtual cursor of its
+own across live semantic menu and ribbon targets; it never moves or clicks the
+user's Windows cursor. The default tour covers File, Tools, Macro, Aero, and the
+other visible top-level menus and ribbon tabs, then writes a JSON receipt under
+the ignored `.vibecad-dev\tours` directory.
+
 Run the standalone Aero and 3D-printing component suites with one command:
 
 ```bash
@@ -333,23 +346,43 @@ one component, and put additional pytest arguments after `--`.
 
 VibeCAD is under active development. The current focus is reliable, readable AI-assisted part design with explicit human control over the document, workbench, and design direction.
 
-A local desktop agent (for example Grok Bot on Windows) can open documents,
-run Python or VibeScript, show Preferences, and read auth status without
-clicking menus. That loopback CLI / HTTP channel is documented in
+A local desktop agent (for example Grok Bot on Windows) can open, save, save-as,
+close, and reopen documents; use the retained privileged local
+Python/VibeScript compatibility route; show
+Preferences; inspect live menu/ribbon geometry; activate an exact semantic UI
+target without taking over the physical cursor; and read auth status. That
+loopback CLI / HTTP channel is documented in
 [docs/vibecad-agent-control.md](docs/vibecad-agent-control.md). It does not
 disable the in-app Assistant and it is not MCP.
 
 Release packaging details are documented in [docs/vibecad-release-packaging.md](docs/vibecad-release-packaging.md).
 
 The current Aero workbench is documented in [docs/vibecad-aero.md](docs/vibecad-aero.md).
-Its complete high-fidelity development program, live implementation status,
-FluidX3D first-use contract, and dependency-ordered release gates are maintained
-in the [VibeCADAero canonical roadmap](docs/vibecadaero-roadmap.md).
+Its active low-order Steps 0-11 completion program, live implementation
+status, and preserved historical advanced design record are maintained in the
+[VibeCADAero canonical roadmap](docs/vibecadaero-roadmap.md).
 
-The cross-domain expansion of governed jobs, results, findings, provenance,
-preview evidence, workflows, optimization, manufacturing, assembly, service,
-and robot projection is maintained in the
+The bounded public host closure, retained current engineering surfaces, and
+VC-DG implementation status are maintained in the
 [VibeCAD governed engineering roadmap](docs/vibecad-governed-engineering-roadmap.md).
+The detailed bounded structural/thermal direct-geometry contracts are in
+[Direct-Geometry, No-Body-Fitted-Meshing Analysis for VibeCAD](docs/direct-geometry/VIBECAD_DIRECT_GEOMETRY_ANALYSIS_WHITEPAPER.md).
+The accompanying
+[repository reconciliation addendum](docs/direct-geometry/VIBECAD_DIRECT_GEOMETRY_RECONCILIATION_ADDENDUM.md)
+preserves that source byte for byte while making the reusable-tester profile,
+separate VC-DG-7 authorization, generic-CfdOF, and McMaster boundaries explicit.
+VC-DG-0 through VC-DG-6 are an explicit, bounded VibeCAD lane. Broader future
+generalized Structures, Physics, high-fidelity Aero, remote execution, and
+multiphysics expansion are outside the current VibeCAD completion boundary.
+Optional VC-DG-7 remains separately gated after VC-DG-6.
+
+The current [McMaster-Carr insert workbench](src/Mod/McMasterInsert/README.md)
+also remains supported and is finished only to its existing catalog/import/cache,
+component-placement, packaging, and acceptance boundary. It is separate from
+bundled standard fasteners and does not make procurement intelligence, supplier
+comparison, automated sourcing, or generalized purchasing an active VibeCAD
+roadmap obligation.
+
 The source-bound assessment of the proposal behind that roadmap is the
 [Governed Engineering Architecture whitepaper evaluation](docs/vibecad-governed-engineering-whitepaper-evaluation.md).
 
