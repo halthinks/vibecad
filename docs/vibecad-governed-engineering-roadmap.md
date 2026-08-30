@@ -3,33 +3,32 @@
 **Roadmap status:** active and canonical for bounded public host closure,
 retained current capability, and the VC-DG direct-geometry lane
 
-**Audited baseline:**
+**Historical audited baseline:**
 `93500486c1515eac2ee98121e16a96a3038c0299` on 2026-08-26
 
-**Current implementation checkpoint:** the dependency-ordered roadmap stack
+**Historical implementation record:** the dependency-ordered roadmap stack
 #90 through #135 reaches `c0157d9a6b4a6bc4d54130025ec9dfaf5c7fbbda`
 and was reconciled on 2026-08-27 with `10-X-eng/vibecad@60b8f3fd` as a bounded
-fork checkpoint. Milestone status below remains evidence-bounded and does not
-claim completion of the active public boundary.
+fork checkpoint. It is preserved as source lineage, not used as the accepted
+current implementation baseline, and receives no completion credit by itself.
 
-**Latest observable stabilization checkpoint:** the 2026-08-28 working tranche
-based on `75917cf660cf100a09fc2d7cae033145b4661bea` proves the repo-local
-one-click GUI/control/file-tour loop and matched three-cycle installed Windows
-and Linux x86-64 physical CalculiX solve/import/persistence burn-ins, matched
-exact-source identity/refusal/rebind burn-ins, and matched physical CalculiX
-active-close/publication-refusal burn-ins. The tranche also repairs the
-rattler-build Pixi lock so strict lock freshness and locked dependency installs
-pass without bypassing the solver. An additive one-cycle Windows checkpoint now
-also carries a real physical CalculiX result through durable G2 verification,
-content-addressed completed-workspace bundle admission, a production FEM
-publisher, and Native document-thread transaction authority. It proves
-write-once receipt persistence, duplicate-free save/reopen replay, rollback,
-and unknown-outcome refusal. The installed host and solver are exact, but the
-new publisher is still loaded from the source checkout, so package rebuild and
-repeated cross-platform acceptance remain. The
+**Accepted implementation baseline:**
+`halthinks/vibecad@8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29,
+from `origin/main`. The machine-checked evidence inventory and credit rule live
+in [the canonical Aero roadmap](vibecadaero-roadmap.md#2026-08-29-live-implementation-reconciliation).
+
+**Concurrent stabilization report; zero integrated credit:** a 2026-08-28
+working tranche based on `75917cf660cf100a09fc2d7cae033145b4661bea` reports a
+repo-local GUI/control/file tour, physical CalculiX burn-ins, exact-source and
+active-close refusal, package-lock repair, and a durable production FEM
+publication cycle. That tranche lies outside the exact accepted implementation
+tree and combines tracked-file modifications, untracked additions, and ignored
+run evidence. None advances a milestone yet. It must be committed, reviewed,
+built into the exact package, and rerun before receiving integrated evidence
+credit. The
 [FEM compatibility report](vibecad-analysis-fem-compatibility-report.md)
-records the detailed boundary. The new one-cycle path advances G2 but is not a
-G5 workflow submission and does not close either milestone.
+preserves the intended detailed boundary without converting concurrent work
+into a completion claim.
 
 ## 2026-08-29 public-scope classification
 
@@ -405,7 +404,8 @@ before execution, and no execution success can promote a qualification ceiling.
 
 ## 5. Verified baseline and honest boundary
 
-The 2026-08-26 audit of `93500486c1515eac2ee98121e16a96a3038c0299`
+The historical 2026-08-26 audit of
+`93500486c1515eac2ee98121e16a96a3038c0299`
 found these foundations:
 
 | Foundation | Evidence | Boundary retained by this roadmap |
@@ -456,17 +456,14 @@ document-thread and post-state checks but are performed by one installed host
 surface authority owner. This closes those two discovered regressions only; it
 does not complete G7, G8, or the repository-wide acceptance gates.
 
-The 2026-08-28 durable FEM publication tranche adds a domain-owned production
-adapter that freezes runtime preferences with the prepared FEM dependency set,
-seals every completed-workspace path in a deterministic
-`canonical-zip-stored-v1` bundle, independently revalidates the live and
-content-addressed bytes, and delegates the unchanged production FEM importer to
-the existing Native mutation authority. One physical Windows CalculiX cycle
-proves a receipt-backed success/save/reopen/replay lane and a separate
-transaction-rollback/unknown-outcome lane at the `model_unqualified` claim
-ceiling. Because the new adapter is source-loaded beside exact installed host
-and solver binaries, this advances but does not close G2 or its installed,
-restart, provider, cross-platform, and normal-route acceptance gates.
+The concurrent 2026-08-28 durable FEM publication work reports a domain-owned
+production adapter, deterministic completed-workspace bundle, exact-byte
+revalidation, unchanged importer delegation, and one physical Windows CalculiX
+receipt/save/reopen/rollback cycle. Those adapter and physical-run files are not
+part of the exact accepted implementation tree; supporting work also modifies
+tracked baseline files. The entire concurrent lane therefore receives zero
+integrated G2 credit until committed, reviewed, package-contained, and rerun
+from one exact accepted tree.
 
 ## 6. Dependency graph
 
@@ -511,9 +508,9 @@ only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
 
 | Milestone | Public classification | Whitepaper mapping | Current status | What remains before closure |
 | --- | --- | --- | --- | --- |
-| G0 — live reconciliation | **STAYS PUBLIC / SHARED LINEAGE** | prerequisite | **Verified complete for this baseline** | Repeat at the start of every implementation tranche and record drift. |
+| G0 — live reconciliation | **STAYS PUBLIC / SHARED LINEAGE** | prerequisite | **Verified complete for accepted source baseline `8611ac88` on 2026-08-29; repeat per tranche** | Repeat at the start of every implementation tranche and record drift. |
 | G1 — common engineering contracts | **STAYS PUBLIC / SHARED LINEAGE** | C, D, E | **Partial** | Define versioned identities, result envelope, finding taxonomy/profile, provenance graph, compatibility rules, and cross-domain fixtures. |
-| G2 — durable Analysis and publication | **COMPLETE CURRENT PUBLIC DEPENDENCIES** | A plus C/E | **Partial** | Generic persistence/reconnect/admission/verification/publication foundations and one physical production-FEM cycle exist. Active closure is limited to exact-package normal-route current FEM, retained low-order Aero, VC-DG support, true process-crash reconstruction, governed cleanup/compact references/corruption restore, and applicable installed cross-platform acceptance. Production remote transport and generalized expansion are non-blocking historical continuations. |
+| G2 — durable Analysis and publication | **COMPLETE CURRENT PUBLIC DEPENDENCIES** | A plus C/E | **Partial** | Generic persistence/reconnect/admission/verification/publication foundations are tracked; the reported physical production-FEM cycle remains concurrent with zero integrated credit. Active closure is limited to exact-package normal-route current FEM, retained low-order Aero, VC-DG support, true process-crash reconstruction, governed cleanup/compact references/corruption restore, and applicable installed cross-platform acceptance. Production remote transport and generalized expansion are non-blocking historical continuations. |
 | G3 — remote provider | **HISTORICAL / NON-NORMATIVE** | B | **Preserved design; prior production plan blocked by G2** | No active public closure obligation. Preserve the real-target/reconnect/credential/transport/restart design record for any separately authorized future work. |
 | G4 — authority policy and preview evidence | **STAYS PUBLIC / SHARED LINEAGE** | F, G | **Partial** | The executable registry-bound census classifies all current operations; add bounded domain preview evidence where justified and prove authoritative installed/runtime integration. |
 | G5 — workflow DAG | **RETAIN CURRENT CAPABILITY** | H | **Partial retained capability** | Preserve the landed bounded DAG/scheduler/restart/cancel/retry/publish-once core and its tests. Generalized five-stage production workflow closure is not an active public gate. |
@@ -535,7 +532,7 @@ only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
 
 **Public classification: STAYS PUBLIC / SHARED LINEAGE.**
 
-**Status: Verified complete for baseline `93500486c`; repeat per tranche.**
+**Status: Verified complete for accepted source baseline `8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29; repeat per tranche.**
 
 Before each implementation tranche:
 
@@ -612,7 +609,16 @@ the Aero roadmap remains the detailed compatibility and first-consumer owner.
 
 Implemented post-baseline slices include immutable artifact descriptors and admission, content-addressed storage, protected cleanup, per-analysis quotas, exact live publication references, versioned atomic metadata and migration, per-user application-data ownership, locking, legal lifecycle transitions, attempt/provider identity, retry, retention metadata, runtime lifecycle binding, and independent verification/publication coordinators. Latest-attempt restart classification requires persisted reconnect support, client-exit survivability and an external job ID. Provider-facing recovery revalidates the exact live provider, reconnects only that attempt, consumes strict bounded status evidence, validates a generic returned manifest, persists an attempt-bound collection receipt, and advances only to `collecting`. Separate receipt-bound output admission resolves files beneath an owned local transport root, rejects path/symlink escape, bounds reads by declared size, independently verifies hashes and byte counts, admits immutable content-addressed objects, records exact metadata under a state guard, and advances only to `verifying`. Domain verification rechecks those immutable bytes, binds one bounded engineering-result receipt to the exact attempt/dependency/artifact identities, and safely resumes to `waiting_to_publish` without mutation authority. Verified publication requires that receipt, exact currentness and authorization, acquires one owner, delegates only through Native authority, persists a write-once receipt, finalizes receipt-backed transition failure without remutation, and refuses unknown mutation outcomes. Existing records remain conservatively compatible, and malformed recovery/collection/verification/publication evidence fails closed.
 
-The additive production FEM path now packages the complete logical workspace in one deterministic, path-preserving content-addressed bundle so equal-content files at different required paths are not collapsed. It revalidates that bundle and the frozen FEM dependency set before the unchanged production importer constructs the draft, then revalidates again before evidence and Native commit. A physical CalculiX integration proves one successful save/reopen/replay lane and one rollback/unknown-outcome lane with real exact-UID transactions. This is not yet a production remote route or full G2 closure: real credentials, authenticated network and portable-bundle upload/download remain absent; the FEM route is integration-orchestrated and source-loaded rather than normal-route, final-package evidence; Aero migration, true process-crash reconstruction, future migrations, governed cleanup, compact references, corruption/restore acceptance, and authoritative cross-platform packaging remain.
+Concurrent production FEM work packages the logical workspace in a deterministic,
+path-preserving content-addressed bundle, revalidates frozen FEM dependencies,
+and reports one physical CalculiX save/reopen/rollback/unknown-outcome lane. That
+lane combines tracked-file modifications, untracked additions, and ignored run
+evidence outside the exact accepted implementation tree and receives zero
+integrated credit here. G2 still requires a normal package-contained FEM route,
+real process-crash reconstruction, Aero migration, governed cleanup, compact
+references, corruption/restore acceptance, and authoritative installed
+cross-platform evidence. Production remote credentials, authenticated network
+transport, and portable upload/download remain non-blocking historical scope.
 
 Durable metadata must record:
 
@@ -892,8 +898,9 @@ domain, and cut-cell classification is derived evidence.
 **Status: Partial host and conforming-reference foundation; the direct route is
 not started and remains `preview_unqualified`.**
 
-Existing Analysis FEM adapters, local provider execution, durable publication,
-and physical CalculiX evidence are retained. Implement one bounded background-
+Existing Analysis FEM adapters, local provider execution, and generic durable
+publication foundations are retained. Concurrent physical CalculiX reports earn
+no integrated credit until committed and rerun. Implement one bounded background-
 grid prototype that classifies inside/outside/cut cells, integrates the physical
 subdomain, applies immersed or weak boundary conditions through resolved
 selectors, reports stabilization and conditioning diagnostics, parses sidecar
@@ -925,8 +932,8 @@ replay, failure mapping, and reference-adapter evidence.
 
 **Status: Blocked by VC-DG-5; not started for a direct method.**
 
-A physical CalculiX `model_unqualified` receipt and generic verification
-contracts do not qualify an unfitted method. Close this package only with
+Any future physical CalculiX `model_unqualified` receipt and the existing generic
+verification contracts cannot qualify an unfitted method. Close this package only with
 analytical or manufactured tests, structural and thermal benchmark suites,
 three-level systematic resolution studies, reaction/force and heat/energy
 balance, small-cut conditioning and integration sensitivity, geometry-
@@ -995,21 +1002,18 @@ full definition of done is evidenced in the exact package. At minimum:
 A workflow references G2 analyses/jobs; it does not embed provider processes or
 live domain objects. Definitions and runs are separate, versioned entities.
 
-The current roadmap execution stack implements bounded validated definitions,
+The accepted implementation baseline tracks bounded validated definitions,
 deterministic topological/ready scheduling, atomic inter-process run metadata,
 node attempts, restart interruption, cancellation and late-completion guards,
 upstream state eligibility, deterministic condition skipping, retry limits,
 publish-once receipts, bounded summaries, and a failure-injected five-stage
 contract benchmark. Read-only discovery now finds validated runs by both current
 and prior node-attempt Analysis identities, without invoking recovery or
-scheduling. Separate installed Windows and Linux x86-64 checkpoints now each
-prove three independent physical CalculiX solve/import/persistence lifecycles
-and three independent exact-source identity/refusal/rebind lifecycles. A third
-checkpoint on each platform proves three real physical CalculiX jobs close their
-exact active source after snapshot authentication, finish the solver afterward,
-refuse publication at the exact-document guard, and clean every owned resource.
-None is submitted or resumed through this DAG. Production G2 submission/domain
-wiring and the real local FEM five-stage workflow benchmark remain before
+scheduling. Reported installed Windows/Linux physical CalculiX,
+exact-source/rebind, and active-close/refusal checkpoints remain concurrent
+uncommitted evidence with zero integrated credit. None is submitted or resumed
+through this DAG. Production G2 submission/domain wiring, exact-package physical
+reruns, and the real local FEM five-stage workflow benchmark remain before
 closure.
 
 One workflow definition contains bounded nodes and edges with:

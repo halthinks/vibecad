@@ -23,12 +23,15 @@ jobs:
       CC: /usr/bin/gcc
       CXX: /usr/bin/g++
       PYTHONPATH: ${{ github.workspace }}/src/Mod/VibeCAD:${{ github.workspace }}/src/Mod/VibeCADAero:${{ github.workspace }}/src/Mod/Fem
+      VIBECAD_CI_EVENT_NAME: ${{ github.event_name }}
+      VIBECAD_CI_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before || '' }}
 
     steps:
       - name: Check out source
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
 
       - name: Install FreeCAD build dependencies
         run: ./package/ubuntu/install-apt-packages.sh
@@ -92,6 +95,8 @@ jobs:
             src/Mod/VibeCAD/vibecad_tests/test_mesh_windows_process_contract.py \
             src/Mod/VibeCAD/vibecad_tests/test_native_analyze_flow_result.py \
             src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py \
+            src/Mod/VibeCAD/vibecad_tests/test_vibecadaero_roadmap_live_reconciliation.py \
+            src/Mod/VibeCAD/vibecad_tests/test_cross_repository_roadmap_assignments.py \
             src/Mod/VibeCADAero/tests/test_detached_analysis.py \
             2>&1 | tee build/test-results/host-analysis-fem-pytest.log
           status=${PIPESTATUS[0]}
