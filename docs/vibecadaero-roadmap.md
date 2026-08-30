@@ -106,19 +106,20 @@ The public [direct-geometry technical specification](direct-geometry/VIBECAD_DIR
 adds a separate VC-DG-0 through VC-DG-7 lane owned and status-tracked by the
 [VibeCAD governed engineering roadmap](vibecad-governed-engineering-roadmap.md).
 VC-DG-0 through VC-DG-6 form its structural/thermal core. VC-DG-7 is assigned to
-VibeCAD; its optional status does not make its owner undecided. The bounded,
-fixed-boundary incompressible embedded-flow preview is not started and may begin
-only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
-It is not required for low-order Aero Steps 0-11 or VC-DG core completion, and
-it does not reactivate, satisfy, or earn completion credit for historical Aero
-Steps 12-20.
+VibeCAD. VC-DG-7 remains planned post-core; not started until accepted VC-DG-6
+plus an explicit VibeCAD-owner instruction to begin VC-DG-7; that instruction
+controls when execution begins, not whether VC-DG-7 can be omitted. VC-DG-7
+does not block the VC-DG-0 through VC-DG-6 structural/thermal core release and
+earns no core or Aero completion credit. Full-fork entire-roadmap completion may
+not be declared until VC-DG-7 satisfies its controlling
+embedded-flow acceptance gate. VibeMechanica remains a compatibility/status
+consumer only and has no implementation obligation.
 
-The reason it is optional is scope, not indecision: VC-DG-0 through VC-DG-6
-already define the required structural/thermal product. VC-DG-7 adds a separate
-fluid method, conservation checks, benchmark set, and qualification burden that
-the structural/thermal core does not need. Requiring it would delay that core
-and blur the boundary with VibeMechanica's advanced Aero program. Optional
-changes the VibeCAD release gate, not ownership.
+The post-core sequence protects the structural/thermal product from the separate
+fluid method, conservation checks, benchmark set, and qualification burden. It
+does not make that VibeCAD milestone leaveable undone for full-fork
+entire-roadmap completion, reactivate historical Aero Steps 12-20, or give it
+Aero completion credit.
 
 This is a deliberate bounded VibeCAD lane. Broad CFD, high-fidelity Aero,
 multiphysics, nonlinear/composites/fatigue, remote execution, and generalized
@@ -149,9 +150,10 @@ VibeCADAero completes its current public boundary when:
 
 Final completion means every acceptance item inside Steps 0-11 and their
 applicable host/Aero release gates has evidence and no attributable issue remains.
-It does not require historical Steps 12-20 or optional VC-DG-7. Nothing in this
-boundary claims airworthiness, measured evidence, or validated real-world flight
-safety.
+It does not require historical Steps 12-20 or the post-core VC-DG-7 milestone.
+That Aero-specific exclusion does not waive VC-DG-7 from the separate full-fork
+entire-roadmap completion predicate. Nothing in this boundary claims
+airworthiness, measured evidence, or validated real-world flight safety.
 
 ### Historical advanced continuation rule
 
@@ -221,9 +223,9 @@ Final completion requires every acceptance item inside Steps 0-11 and every
 applicable G0-G9 release gate, from exact built packages and the visible
 one-click GUI, with zero attributable unclassified regression. It does not
 require historical Steps 12-20, remote compute, broad CFD, advanced coupling, or
-optional VC-DG-7. Existing behavior documented under a later historical heading
-remains supported. Nothing here claims airworthiness, measured evidence, or
-validated real-world flight safety.
+the post-core VC-DG-7 milestone. Existing behavior documented under a later
+historical heading remains supported. Nothing here claims airworthiness,
+measured evidence, or validated real-world flight safety.
 
 ## 4. Non-negotiable architecture locks
 
@@ -412,8 +414,8 @@ flowchart TD
 ```
 
 VC-DG-0 through VC-DG-6 are a separate public structural/thermal lane in the
-governed engineering roadmap. Optional VC-DG-7 remains non-blocking and earns no
-completion credit here.
+governed engineering roadmap. The required post-core VC-DG-7 milestone does not
+block that structural/thermal core release and earns no completion credit here.
 
 ### Roadmap at a glance
 
@@ -1076,7 +1078,7 @@ Documentation-only roadmap changes do not require red/green production tests, bu
 Keep these visible during planning and review:
 
 - Do not treat the recovered overlay as integrated production code.
-- Do not present historical Steps 12-20 as current public completion obligations or use optional VC-DG-7 as Aero milestone credit.
+- Do not present historical Steps 12-20 as current public completion obligations or use the post-core VC-DG-7 milestone as Aero completion credit.
 - Do not serialize live Native, FreeCAD, Qt, provider, process, or credential authority.
 - Do not allow accepted cancellation and later document mutation to coexist.
 - Do not infer success from leftover PIDs/files, solver exit code, screenshots, or one plausible coefficient.
