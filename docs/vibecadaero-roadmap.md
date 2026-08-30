@@ -2,33 +2,81 @@
 
 **Roadmap status:** canonical for the active bounded Steps 0-11 public lane; Steps 12-20 are historical/non-normative in VibeCAD and assigned to VibeMechanica
 
-**Live baseline audited:** `halthinks/vibecad@31ea810db044db6311207a2538a9b6f7694011ae` on 2026-08-25
+**Historical live baseline audit:** `halthinks/vibecad@31ea810db044db6311207a2538a9b6f7694011ae` on 2026-08-25
 
-**Current roadmap execution stack reconciled:** `halthinks/vibecad@c0157d9a6b4a6bc4d54130025ec9dfaf5c7fbbda` on 2026-08-27, represented by the dependency-ordered PR stack #90 through #135 and reconciled at a bounded fork checkpoint with `10-X-eng/vibecad@60b8f3fd`. This is post-baseline implementation evidence, not a rewrite of the historical audit and not a claim that the active public boundary is finished.
+**Historical roadmap execution record:** the dependency-ordered PR stack #90
+through #135 reported
+`halthinks/vibecad@c0157d9a6b4a6bc4d54130025ec9dfaf5c7fbbda` on 2026-08-27 and
+used `10-X-eng/vibecad@60b8f3fd` as its bounded upstream checkpoint. This is
+preserved source lineage, not the accepted current implementation baseline, and
+it receives no current completion credit by itself.
 
-**Latest stabilization checkpoint:** the 2026-08-28 working tranche based on
-`halthinks/vibecad@75917cf660cf100a09fc2d7cae033145b4661bea` adds matched
-three-cycle installed Windows and Linux x86-64 physical CalculiX 2.23
-solve/import/save-reopen burn-ins, matched exact-source identity/rebind/refusal
-burn-ins, and matched real asynchronous close-while-running
-publication-refusal burn-ins. It also repairs detached identity use after source
-closure and App-only FEM mesh GUI restoration; exercises the exact-checkout
-visible Windows launcher, native file round trip, and cyan semantic UI tour; and
-repairs the rattler-build Pixi lock so locked dependency installation is
-reproducible without weakening the lock check. An additive one-cycle Windows
-checkpoint now also drives physical CalculiX through the durable G2 verification
-and publication coordinator, a production FEM completed-workspace verifier and
-publisher, and real Native document-thread transaction authority. It persists a
-write-once receipt, survives save/reopen replay without a duplicate result,
-rolls back a failed postcondition, and refuses the resulting unknown-outcome
-replay. The host and solver are the exact installed binaries, but the new FEM
-publisher is loaded from the source checkout; rebuilding and repeating the gate
-from the final installed package therefore remains mandatory. See
+**Concurrent stabilization report; zero integrated credit:** a 2026-08-28
+working tranche based on
+`halthinks/vibecad@75917cf660cf100a09fc2d7cae033145b4661bea` reports matched
+physical CalculiX, exact-source, active-close, visible file-tour, lock-repair,
+and durable FEM publication work. That tranche lies outside the exact accepted
+implementation tree and combines modifications to tracked baseline files,
+untracked source/test additions, and ignored run evidence. None of those deltas
+or results receives integrated completion credit until the contributor work is
+committed, reviewed, built into one exact package, and rerun from that exact
+tree. The detailed intended boundary remains preserved in
 [the FEM compatibility report](vibecad-analysis-fem-compatibility-report.md).
-This is bounded checkpoint evidence, not a claim that Step 1, Step 7, Gate G5,
-or the active public boundary is finished.
 
 **Scope:** retained low-order Aero, current Native/FEM/Analysis dependencies, exact evidence and publication, and Steps 0-11 closure; later advanced solver/remote/dynamics/coupling material is preserved but non-blocking
+
+## 2026-08-29 live implementation reconciliation
+
+<!-- VIBECADAERO-LIVE-RECONCILIATION:BEGIN -->
+| Field | Value |
+| --- | --- |
+| Accepted implementation baseline | `halthinks/vibecad@8611ac881a67b77b777c38f1749880527d2cc956` |
+| Baseline source ref at audit | `origin/main` |
+| Baseline commit time | `2026-08-29T18:18:57-07:00` |
+| Audit date | `2026-08-29` |
+| Last revalidated | `2026-08-30` |
+| Roadmap audit branch | `docs/vibecad-roadmap-additive-audit-20260829` |
+| CI event-base rule | Pull-request runs require the recorded baseline to equal the event base SHA; pushes to main require it to equal the event before SHA. Manual dispatch and local runs are explicitly skipped as event-base enforcement unavailable. |
+| Credit rule | Only exact blobs and behavior in the accepted implementation commit receive integrated completion credit; every tracked modification, untracked addition, or ignored artifact outside that tree receives zero credit until committed, reviewed, packaged, and rerun. |
+
+Tracked baseline evidence includes:
+
+Each entry below means the exact blob at the accepted baseline path, not any
+same-named file modified in a concurrent working tree.
+
+<!-- VIBECADAERO-BASELINE-EVIDENCE:BEGIN -->
+- `Launch-VibeCAD-Dev.ps1`;
+- `docs/developer-launch-windows.md`;
+- `src/Mod/VibeCAD/VibeCADAgentControl.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_lifecycle_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_publication_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py`.
+<!-- VIBECADAERO-BASELINE-EVIDENCE:END -->
+
+Concurrent working-tree report receives **zero integrated completion credit**.
+The reported paths are not accepted implementation evidence; they remain a
+provenance-preserving audit record until committed and their claimed acceptance
+is rerun from the exact committed and packaged tree. At this audit that reported
+category includes:
+
+<!-- VIBECADAERO-CONCURRENT-REPORT:BEGIN -->
+- `Invoke-VibeCAD-VisibleTour.ps1`;
+- `src/Mod/VibeCAD/VibeCADAnalysisFEMPublication.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_active_close_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_physical_calculix_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_verified_publication_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py`;
+- `tools/run_analysis_fem_installed_active_close.py`;
+- `tools/run_analysis_fem_installed_physical_calculix.py`;
+- `tools/run_analysis_fem_installed_verified_publication.py`.
+<!-- VIBECADAERO-CONCURRENT-REPORT:END -->
+
+Concurrent physical CalculiX, active-close, durable FEM publication,
+visible-tour, and packaging work remains uncommitted at this accepted baseline.
+It may be integrated later without losing its evidence lineage, but no roadmap
+status advances until review and exact-tree rerun establish the corresponding
+acceptance gate.
+<!-- VIBECADAERO-LIVE-RECONCILIATION:END -->
 
 This is the repository's real implementation roadmap for the recovered Advanced VibeCAD / VibeCADAero program. It converts the recovered research and design package into one dependency-ordered, evidence-bounded plan tied to the current source tree.
 
@@ -287,7 +335,9 @@ than replaces the engineering evidence and claim ceilings in this roadmap.
 
 ## 5. Verified live baseline
 
-The audit of `main@31ea810db` found the following real implementation. These are foundations, not high-fidelity completion claims.
+The historical audit of `main@31ea810db` found the following real
+implementation. These are foundations, not high-fidelity completion claims and
+not a substitute for the accepted implementation baseline recorded above.
 
 | Live capability | Current evidence | Honest boundary |
 | --- | --- | --- |
@@ -307,7 +357,10 @@ No current integrated implementation was found for Aero FluidX3D, Aero CfdOF/Ope
 
 ### Post-baseline implementation reconciliation
 
-The table above is historical evidence from `main@31ea810db`; it is not rewritten to attribute later work to that revision. In the current roadmap execution tree, after that audit:
+The table above is historical evidence from `main@31ea810db`; it is not
+rewritten to attribute later work to that revision. The following capabilities
+are tracked in the accepted implementation baseline
+`8611ac881a67b77b777c38f1749880527d2cc956`:
 
 - all public Analysis facades are registered in `VibeCAD_Scripts`, the existing default `Unspecified` install-component behavior is retained, and isolated build-tree and component-installed import coverage exists;
 - artifact descriptors, manifests, canonical hashing, bounded archive admission, quota-enforced content-addressed storage, protected idempotent cleanup, and exact live publication-artifact references are implemented and tested;
@@ -317,9 +370,27 @@ The table above is historical evidence from `main@31ea810db`; it is not rewritte
 - a separate output-admission coordinator binds that exact collection receipt to an owned local transport root, rejects path/symlink escape, bounds reads by the declared size, verifies every returned file hash and byte count, admits immutable content-addressed objects, records exact artifact metadata idempotently, and advances only from `collecting` to `verifying`;
 - a separate domain-verification coordinator rechecks every admitted content-addressed byte against the exact collected manifest before invoking a domain-owned verifier, requires the existing bounded `EngineeringResultEnvelope` and finding contracts to bind the exact domain, adapter, source document, dependency snapshot, provider attempt, and artifact identities, persists a bounded write-once result receipt, resumes idempotently after receipt persistence, and advances only from `verifying` to `waiting_to_publish` without CAD-mutation or publication authority;
 - the compatibility publication coordinator remains available, while an additive verified-publication coordinator now requires the exact latest domain-verification receipt, rechecks every referenced content-addressed object, binds a canonical descriptor hash to fresh authorization and persisted currentness evidence, acquires one publication owner with compare-and-swap, persists a bounded write-once publication receipt before terminal success, finalizes a receipt-backed transition crash without remutation, and refuses to replay a mutation whose outcome remains unknown;
-- a production FEM adapter freezes the complete prepared dependency set including runtime preferences, seals the completed workspace as a deterministic path-preserving `canonical-zip-stored-v1` bundle, revalidates every live and content-addressed byte, and delegates the unchanged production FEM importer/result graph through the real Native mutation boundary. A one-cycle physical CalculiX checkpoint proves successful receipt-backed save/reopen replay and a transaction-rollback/unknown-outcome lane. Its exact installed host and solver run the new publisher from the source checkout, so it is not yet final package-contained or repeated cross-platform evidence.
 
-These are additive post-baseline slices. Provider recovery and returned-file transport remain proven only against an inert provider and owned local-transport fixture. Generic verification/publication fault coverage remains fixture-backed, while the additive physical CalculiX checkpoint now proves one real FEM domain-verification/publication path against immutable local content-addressed storage, exact `Document.Uid` rebind, and Native document-thread mutation. `collecting` and `verifying` resume idempotently across their covered receipt/transition crash boundaries. Verified publication rejects stale, mismatched, missing, or mutated evidence; a durable publication receipt can finish its terminal state transition without a second mutation, while a mutation with no receipt remains outcome-unknown and non-replayable. No production remote provider, credentials, authenticated network upload/download, Aero verifier/publisher migration, final package-contained FEM publisher gate, complete process-crash reconstruction, or G5 workflow submission is integrated. These slices do not yet close the remaining repeated cross-platform packaging, governed quota-policy and cross-record cleanup integration, compact document-reference integration, corruption/restore acceptance, future migration-chain expansion, broader domain migration, or production-integration gates listed below.
+These are additive tracked slices. Provider recovery and returned-file transport
+remain proven only against an inert provider and owned local-transport fixture,
+and generic verification/publication fault coverage remains fixture-backed.
+`collecting` and `verifying` resume idempotently across their covered
+receipt/transition crash boundaries. Verified publication rejects stale,
+mismatched, missing, or mutated fixture evidence; a durable publication receipt
+can finish its terminal state transition without a second mutation, while a
+mutation with no receipt remains outcome-unknown and non-replayable.
+
+The reported production FEM completed-workspace adapter and its physical
+CalculiX save/reopen, rollback, active-close, and durable-publication runs exist
+only in concurrent uncommitted work at this checkpoint. They receive zero
+integrated completion credit here. No production FEM publisher on the normal
+package route, production remote provider, credentials, authenticated network
+transport, Aero verifier/publisher migration, final package-contained FEM
+publisher gate, complete process-crash reconstruction, or G5 workflow
+submission is integrated. The accepted slices also do not close repeated
+cross-platform packaging, governed quota-policy and cross-record cleanup,
+compact document references, corruption/restore acceptance, future migration
+chains, broader domain migration, or the production-integration gates below.
 
 ## 6. Dependency graph
 
@@ -348,16 +419,16 @@ completion credit here.
 
 | Step | Public scope | Current status | What remains before the step is closed |
 | --- | --- | --- | --- |
-| 0 — live reconciliation | **ACTIVE** | **Verified complete for this baseline** | Repeat on a newer `main` before implementation and record drift. |
-| 1 — characterization | **ACTIVE** | **Partial** | The four-solver process-lifecycle oracle, installed Windows synthetic-publication A/B gate, installed Linux synthetic-publication gate, matched three-cycle Windows/Linux x86-64 exact-source, physical CalculiX 2.23 solve/import/persistence and real active-close/refusal traces, plus one Windows installed-host/source-checkout-harness durable publication cycle are executable; rebuild that durable gate into the exact package, repeat it, and complete Linux/macOS, remaining physical backend/importer, and remaining-platform/backend active-runtime traces. |
+| 0 — live reconciliation | **ACTIVE** | **Verified complete at accepted baseline `8611ac88`; repeat per tranche** | Repeat on a newer accepted `main` before implementation and record branch, commit, date, dependency, evidence, and concurrent-work drift. |
+| 1 — characterization | **ACTIVE** | **Partial** | The tracked four-solver process-lifecycle oracle and installed synthetic-publication harnesses are executable. Reported physical CalculiX, exact-source, active-close/refusal, and visible-file traces remain concurrent with zero integrated credit; commit and rerun them from the exact package, then complete applicable Windows/Linux/macOS and remaining-backend runtime traces. |
 | 2 — host contracts/facades | **ACTIVE** | **Verified complete for the domain-neutral packaging/compatibility foundation** | Durable persistence remains a later active milestone; production remote providers and advanced qualification are preserved non-blocking design records and are not implied by this closure. |
 | 3 — local process mechanics | **ACTIVE** | **Verified complete for the shared process primitive** | Keep the Windows/POSIX parity, timeout, cancellation, cleanup, output-bound, and redaction matrix required by the current local/package providers; repeated lifecycle and leak burn-in remains Step 7. Future provider changes must repeat the same gate if separately authorized. |
 | 4 — input/artifact sealing | **ACTIVE** | **Partial** | Retained-object count/byte quotas and live publication-reference protection are implemented; complete application-data/compact-document integration and installed/cross-platform acceptance around the immutable manifests, storage, archive defenses, and cleanup. |
 | 5 — host orchestration | **ACTIVE** | **Verified complete for the in-memory compatibility slice** | Persistence/recovery remain explicitly outside this step. |
-| 6 — current FEM migration | **ACTIVE** | **Verified complete for CalculiX, Elmer, Z88, and Mystran** | Process parity and installed Windows/Linux synthetic result publication are frozen, physical CalculiX has three-cycle installed Windows and Linux x86-64 burn-ins, and one Windows durable publication cycle preserves the production importer/result graph at `model_unqualified`; package and repeat the durable path, then close remaining physical-backend, macOS, and broader stabilization gates. |
-| 7 — stabilization | **ACTIVE** | **Partial** | Three-cycle installed Windows and Linux x86-64 physical CalculiX publication, exact-source lifecycle, and real active-close/refusal burn-ins are clean, as is visible Windows native save/reopen; complete macOS, remaining-backend active-runtime, and broader leak/orphan burn-in. |
-| 8 — durable persistence | **ACTIVE** | **Partial** | Explicit migration/discovery/restart evidence, bounded provider reconnect/status/collect reconciliation, attempt-bound collection receipts, immutable local-transport admission with file-content hash verification, idempotent `collecting` recovery, receipt-bound domain verification, idempotent `verifying` recovery, per-analysis quotas, exact live publication references, and one physical FEM bundle-verification cycle are implemented; move the FEM verifier from the integration-only orchestration into the normal package-contained route, prove real process-crash recovery, add governed quota policy and cross-record cleanup authority, compact document references, corruption/restore acceptance, and authoritative installed/cross-platform acceptance for current FEM and retained low-order Aero. Authenticated remote transport and future migration-chain expansion are preserved non-blocking compatibility work. |
-| 8A — publication authority | **ACTIVE** | **Partial** | Exact verification-receipt, immutable-object, descriptor-hash, currentness, authorization, single-owner, write-once receipt, terminal-transition recovery, unknown-outcome refusal, real `Document.Uid` rebind, Native transaction rollback, and one production FEM publisher cycle are implemented. Rebuild and repeat the physical gate from the exact installed package, wire the path into normal Native FEM submission, migrate Aero, and prove real process-crash restart/reconstruction cannot duplicate publication. |
+| 6 — current FEM migration | **ACTIVE** | **Verified complete for the tracked CalculiX, Elmer, Z88, and Mystran compatibility migration** | Process parity and installed synthetic-result publication harnesses are frozen. Physical multi-cycle and durable-publication evidence remains concurrent with zero integrated credit; integrate and rerun the exact package, then close remaining physical-backend, platform, importer, and stabilization gates. |
+| 7 — stabilization | **ACTIVE** | **Partial** | The accepted baseline contains lifecycle and installed-publication harnesses. Reported multi-cycle physical CalculiX, exact-source, active-close/refusal, and visible Windows save/reopen burn-ins remain concurrent with zero integrated credit; integrate them and finish applicable cross-platform, remaining-backend, and leak/orphan burn-in. |
+| 8 — durable persistence | **ACTIVE** | **Partial** | Explicit migration/discovery/restart primitives, bounded provider reconciliation, collection receipts, immutable local-transport admission, idempotent `collecting` and `verifying` recovery, receipt-bound domain verification, quotas, and exact live publication references are tracked. The physical FEM bundle-verification cycle and production FEM adapter remain concurrent with zero integrated credit. Integrate the normal package route, prove real process-crash recovery, and add governed cleanup, compact references, corruption/restore, and installed cross-platform acceptance for current FEM and retained low-order Aero. Authenticated remote transport and future migration chains remain non-blocking compatibility work. |
+| 8A — publication authority | **ACTIVE** | **Partial** | Generic fixture-backed verification-receipt, immutable-object, descriptor-hash, currentness, authorization, single-owner, write-once-receipt, terminal-transition recovery, and unknown-outcome refusal are tracked. The production FEM publisher, real `Document.Uid` rebind/Native transaction cycle, and physical replay evidence remain concurrent with zero integrated credit. Integrate them into normal Native FEM submission, rerun from the exact installed package, migrate retained low-order Aero, and prove real process-crash restart cannot duplicate publication. |
 | 9 — Aero repair authority | **ACTIVE** | **Partial** | Converge host revision and preview/apply/reject authority; define bounded preview persistence. |
 | 10 — Aero evidence/frames | **ACTIVE** | **Partial** | Complete case schema, frames/references, readiness, correspondence, stamps/results/context, and claim ceilings. |
 | 11 — Aero runtime client | **ACTIVE** | **Partial** | Complete the integrated low-order client, including solver-neutral case/result seams needed by the retained routes, without making advanced high-fidelity solvers a closure gate. |
@@ -375,7 +446,7 @@ completion credit here.
 
 ### Step 0 — live re-reconciliation
 
-**Status: Verified complete for baseline `31ea810db`; repeat at every implementation tranche.**
+**Status: Verified complete for accepted source baseline `8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29; repeat at every implementation tranche.**
 
 The current tree, merged host-runtime history, Native Aero runtime, process helper, FEM adapter, tests, build registration, and recovered source package were compared. Newer host ownership was adopted where it already controls a seam; the frozen overlay remains reference evidence only.
 
@@ -393,12 +464,33 @@ Exit evidence:
 
 **Status: Partial.**
 
-Real characterization exists for the generic runtime, atomic commit gate, shared process sequence, Native Aero background path, and each currently supported FEM local-provider path. `analysis_fem_parity_v2.json` and `test_analysis_fem_parity_oracle.py` form the executable legacy/host process-lifecycle oracle for CalculiX, Elmer, Z88, and Mystran. Installed Windows and Linux VibeCAD 26.3 `FreeCADCmd` gates execute the deterministic four-solver publication slice; the Windows A/B gate additionally compares the normalized object graph, solver membership, History order, ownership, hash presence, public JSON, and save/reopen persistence. Those historical package-contained paths correctly report no durable publication receipt. The installed exact-source lifecycle gate repeats three independent packaged-host cycles on each platform: every cycle refuses a closed source, switched document, same-name/wrong-UID replacement, solver drift, History drift, and runtime-preference drift before reopening and publishing only the exact UID with clean preference/document postconditions. This remains synthetic publication evidence. The additive `analysis_fem_installed_physical_calculix_integration.py` gate executes packaged CalculiX 2.23 through the production importer on installed Windows and Linux x86-64, persists 20 non-synthetic field semantics across save/reopen with exact document UID, preserves the `model_unqualified` ceiling, and proves no document, solver-process, or private-workspace leak. Its collision-safe aggregate mode repeats that lifecycle for three independent packaged-host cycles per platform. The separate `analysis_fem_installed_active_close_integration.py` gate uses a controlled post-snapshot barrier and the real production background thread to close three unique sources while active on each platform, starts and completes physical CalculiX only after each close, reaches `waiting_to_commit`, refuses every result with `NATIVE_RUNTIME_GUARD_FAILED`, reopens every FCStd unchanged, and proves complete process/thread/workspace/document/preference cleanup. Its first red run exposed and drove the repair of detached result adoption reading invalidated FreeCAD wrappers instead of frozen identity. The additive `analysis_fem_installed_verified_publication_integration.py` gate now performs one physical CalculiX cycle through durable verification, deterministic completed-workspace bundle admission, the production FEM publisher, and real Native transaction authority. It proves a write-once receipt, exact-UID save/reopen replay without a duplicate result, failed-postcondition rollback, and outcome-unknown refusal while retaining the same 20 fields and `model_unqualified` ceiling. The host and solver are installed binaries, but this new module is loaded from the source checkout. The visible Windows GUI round trip additionally preserves the result-state hash and repaired FEM view-provider contracts while exercising the observable exact-checkout gate. The Linux evidence is sealed by a 48-file hash manifest and an independent semantic validator. Physical Elmer/Z88/Mystran, macOS installed/active-runtime traces, package-contained and repeated durable publication, and complete process-crash reconstruction stay open.
+The accepted baseline tracks characterization for the generic runtime, atomic
+commit gate, shared process sequence, Native Aero background path, and each
+supported FEM local-provider path. `analysis_fem_parity_v2.json` and
+`test_analysis_fem_parity_oracle.py` form the executable legacy/host
+process-lifecycle oracle for CalculiX, Elmer, Z88, and Mystran. The tracked
+installed lifecycle and synthetic-publication harnesses cover exact-source,
+closed/switched/replaced-source, drift, result-graph, History, ownership,
+save/reopen, cleanup, and the explicit absence of a durable publication receipt.
+Their presence is executable source, not a claim that this documentation tranche
+reran every installed platform gate.
+
+Concurrent uncommitted physical CalculiX, active-close, durable FEM
+publication, visible GUI, package-lock, and Linux evidence reports preserve
+useful intended acceptance detail, including the `model_unqualified` ceiling.
+They receive zero integrated credit at this baseline. The corresponding files
+must be committed and all claimed cycles rerun from the exact package before any
+of those results advance Step 1. Physical Elmer/Z88/Mystran, macOS
+installed/active-runtime traces, repeated package-contained durable publication,
+and complete process-crash reconstruction also stay open.
 
 Remaining exit criteria:
 
 - preserve the normalized lifecycle traces for process, input digest, exact command/environment identity, stale checks, result graph/History, receipts, public APIs/errors, timeout/cancel, cleanup, document close/switch/reopen, and Windows/Linux behavior, then add the missing macOS traces;
-- add the remaining physical solver/importer traces; the installed Windows/Linux synthetic-publication fixtures cover the bounded four-solver publication state, the three-cycle exact-source gates cover installed identity/refusal/rebind behavior, physical CalculiX gates cover three-cycle real backend/importer/persistence burn-ins on both platforms, separate three-cycle physical active-close gates cover exact guarded refusal and cleanup for CalculiX, and one Windows source-harness cycle covers durable FEM receipt semantics, while remaining-backend, macOS active-runtime, exact-package/repeated durable publication, and real process-crash evidence remain open;
+- rerun the tracked installed synthetic-publication and exact-source harnesses
+  from the accepted package, then integrate and rerun the concurrent physical
+  backend/importer, active-close, durable-receipt, and visible-file gates across
+  the applicable Windows/Linux/macOS and remaining-backend matrix;
 - preserve the reviewed intentional-difference list in both the compatibility report and executable oracle before further extraction.
 
 ### Step 2 — introduce host Analysis contracts and facades
@@ -463,11 +555,27 @@ This step explicitly excludes persistence, restart recovery, new concurrency, re
 
 **Status: Verified complete for the currently supported detached solver set; parity gate remains open.**
 
-CalculiX, Elmer, Z88, and Mystran execution route through the host local provider with compatibility mappings and solver-specific tests. The v2 executable A/B oracle directly compares legacy and host success, failure, cancellation, cleanup, and exact legacy publication delegation for every solver. Installed Windows and Linux synthetic-publication gates execute the bounded four-solver publication slice; the Windows A/B gate additionally compares result graph, membership, History, ownership, hashes, public output, and save/reopen persistence. Those package-contained compatibility paths record rather than conceal the absence of a durable publication receipt. Installed Windows and Linux x86-64 physical CalculiX gates each execute a real 2.23 backend/importer lifecycle three independent times, persist 20 non-synthetic result fields per cycle under a `model_unqualified` ceiling, and exit every cycle without a document, process, or private-workspace leak. A separate one-cycle Windows gate now routes that same physical CalculiX importer/result graph through durable verification, the production FEM publisher, and Native mutation authority without changing the claim ceiling; because its new publisher is source-loaded, exact-package and repeated cross-platform closure remains. The process oracle previously closed a discovered host-path loss of the legacy backend diagnostic repair payload by sharing the FEM failure translator.
+CalculiX, Elmer, Z88, and Mystran execution route through the tracked host local
+provider with compatibility mappings and solver-specific tests. The v2
+executable A/B oracle compares legacy and host success, failure, cancellation,
+cleanup, and exact legacy publication delegation for every solver. Tracked
+installed synthetic-publication harnesses cover the bounded four-solver result
+graph, membership, History, ownership, hashes, public output, and save/reopen
+contract while recording rather than concealing the absence of a durable
+publication receipt. The process oracle also preserves the shared FEM failure
+translator that repaired a discovered host-path diagnostic loss.
+
+The reported physical CalculiX multi-cycle and durable-publisher gates remain
+concurrent uncommitted work and receive zero integrated Step 6 credit. Their
+reported field semantics, cleanup, exact-UID, receipt, rollback, and claim-ceiling
+behavior must be reviewed and rerun from the exact accepted package.
 
 Remaining program obligations:
 
-- complete Gate 5 with physical result publication for the remaining backend/importer paths, their repeated installed lifecycle/leak evidence, macOS evidence, and exact-package repeated durable publication receipts; installed Windows/Linux synthetic publication state is frozen, the physical CalculiX three-cycle burn-in is covered on both platforms, one source-harness Windows durable cycle is covered, and exact inputs, commands, environment identity, process failures, cancellation, cleanup, and publication-seam identity remain frozen by the v2 oracle;
+- complete Gate 5 with accepted-package physical result publication for
+  CalculiX and the remaining applicable backend/importer paths, repeated
+  lifecycle/leak evidence, macOS evidence, and repeated durable publication
+  receipts; preserve the tracked synthetic publication state and v2 oracle;
 - treat any future FEM backend as a new solver migration requiring its own parity proof;
 - do not use this milestone to change FEM publication semantics.
 
@@ -475,13 +583,33 @@ Remaining program obligations:
 
 **Status: Partial.**
 
-Multiple host-runtime correctness slices have landed and dedicated regression tests exist. The FEM compatibility and known-difference report is frozen against the v2 executable oracle. Gate G7 is covered by a temporary internal, context-local route that defaults to `analysis_runtime_fem`, can exercise `legacy_fem_execution` without a public or durable setting, captures the route at submission, and restores it automatically. The route tests cover success, cancellation, failure, cleanup, and stale-document refusal; the v2 oracle, installed Windows A/B publication gate, and compatibility-facade checks prove the associated execution, CAD-state, save/reopen, and old-API invariants. The Windows/POSIX FEM workflow repeats descendant-process cancellation and timeout, bounded-output execution, runtime success/failure/cancellation, terminal-job retention, document-owner release, worker-thread shutdown, and private-workspace cleanup. The burn-in found and fixed a real race where an older terminal job's delayed cleanup could remove a newer job's document ownership and admit a third concurrent mutation. Installed Windows and Linux x86-64 physical CalculiX checkpoints each add three independent real solve/import/persist/close/reopen lifecycles with clean document, process, and workspace postconditions; Windows additionally has the visible GUI restore and native file round trip. Separate three-cycle packaged-host lifecycle checkpoints on both platforms repeat closed/switched/same-name-wrong-UID/drift refusal and exact-UID reopen/rebind/publication with clean document and preference postconditions. Three-cycle real active-close checkpoints on both platforms close each exact source after snapshot authentication while its production worker is active, run physical CalculiX after closure, refuse publication at the exact-document guard, reopen the source unchanged, and prove resource cleanup. One additive Windows durable-publication cycle now proves success/save-reopen/replay and rollback/unknown-outcome semantics with a real physical result; it is not yet a repeated or package-contained burn-in. The named stabilization interval still lacks repeated durable-publication execution, remaining solver/importer physical and active-runtime burn-in, macOS evidence, and complete cross-backend leak/orphan evidence.
+Multiple host-runtime correctness slices and dedicated regression tests are
+tracked. The FEM compatibility report is frozen against the v2 executable
+oracle. A temporary internal, context-local route defaults to
+`analysis_runtime_fem`, can exercise `legacy_fem_execution` without a public or
+durable setting, captures the route at submission, and restores it
+automatically. Tracked tests cover success, cancellation, failure, cleanup,
+stale-document refusal, Windows/POSIX descendant cleanup, bounded output,
+terminal retention, document-owner release, worker shutdown, and synthetic
+workspace cleanup. That burn-in previously found and fixed the delayed-cleanup
+document-ownership race.
+
+Reported installed physical CalculiX, exact-source, active-close, visible GUI,
+and durable-publication cycles remain concurrent uncommitted evidence. They
+receive zero integrated Step 7 credit and must be rerun after exact-package
+integration. Repeated durable publication, remaining solver/importer physical
+and active-runtime burn-in, macOS evidence, and complete cross-backend
+leak/orphan evidence remain open.
 
 Remaining exit criteria:
 
 - preserve the now-repeated Windows/POSIX cancel, timeout, process-output-bound, descendant-process, runtime-terminal, worker-thread, document-owner, and synthetic-workspace checks;
-- preserve the repeated installed Windows and Linux x86-64 physical CalculiX active-close/refusal gates and extend equivalent active close/switch evidence to the remaining supported backend/platform matrix; repeated installed closed/switched/same-name-wrong-UID refusal and exact-source reopen/rebind remain covered for the synthetic publication seam on both platforms;
-- repeat installed physical backend/importer runs and confirm no installed-host document mutation, solver process, or real case-workspace leaks across the supported matrix; the three-cycle Windows/Linux CalculiX slices are clean, while the remaining supported backends and macOS matrix are still open;
+- integrate and rerun the reported Windows/Linux physical CalculiX
+  active-close/refusal work, then extend equivalent close/switch evidence to the
+  remaining applicable backend/platform matrix;
+- run accepted-package physical backend/importer cycles and confirm no host
+  document mutation, solver process, or real case-workspace leak across the
+  supported matrix, including applicable macOS evidence;
 - keep the published parity and known-difference report synchronized with every compatibility change while completing the remaining installed-solver and lifecycle evidence.
 
 ### Step 8 — durable host metadata and artifact persistence
@@ -494,9 +622,39 @@ package-contained routes. Keep provider-neutral recovery seams compatible, but
 a production remote provider, credentials, authenticated network transport, and
 portable remote upload/download are not Steps 0-11 completion gates.
 
-The current roadmap execution branch implements versioned atomic JSON metadata, an explicit audited and backup-preserving v1-to-v2 migration, unknown-version refusal, four migration fault-point outcomes, the centralized `VibeCADProject.vibecad_data_dir()` per-user root, bounded global/document discovery, inter-process locking, legal state transitions, attempt and provider identities, backup, explicit fault points, and same-analysis retry with a new attempt. Each new provider attempt records only a bounded inert recovery snapshot: whether reconnect is supported and whether the provider job survives client exit. Restart classification uses only the latest attempt, requires both declared capabilities plus a non-empty external job ID before returning a remote-reconnect plan, records exact reason codes, and otherwise can atomically persist append-only structured `host_interrupted` evidence without treating leftover processes or files as success. A provider-facing recovery coordinator now revalidates the live provider identity/capabilities, reconnects only that authorized attempt, consumes strict bounded reconnect/status payloads, and collects only after authoritative provider completion. It validates generic artifact-manifest structure, attempt/provider identity, artifact count, and declared-byte limits; records a compact manifest-hash receipt bound to the exact provider attempt; and advances only to `collecting`. A separate admission coordinator requires that exact receipt and latest attempt, resolves returned files only beneath an owned local transport root, rejects symlink/path escape, stops oversized reads at the declared bound, independently verifies content hashes and byte counts, admits immutable content-addressed objects, records exact artifact metadata under a `collecting` state guard, and advances only to `verifying`. A third, separately authorized domain-verification coordinator revalidates those admitted immutable bytes before invoking a domain callback, passes only the exact persisted analysis/attempt/dependency/artifact identities plus ephemeral immutable artifact paths, validates the returned bounded engineering result and findings against those identities, persists a canonical result digest and write-once envelope receipt, and advances only to `waiting_to_publish`. Missing transport/storage/verifier/metadata availability preserves state for truthful retry; immutable-integrity or domain-contract failures become explicit terminal evidence; repeated admission and repeated verification after the covered pre-transition crashes are idempotent. None of those first three coordinators has CAD-mutation or publication authority. The branch also implements quota-enforced artifact record counts and declared bytes, pins, cleanup eligibility, tombstones, exact live publication-artifact references, and an additive opt-in runtime lifecycle binding. Migration is an explicit writer-authorized operation; ordinary load and discovery never silently rewrite legacy state. Existing schema-v2 attempts without the additive recovery snapshot or verification-receipt list remain readable and conservatively non-reconnectable. Existing compact hash-only evidence records remain valid and count toward the record quota without inventing a byte size. Existing in-memory clients remain unchanged. FCStd still stores compact references and engineering evidence, not multi-gigabyte solver artifacts. A production FEM adapter now consumes the verified state through a deterministic path-preserving workspace bundle, revalidates exact bytes and dependencies, and delegates publication through Native authority. The one-cycle physical gate proves this path without transferring mutation authority into the host persistence coordinators.
+The accepted baseline implements versioned atomic JSON metadata, an audited and
+backup-preserving v1-to-v2 migration, unknown-version refusal, migration fault
+outcomes, centralized per-user data ownership, bounded discovery,
+inter-process locking, legal transitions, attempt/provider identities, and
+same-analysis retry with a new attempt. Provider recovery records bounded inert
+capabilities and uses only the latest exact provider attempt. Separate recovery,
+local-transport admission, and domain-verification coordinators validate
+provider identity, manifests, bounds, content hashes, immutable artifacts,
+engineering-result identities, and write-once verification receipts while
+stopping before CAD mutation. Covered crash boundaries resume idempotently;
+missing authority preserves retryable state and integrity failures become
+explicit evidence. The baseline also tracks quotas, pins, cleanup eligibility,
+tombstones, exact live publication-artifact references, opt-in runtime binding,
+additive schema compatibility, and compact FCStd references rather than large
+solver artifacts.
 
-This remains a recovery foundation rather than a production remote route. Reconnect/status/collect and remote transport are exercised with inert provider and owned local-transport fixtures; there is no production provider, credential boundary, authenticated network transport, or portable-bundle upload/download implementation. Generic verification fault coverage remains fixture-backed, and one production FEM verifier/publisher path is physically exercised, but it is still launched by the integration harness rather than the normal Native submission route and has not yet been rebuilt into or repeated from the final package. Remaining active work is to package the physically exercised FEM route, put it into normal Native submission, migrate retained low-order Aero, prove publication-phase process-crash reconstruction, add governed quota-policy configuration and cross-record cleanup authority, integrate compact document references, cover corruption/restore, and complete installed cross-platform acceptance. Production remote networking and migration-registry expansion for a future schema remain preserved compatibility work only.
+The production FEM workspace-bundle adapter and one-cycle physical gate are
+present only in concurrent uncommitted work and receive zero integrated Step 8
+credit. Their reported byte/dependency revalidation and Native delegation remain
+the intended implementation direction, not accepted evidence.
+
+This remains a recovery foundation rather than a production remote route.
+Reconnect/status/collect and returned transport are exercised with inert
+provider and owned local-transport fixtures; there is no production provider,
+credential boundary, authenticated network transport, or portable-bundle
+upload/download implementation. Generic verification fault coverage remains
+fixture-backed. Remaining active work is to integrate the concurrent FEM route
+into the exact package and normal Native submission, rerun its physical evidence,
+migrate retained low-order Aero, prove publication-phase process-crash
+reconstruction, add governed quota policy and cross-record cleanup, integrate
+compact document references, cover corruption/restore, and complete installed
+cross-platform acceptance. Production remote networking and a future migration
+registry remain preserved compatibility work only.
 
 Required durable data:
 
@@ -524,7 +682,17 @@ Restart rules:
 - leftover files or PIDs never prove success;
 - no result republishes because a document with the same name or path opens.
 
-The current implementation proves classification, durable interruption recording, bounded provider-facing reconciliation, immutable returned-file admission, and a domain-verification receipt/restart boundary through inert fixtures. A `reconnect_remote` disposition remains only persisted authority to query the exact live provider; completion is accepted only from a strict matching status. Returned descriptors remain provider claims until independently matched to bounded local file content. The generic fixture verifier produces only an exact, bounded, unpublished `EngineeringResultEnvelope`; separately, the physical CalculiX integration wires a production FEM verifier/publisher over the same durable identities and stops host verification authority at `waiting_to_publish` before fresh Native publication authority begins. No real remote provider or network transport is integrated, and the FEM path is not yet the package-contained normal submission route.
+The accepted implementation proves classification, durable interruption
+recording, bounded provider-facing reconciliation, immutable returned-file
+admission, and a domain-verification receipt/restart boundary through inert
+fixtures. A `reconnect_remote` disposition remains only persisted authority to
+query the exact live provider; completion is accepted only from a strict matching
+status. Returned descriptors remain provider claims until independently matched
+to bounded local file content. The generic fixture verifier produces only an
+exact, bounded, unpublished `EngineeringResultEnvelope`. The concurrent
+physical CalculiX production verifier/publisher receives zero integrated credit.
+No real remote provider or network transport is integrated, and no production
+FEM path is yet the package-contained normal submission route.
 
 ### Step 8A — durable publication authority
 
@@ -532,9 +700,29 @@ The current implementation proves classification, durable interruption recording
 
 The current roadmap execution branch preserves the independent compatibility publication coordinator and adds a strict `VerifiedAnalysisPublicationCoordinator`. The verified path accepts only the latest durable domain-verification receipt, binds source/dependency/provider-attempt/output/result identity through a canonical publication-descriptor hash, rechecks all exact content-addressed bytes, records a successful currentness decision and fresh exact authorization before ownership, and acquires publication with compare-and-swap. After postconditions pass, it persists a bounded, secret-screened, path-free, write-once receipt before terminal success. A crash after that receipt can finalize `publishing -> succeeded` without invoking document mutation again; a crash or exception after ownership but before the receipt remains explicitly outcome-unknown and cannot replay blindly.
 
-An additive Native host boundary now separates domain-owned currentness, draft construction, and postcondition verification from host-owned document-thread dispatch and transaction authority. The default production boundary enumerates real open FreeCAD documents, requires one exact `Document.Uid`, rebinds that UID again immediately before mutation, rechecks domain currentness from inside the owned transaction, canonicalizes and screens returned domain evidence before commit, and rolls back when domain postconditions fail. Unit coverage proves exact-UID ambiguity refusal, close/reopen replacement rebind, in-transaction stale refusal, commit, rollback, and bounded evidence. The earlier installed `FreeCADCmd` fixture gate uses a real saved/reopened document and real FreeCAD transactions to prove successful publication persists after reopen while a deliberately failed postcondition leaves no result object. The additive physical CalculiX gate now replaces that fixture adapter for one bounded path with a production FEM verifier/publisher, exact completed-workspace bundle, production importer/result graph, and real Native transaction. It proves a persisted write-once receipt and duplicate-free replay after reopen; a separate failed-postcondition lane rolls back the document, leaves no receipt, and remains outcome-unknown on replay.
+The tracked additive Native host boundary separates domain-owned currentness,
+draft construction, and postcondition verification from host-owned
+document-thread dispatch and transaction authority. It enumerates open FreeCAD
+documents, requires one exact `Document.Uid`, rebinds immediately before
+mutation, rechecks currentness inside the transaction, screens returned evidence,
+and rolls back failed postconditions. Unit coverage proves exact-UID ambiguity
+refusal, close/reopen replacement rebind, in-transaction stale refusal, commit,
+rollback, and bounded evidence. The tracked installed `FreeCADCmd` fixture gate
+uses a saved/reopened document and real transactions to exercise persistence and
+rollback without claiming a production physical solver result.
 
-Remaining work is to rebuild the new FEM adapter into the exact package, repeat the durable physical gate on Windows and Linux, wire it into the normal Native FEM submission route, migrate Aero additively, and prove real process crash/restart/retry reconstruction cannot duplicate document objects or publication history. The current physical gate proves one in-process save/reopen/replay and rollback/unknown-outcome cycle, not a process crash, all-platform package acceptance, remaining-backend publication, Aero publication, or an engineering-qualification upgrade.
+The reported physical CalculiX replacement adapter, completed-workspace bundle,
+production importer/result graph, write-once receipt, duplicate-free replay, and
+unknown-outcome lanes remain concurrent uncommitted work. They receive zero
+integrated Step 8A credit until exact-package integration and rerun.
+
+Remaining work is to integrate and rebuild the concurrent FEM adapter into the
+exact package, run the durable physical gate on applicable Windows/Linux hosts,
+wire it into normal Native FEM submission, migrate Aero additively, and prove
+real process crash/restart/retry reconstruction cannot duplicate document
+objects or publication history. No accepted physical gate currently proves a
+process crash, all-platform package acceptance, remaining-backend publication,
+Aero publication, or an engineering-qualification upgrade.
 
 Required preconditions before mutation:
 
@@ -930,10 +1118,11 @@ Stop the affected implementation slice and resolve explicitly if:
 
 The active Steps 0-11 work remains small, reversible, and dependency-ordered:
 
-1. **Close Steps 1 and 7:** retain the current Windows/Linux physical CalculiX,
-   exact-source, active-close, and visible-file evidence; rebuild the final
-   package and finish applicable backend/platform leak, cleanup, and importer
-   evidence without changing current behavior.
+1. **Close Steps 1 and 7:** review and integrate the concurrent physical
+   CalculiX, exact-source, active-close, and visible-file work without crediting
+   its uncommitted state; rebuild the exact final package and rerun the
+   applicable backend/platform leak, cleanup, and importer evidence without
+   changing current behavior.
 2. **Close Step 4:** finish application-data and compact-document integration,
    immutable artifact quotas/reference protection, corruption/restore behavior,
    and installed cross-platform acceptance.
