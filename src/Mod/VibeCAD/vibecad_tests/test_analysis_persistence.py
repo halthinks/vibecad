@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import json
+import os
+import subprocess
+import sys
+import textwrap
 from pathlib import Path
 
 import pytest
@@ -449,6 +453,249 @@ def test_unrecoverable_restart_is_atomically_interrupted_and_audited(
         expected_execution_spec_sha256="d" * 64,
     )
     assert retried["recovery_events"] == interrupted["recovery_events"]
+
+
+def test_independent_process_exit_is_reconciled_to_interrupted(
+    tmp_path: Path,
+) -> None:
+    module_root = Path(__file__).resolve().parents[1]
+    environment = dict(os.environ)
+    environment["PYTHONPATH"] = os.pathsep.join(
+        part
+        for part in (str(module_root), environment.get("PYTHONPATH", ""))
+        if part
+    )
+    script = textwrap.dedent("""\
+        import os
+        from pathlib import Path
+        import sys
+        from VibeCADAnalysisPersistence import (
+            AnalysisMetadataStore,
+            new_job_record,
+        )
+
+        root = Path(sys.argv[1])
+        store = AnalysisMetadataStore(root)
+        store.create(new_job_record(
+            analysis_id="analysis-child",
+            domain="fem",
+            adapter_id="vibecad.native.analyze.fem",
+            source_document_uid="document-child",
+            prepared_analysis_sha256="a" * 64,
+            dependency_sha256="b" * 64,
+            input_manifest_sha256="c" * 64,
+            execution_spec_sha256="d" * 64,
+        ))
+        store.begin_attempt(
+            "analysis-child",
+            provider_id="local-process",
+            provider_kind="local",
+        )
+        os._exit(0)
+    """)
+    completed = subprocess.run(
+        [sys.executable, "-c", script, str(tmp_path)],
+        env=environment,
+        capture_output=True,
+        text=True,
+        timeout=30,
+        check=False,
+    )
+    assert completed.returncode == 0, completed.stderr
+
+    parent_store = AnalysisMetadataStore(tmp_path)
+    restored = parent_store.interrupt_unrecoverable_after_restart("analysis-child")
+
+    assert restored["analysis_id"] == "analysis-child"
+    assert restored["state"] == "interrupted"
+    assert restored["terminal_reason"] == "host_interrupted"
+    assert restored["attempts"][-1]["attempt"] == 1
+    assert restored["attempts"][-1]["terminal_reason"] == "host_interrupted"
+    assert restored["publication"]["receipt"] is None
+    assert restored["recovery_events"] == [{
+        "classified_at": restored["recovery_events"][0]["classified_at"],
+        "previous_state": "running_local",
+        "disposition": "orphaned",
+        "failure_kind": "host_interrupted",
+        "attempt": 1,
+    }]
+
+
+def test_exact_restart_interruption_rejects_prepared_aba(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    store = AnalysisMetadataStore(tmp_path)
+    store.create(_record())
+    store.begin_attempt(
+        "analysis-1", provider_id="local-process", provider_kind="local",
+    )
+    first_interrupted = store.interrupt_unrecoverable_after_restart("analysis-1")
+    store.retry_interrupted(
+        "analysis-1",
+        expected_prepared_analysis_sha256="a" * 64,
+        expected_dependency_sha256="b" * 64,
+        expected_input_manifest_sha256="c" * 64,
+        expected_execution_spec_sha256="d" * 64,
+    )
+    original_transition = store.transition
+    moved = False
+    newer = None
+
+    def move_before_interruption(
+        analysis_id: str,
+        state: str,
+        *,
+        reason: str,
+        updates=None,
+        **guards,
+    ) -> dict:
+        nonlocal moved, newer
+        if state == "interrupted" and not moved:
+            moved = True
+            monkeypatch.setattr(store, "transition", original_transition)
+            store.begin_attempt(
+                analysis_id,
+                provider_id="local-process",
+                provider_kind="local",
+            )
+            original_transition(
+                analysis_id,
+                "interrupted",
+                reason="provider_failed",
+                expected_state="running_local",
+            )
+            store.retry_interrupted(
+                analysis_id,
+                expected_prepared_analysis_sha256="a" * 64,
+                expected_dependency_sha256="b" * 64,
+                expected_input_manifest_sha256="c" * 64,
+                expected_execution_spec_sha256="d" * 64,
+            )
+            newer = store.load(analysis_id)
+            monkeypatch.setattr(store, "transition", move_before_interruption)
+        return original_transition(
+            analysis_id,
+            state,
+            reason=reason,
+            updates=updates,
+            **guards,
+        )
+
+    monkeypatch.setattr(store, "transition", move_before_interruption)
+
+    with pytest.raises(AnalysisPersistenceError, match="record changed"):
+        store.interrupt_unrecoverable_after_restart("analysis-1")
+
+    assert newer is not None
+    assert store.load("analysis-1") == newer
+    assert [item["attempt"] for item in newer["attempts"]] == [1, 2]
+    assert newer["recovery_events"] == first_interrupted["recovery_events"]
+    assert [event["reason"] for event in newer["events"][-3:]] == [
+        "provider_attempt_started",
+        "provider_failed",
+        "retry_prepared",
+    ]
+    assert newer["attempts"][-1]["provider_capability_snapshot"] == {
+        "reconnect_supported": False,
+        "job_survives_client_exit": False,
+    }
+
+
+def test_exact_restart_interruption_rejects_running_remote_aba(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    store = AnalysisMetadataStore(tmp_path)
+    store.create(_record())
+    store.begin_attempt(
+        "analysis-1",
+        provider_id="remote",
+        provider_kind="remote",
+        provider_job_id="job-1",
+    )
+    first_interrupted = store.interrupt_unrecoverable_after_restart("analysis-1")
+    store.retry_interrupted(
+        "analysis-1",
+        expected_prepared_analysis_sha256="a" * 64,
+        expected_dependency_sha256="b" * 64,
+        expected_input_manifest_sha256="c" * 64,
+        expected_execution_spec_sha256="d" * 64,
+    )
+    store.begin_attempt(
+        "analysis-1",
+        provider_id="remote",
+        provider_kind="remote",
+        provider_job_id="job-2",
+    )
+    original_transition = store.transition
+    moved = False
+    newer = None
+
+    def move_before_interruption(
+        analysis_id: str,
+        state: str,
+        *,
+        reason: str,
+        updates=None,
+        **guards,
+    ) -> dict:
+        nonlocal moved, newer
+        if state == "interrupted" and not moved:
+            moved = True
+            monkeypatch.setattr(store, "transition", original_transition)
+            original_transition(
+                analysis_id,
+                "interrupted",
+                reason="provider_failed",
+                expected_state="running_remote",
+            )
+            store.retry_interrupted(
+                analysis_id,
+                expected_prepared_analysis_sha256="a" * 64,
+                expected_dependency_sha256="b" * 64,
+                expected_input_manifest_sha256="c" * 64,
+                expected_execution_spec_sha256="d" * 64,
+            )
+            store.begin_attempt(
+                analysis_id,
+                provider_id="remote",
+                provider_kind="remote",
+                provider_job_id="job-3",
+                provider_capability_snapshot={
+                    "reconnect_supported": True,
+                    "job_survives_client_exit": True,
+                },
+            )
+            newer = store.load(analysis_id)
+            monkeypatch.setattr(store, "transition", move_before_interruption)
+        return original_transition(
+            analysis_id,
+            state,
+            reason=reason,
+            updates=updates,
+            **guards,
+        )
+
+    monkeypatch.setattr(store, "transition", move_before_interruption)
+
+    with pytest.raises(AnalysisPersistenceError, match="record changed"):
+        store.interrupt_unrecoverable_after_restart("analysis-1")
+
+    assert newer is not None
+    assert store.load("analysis-1") == newer
+    assert [item["attempt"] for item in newer["attempts"]] == [1, 2, 3]
+    assert newer["attempts"][-1]["provider_job_id"] == "job-3"
+    assert newer["attempts"][-1]["provider_capability_snapshot"] == {
+        "reconnect_supported": True,
+        "job_survives_client_exit": True,
+    }
+    assert newer["recovery_events"] == first_interrupted["recovery_events"]
+    assert [event["reason"] for event in newer["events"][-3:]] == [
+        "provider_failed",
+        "retry_prepared",
+        "provider_attempt_started",
+    ]
 
 
 def test_expected_state_guard_refuses_stale_restart_write(tmp_path: Path) -> None:

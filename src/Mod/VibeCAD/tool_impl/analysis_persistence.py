@@ -88,6 +88,21 @@ def _canonical_sha256(value: Mapping[str, Any]) -> str:
     return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 
+def _canonical_record_revision_sha256(record: Mapping[str, Any]) -> str:
+    try:
+        encoded = json.dumps(
+            record,
+            ensure_ascii=True,
+            sort_keys=True,
+            separators=(",", ":"),
+        )
+    except (TypeError, ValueError) as exc:
+        raise AnalysisPersistenceError(
+            "Analysis record cannot be canonically revised"
+        ) from exc
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
 def _artifact_references(record: Mapping[str, Any]) -> tuple[str, ...]:
     publication = record.get("publication")
     if not isinstance(publication, Mapping):
@@ -670,12 +685,33 @@ class AnalysisMetadataStore:
         self, analysis_id: str, state: str, *, reason: str,
         updates: Mapping[str, Any] | None = None,
         expected_state: str | None = None,
+        expected_record_sha256: str | None = None,
     ) -> dict[str, Any]:
         clean_state = str(state or "").strip()
         if clean_state not in KNOWN_STATES:
             raise AnalysisPersistenceError("Unknown Analysis lifecycle state")
+        expected_revision = None
+        if expected_record_sha256 is not None:
+            expected_revision = str(expected_record_sha256 or "").lower()
+            if (
+                len(expected_revision) != 64
+                or any(
+                    character not in "0123456789abcdef"
+                    for character in expected_revision
+                )
+            ):
+                raise AnalysisPersistenceError(
+                    "expected_record_sha256 must be a SHA-256 digest"
+                )
         with self._writer():
             current = self.load(analysis_id)
+            if (
+                expected_revision is not None
+                and _canonical_record_revision_sha256(current) != expected_revision
+            ):
+                raise AnalysisPersistenceError(
+                    "Analysis record changed before the requested transition"
+                )
             if expected_state is not None and current["state"] != expected_state:
                 raise AnalysisPersistenceError(
                     "Analysis state changed before the requested transition"
@@ -729,6 +765,7 @@ class AnalysisMetadataStore:
             raise AnalysisPersistenceError(
                 "Analysis restart disposition is not unrecoverable"
             )
+        preflight_revision = _canonical_record_revision_sha256(current)
         attempts = deepcopy(current["attempts"])
         if attempts:
             attempts[-1]["terminal_reason"] = "host_interrupted"
@@ -748,6 +785,7 @@ class AnalysisMetadataStore:
                 "recovery_events": [*recovery_events, recovery_event],
             },
             expected_state=current["state"],
+            expected_record_sha256=preflight_revision,
         )
 
     def interrupt_missing_provider_job_after_restart(
