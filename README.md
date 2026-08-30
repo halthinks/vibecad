@@ -370,15 +370,29 @@ The detailed bounded structural/thermal direct-geometry contracts are in
 The accompanying
 [repository reconciliation addendum](docs/direct-geometry/VIBECAD_DIRECT_GEOMETRY_RECONCILIATION_ADDENDUM.md)
 preserves that source byte for byte while making the reusable-tester profile,
-separate VC-DG-7 authorization, generic-CfdOF, and McMaster boundaries explicit.
+VC-DG-7 start condition, generic-CfdOF, and McMaster boundaries explicit.
 VC-DG-0 through VC-DG-6 are an explicit, bounded VibeCAD lane. Broader future
 generalized Structures, Physics, high-fidelity Aero, remote execution, and
 multiphysics expansion are outside the current VibeCAD completion boundary.
-Optional VC-DG-7 remains separately gated after VC-DG-6.
+Optional VC-DG-7 is assigned to VibeCAD. It is not started and may begin only
+after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin; its
+owner is not undecided.
+It is optional because VC-DG-0 through VC-DG-6 already define the required
+structural/thermal product, while VC-DG-7 adds a separate fluid method,
+conservation checks, benchmarks, and qualification burden. Requiring that work
+would delay the core and blur the boundary with VibeMechanica's advanced Aero
+program. Optional changes the VibeCAD release gate, not ownership.
+Advanced Aero Steps 12-20 and the broader mechanics/physics product expansion
+are assigned to the
+[VibeMechanica roadmap](https://github.com/halthinks/VibeMechanica/blob/main/docs/vibemechanica/ROADMAP.md);
+their preserved records in this repository are historical/non-normative and do
+not become VibeCAD completion claims without an explicit two-repository scope
+amendment.
 
 The current [McMaster-Carr insert workbench](src/Mod/McMasterInsert/README.md)
-also remains supported and is finished only to its existing catalog/import/cache,
-component-placement, packaging, and acceptance boundary. It is separate from
+also remains supported. Its existing catalog/import/cache and component-placement
+slice is retained, but remains partial until its already-started packaging,
+installed-runtime, and visible acceptance gates close. It is separate from
 bundled standard fasteners and does not make procurement intelligence, supplier
 comparison, automated sourcing, or generalized purchasing an active VibeCAD
 roadmap obligation.

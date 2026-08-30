@@ -1,6 +1,6 @@
 # VibeCADAero canonical roadmap
 
-**Roadmap status:** canonical for the active bounded Steps 0-11 public lane; Steps 12-20 are preserved historical design records
+**Roadmap status:** canonical for the active bounded Steps 0-11 public lane; Steps 12-20 are historical/non-normative in VibeCAD and assigned to VibeMechanica
 
 **Live baseline audited:** `halthinks/vibecad@31ea810db044db6311207a2538a9b6f7694011ae` on 2026-08-25
 
@@ -45,29 +45,40 @@ acceptance, and zero unclassified regressions attributable to those public
 slices. This reconciliation removes no current code, test, compatibility seam,
 result history, or recovered design record.
 
-Steps 12-20 are preserved below as **historical/non-normative advanced design
-records**. Their broad high-fidelity CFD, remote compute, qualification,
-moving-body, propulsion-interaction, unsteady/6DOF, FSI, and advanced diagnostic
-requirements are outside the current public completion scope and do not block
-completion of Steps 0-11. Already-present low-order behavior associated with a
-later historical heading—most notably the current JSBSim export—remains supported
-and must not regress.
+VibeMechanica owns future implementation of Steps 12-20. They remain
+historical/non-normative in VibeCAD as preserved advanced design records. Their
+broad high-fidelity CFD, remote compute, qualification, moving-body,
+propulsion-interaction, unsteady/6DOF, FSI, and advanced diagnostic requirements
+are outside the current VibeCAD completion scope and do not block completion of
+Steps 0-11. Already-present low-order behavior associated with a later historical
+heading—most notably the current JSBSim export—remains supported and must not
+regress.
 
 The public [direct-geometry technical specification](direct-geometry/VIBECAD_DIRECT_GEOMETRY_ANALYSIS_WHITEPAPER.md)
 adds a separate VC-DG-0 through VC-DG-7 lane owned and status-tracked by the
 [VibeCAD governed engineering roadmap](vibecad-governed-engineering-roadmap.md).
-VC-DG-0 through VC-DG-6 form its structural/thermal core. VC-DG-7 is an optional,
-bounded, fixed-boundary incompressible embedded-flow preview after VC-DG-6. It is
-not required for low-order Aero Steps 0-11 or VC-DG core completion, and it does
-not reactivate, satisfy, or earn completion credit for historical Aero Steps
-12-20.
+VC-DG-0 through VC-DG-6 form its structural/thermal core. VC-DG-7 is assigned to
+VibeCAD; its optional status does not make its owner undecided. The bounded,
+fixed-boundary incompressible embedded-flow preview is not started and may begin
+only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
+It is not required for low-order Aero Steps 0-11 or VC-DG core completion, and
+it does not reactivate, satisfy, or earn completion credit for historical Aero
+Steps 12-20.
+
+The reason it is optional is scope, not indecision: VC-DG-0 through VC-DG-6
+already define the required structural/thermal product. VC-DG-7 adds a separate
+fluid method, conservation checks, benchmark set, and qualification burden that
+the structural/thermal core does not need. Requiring it would delay that core
+and blur the boundary with VibeMechanica's advanced Aero program. Optional
+changes the VibeCAD release gate, not ownership.
 
 This is a deliberate bounded VibeCAD lane. Broad CFD, high-fidelity Aero,
 multiphysics, nonlinear/composites/fatigue, remote execution, and generalized
 solver expansion remain outside this roadmap's current completion boundary.
-VibeCADAero continues to own only Steps 0-11 here;
-VC-DG status remains solely in the governed engineering roadmap, so the two
-lanes cannot claim the same implementation or completion evidence.
+VibeCADAero continues to own only Steps 0-11 here; VibeMechanica owns future
+implementation of Steps 12-20. VC-DG status remains solely in the governed
+engineering roadmap, so the three lanes cannot claim the same implementation or
+completion evidence.
 
 ### Active public completion objective
 
@@ -97,11 +108,14 @@ safety.
 ### Historical advanced continuation rule
 
 Every Step 12-20 heading and requirement below remains searchable design
-provenance. Its status is **Historical/non-normative; outside current public
-scope** unless a later owner-approved scope change explicitly reactivates a
-bounded item. Future public additions must be additive, separately authorized,
-independently evidenced, and must not silently turn these preserved records back
-into release blockers.
+provenance. Its status in this repository is **Historical/non-normative; outside
+current VibeCAD public scope**. The VibeMechanica roadmap owns future executable
+status, dependency order, acceptance, and completion claims for those steps.
+VibeCAD may mirror only an accepted synchronization receipt and must not infer
+completion from a downstream branch or compatibility surface. Any future
+reassignment back to VibeCAD requires an explicit owner-approved amendment in
+both repositories. Additions remain additive, independently evidenced, and must
+not silently turn these preserved records back into VibeCAD release blockers.
 
 ## 1. Source-of-truth order
 
@@ -112,9 +126,12 @@ Use these sources in this order:
 3. The [VibeCAD governed engineering roadmap](vibecad-governed-engineering-roadmap.md)
    owns cross-domain host extensions shared by Analysis, Native, Manufacture,
    Assembly, Robot, and future engineering domains. This Aero roadmap retains
-   Aero physics, solver, qualification, evidence, and original host-runtime
-   acceptance obligations. A change to shared Analysis persistence,
-   publication, or provenance status must update both owner documents.
+   low-order Aero physics, solver, qualification, evidence, and original
+   host-runtime acceptance obligations through Step 11. The
+   [VibeMechanica roadmap](https://github.com/halthinks/VibeMechanica/blob/main/docs/vibemechanica/ROADMAP.md)
+   owns future implementation of Steps 12-20. A change to shared Analysis
+   persistence, publication, or provenance status must follow each repository's
+   guarded synchronization and update the affected owner documents.
 4. The preserved [direct-geometry technical specification](direct-geometry/VIBECAD_DIRECT_GEOMETRY_ANALYSIS_WHITEPAPER.md)
    owns its unaffected numerical contracts, while the
    [repository reconciliation addendum](direct-geometry/VIBECAD_DIRECT_GEOMETRY_RECONCILIATION_ADDENDUM.md)
@@ -306,8 +323,10 @@ These are additive post-baseline slices. Provider recovery and returned-file tra
 
 ## 6. Dependency graph
 
-The solid graph is the active public completion path. The dashed advanced node
-preserves Steps 12-20 as design provenance and is not a release dependency.
+The solid graph is the active VibeCAD public completion path. The dashed
+advanced node records the accepted compatibility handoff of Steps 12-20 to
+VibeMechanica. It preserves VibeCAD design provenance, but it is not a VibeCAD
+release dependency or permission for VibeCAD to resume that implementation.
 
 ```mermaid
 flowchart TD
@@ -316,7 +335,7 @@ flowchart TD
     C --> D[9: Native Aero repair authority]
     D --> E[10: low-order evidence, frames, and correspondence]
     E --> F[11: complete low-order Analysis Runtime client]
-    F -. separately authorized future work .-> H[12-20: historical advanced design]:::historical
+    F -. accepted compatibility handoff .-> H[12-20: VibeMechanica-owned advanced roadmap]:::historical
     C --> DG[VC-DG status is owned by governed roadmap]
     classDef historical stroke-dasharray: 5 5,color:#666;
 ```
@@ -342,15 +361,15 @@ completion credit here.
 | 9 — Aero repair authority | **ACTIVE** | **Partial** | Converge host revision and preview/apply/reject authority; define bounded preview persistence. |
 | 10 — Aero evidence/frames | **ACTIVE** | **Partial** | Complete case schema, frames/references, readiness, correspondence, stamps/results/context, and claim ceilings. |
 | 11 — Aero runtime client | **ACTIVE** | **Partial** | Complete the integrated low-order client, including solver-neutral case/result seams needed by the retained routes, without making advanced high-fidelity solvers a closure gate. |
-| 12 — OpenFOAM/CfdOF | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: build and benchmark a real end-to-end Aero baseline through the normal CfdOF path. |
-| 13 — FluidX3D | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: implement pinned build/bridge, exact notice, physical scale/domain/units/forces/fields, and benchmarks. |
-| 14 — field viewer | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: build the common source-bound scalar/vector/volume/time UI with bounded loading. |
-| 15 — routing/Kaggle | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: add explainable routing and restart-safe remote compute after persistence/publication gates. |
-| 16 — qualification/high-Re | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: build benchmark/envelope registry and complete high-Re sensitivity/convergence evidence. |
-| 17 — moving/propulsion | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: implement validated moving boundaries, rotor/prop fidelity, interaction, and feedback. |
-| 18 — unsteady/6DOF | **RETAIN CURRENT JSBSIM; ADVANCED SCOPE HISTORICAL** | **Partial only for current low-order JSBSim export** | Preserved if separately reactivated: complete validated unsteady, lateral/control/propulsion/gust inputs and coupled dynamics. |
-| 19 — aeroelasticity/FSI | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: implement structural authority, mapping, partitioned coupling, convergence, and flutter validation. |
-| 20 — diagnostics/refinement | **HISTORICAL / NON-NORMATIVE** | **Design-ready** | Preserved if separately reactivated: compose uncertainty, convergence, comparison, decomposition, and refinement from host jobs. |
+| 12 — OpenFOAM/CfdOF | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns the production CFD baseline; generic VibeCAD CfdOF compatibility earns no Step 12 credit. |
+| 13 — FluidX3D | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Optional and non-blocking in VibeMechanica** | VibeMechanica owns any restricted-use evaluation and separate qualification; this item blocks no required step or release. |
+| 14 — field viewer | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns the common source-bound scalar/vector/volume/time UI with bounded loading. |
+| 15 — routing/Kaggle | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns explainable routing and restart-safe remote compute after its persistence/publication gates. |
+| 16 — qualification/high-Re | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns the benchmark/envelope registry and high-Re sensitivity/convergence evidence. |
+| 17 — moving/propulsion | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns validated moving boundaries, rotor/prop fidelity, interaction, and feedback. |
+| 18 — unsteady/6DOF | **RETAIN CURRENT VIBECAD JSBSIM; ADVANCED SCOPE VIBEMECHANICA-OWNED** | **Current low-order path partial in VibeCAD; advanced work planned in VibeMechanica** | VibeCAD retains its current JSBSim compatibility; VibeMechanica owns advanced validated unsteady and coupled-dynamics work. |
+| 19 — aeroelasticity/FSI | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns structural authority, mapping, partitioned coupling, convergence, and flutter validation. |
+| 20 — diagnostics/refinement | **HISTORICAL HERE; VIBEMECHANICA-OWNED** | **Planned in VibeMechanica** | VibeMechanica owns uncertainty, convergence, comparison, decomposition, and controlled refinement from host jobs. |
 
 ## 7. Dependency-ordered implementation roadmap
 
@@ -593,6 +612,13 @@ Remaining exit criteria for the complete domain client:
 - make artifact/evidence/currentness contracts complete and consistent across the retained low-order routes; preserve future advanced compatibility without making it a closure gate;
 - preserve existing low-order commands and report semantics while adding the new case/result surfaces.
 
+The detailed Step 12-20 sections below preserve technical source and acceptance
+history. Their local classification and status lines are VibeCAD evidence
+snapshots, not current executable assignments. Future implementation is governed
+by the VibeMechanica roadmap: Step 13 is optional and non-blocking there, while
+Steps 12 and 14-20 are planned there. None is assigned back to VibeCAD by this
+preserved detail.
+
 ### Step 12 — complete OpenFOAM through CfdOF baseline
 
 **Public classification: HISTORICAL / NON-NORMATIVE; OUTSIDE CURRENT PUBLIC COMPLETION.**
@@ -823,16 +849,18 @@ retaining compatibility until migration is proven.
 | **G11 Remote provider** | **HISTORICAL / NON-NORMATIVE** | Live capability/quota checks, immutable upload, persisted remote identity, restart reconnect, bounded logs/artifacts, hash verification, fresh publication, and deterministic routing explanation. |
 | **G12 Dynamics/coupling** | **HISTORICAL / NON-NORMATIVE** | Validated timestep/frame/feedback/mapping behavior, convergence and sensitivity evidence, rollback/failure semantics, and complete cross-domain provenance. |
 
-Active G0-G9 gates may be satisfied in a dedicated pull request or by a later pull request with equivalent evidence, but they may not be waived by prose. G10-G12 remain preserved evidence contracts for any separately authorized advanced continuation and do not block Steps 0-11.
+Active G0-G9 gates may be satisfied in a dedicated pull request or by a later pull request with equivalent evidence, but they may not be waived by prose. G10-G12 remain preserved evidence contracts for VibeMechanica-owned advanced continuation and do not block VibeCAD Steps 0-11.
 
 ## 10. Test and evidence matrix
 
 Every implementation pull request must identify the affected rows and provide proportional tests.
 
-Rows through **Aero low-order** are active as applicable to Steps 0-11.
+Rows through **Aero low-order** are active as applicable to VibeCAD Steps 0-11.
 OpenFOAM/CfdOF, FluidX3D, Remote/Kaggle, advanced Visualization,
-Qualification, and Dynamics/FSI rows are historical/non-normative and become
-required only if their bounded advanced scope is explicitly reactivated.
+Qualification, and Dynamics/FSI rows are historical/non-normative in VibeCAD.
+They are acceptance-contract references for the VibeMechanica-owned advanced
+roadmap; Step 13 remains optional and non-blocking there, while the required
+rows apply only when their owning VibeMechanica milestones are implemented.
 
 
 | Area | Minimum automated evidence | Integration evidence |
@@ -920,10 +948,14 @@ The active Steps 0-11 work remains small, reversible, and dependency-ordered:
    Analysis Runtime behavior, cancellation, save/reopen, publication, and the
    visible one-click GUI acceptance.
 6. **Cross-reference VC-DG only:** the governed engineering roadmap owns
-   VC-DG-0 through VC-DG-7. That work does not reactivate Steps 12-20.
+   VC-DG-0 through VC-DG-7. That work does not assign Steps 12-20 back to
+   VibeCAD.
 
-Steps 12-20 remain searchable historical/non-normative records. They are not
-next public tranches and do not block the active final definition of done.
+Steps 12-20 remain searchable historical/non-normative records in VibeCAD. They
+are not VibeCAD's next public tranches and do not block VibeCAD's active final
+definition of done. Their future closure belongs to the controlling
+VibeMechanica roadmap: Step 13 is optional and non-blocking; Steps 12 and 14-20
+are planned VibeMechanica work.
 
 ## 14. Roadmap maintenance rules
 

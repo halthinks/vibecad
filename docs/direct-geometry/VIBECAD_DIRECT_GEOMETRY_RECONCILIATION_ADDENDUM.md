@@ -31,10 +31,19 @@ They do not reactivate generalized Structures, generalized Physics,
 multiphysics, remote execution, historical high-fidelity Aero Steps 12-20, or
 other advanced engineering expansion outside the current VibeCAD boundary.
 
-VC-DG-7 is optional and non-blocking. It may begin only after VC-DG-6 is closed
-and after separate explicit owner authorization. It earns no completion credit
-for VC-DG-0 through VC-DG-6 and no completion credit for historical Aero Step
-12 or any later Aero milestone.
+VC-DG-7 is assigned to VibeCAD. Its optional status does not make its owner
+undecided, and VibeMechanica has no implementation obligation. The work is not
+started and does not block completion of VC-DG-0 through VC-DG-6. VibeCAD may
+begin it only after VC-DG-6 is finished and the VibeCAD owner explicitly says to
+begin. It earns no completion credit for VC-DG-0 through VC-DG-6 and no
+completion credit for historical Aero Step 12 or any later Aero milestone.
+
+The rationale is scope and sequencing, not uncertainty. VC-DG-0 through VC-DG-6
+already define and qualify the required structural/thermal product. VC-DG-7 adds
+a separate fluid method, conservation checks, benchmark set, and qualification
+burden that are not prerequisites for that product and must not delay it or
+duplicate VibeMechanica's advanced Aero program. Optional changes the VibeCAD
+release gate, not ownership: VibeCAD still owns and tracks VC-DG-7.
 
 ## 2. VC-DG-0 consumes the reusable tester; it does not own it
 
@@ -83,10 +92,12 @@ Therefore:
 
 - generic CfdOF compatibility earns zero Aero Step 12 completion credit;
 - a conforming OpenFOAM/CfdOF comparison earns no direct-geometry method credit;
-- VC-DG-7, if separately authorized, requires its own embedded-flow method and
-  independent comparison evidence;
-- historical Aero Steps 12-20 remain non-normative in the active VibeCAD
-  completion boundary unless separately reactivated.
+- VC-DG-7, if begun after VC-DG-6 is finished and the VibeCAD owner explicitly
+  says to begin, requires its own embedded-flow method and independent
+  comparison evidence;
+- Aero Steps 12-20 remain historical/non-normative in VibeCAD; their future
+  implementation belongs to VibeMechanica unless both repositories explicitly
+  approve a later ownership change.
 
 ## 4. McMasterInsert remains separate retained work
 
