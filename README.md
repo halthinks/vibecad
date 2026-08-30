@@ -374,14 +374,18 @@ VC-DG-7 start condition, generic-CfdOF, and McMaster boundaries explicit.
 VC-DG-0 through VC-DG-6 are an explicit, bounded VibeCAD lane. Broader future
 generalized Structures, Physics, high-fidelity Aero, remote execution, and
 multiphysics expansion are outside the current VibeCAD completion boundary.
-Optional VC-DG-7 is assigned to VibeCAD. It is not started and may begin only
-after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin; its
-owner is not undecided.
-It is optional because VC-DG-0 through VC-DG-6 already define the required
-structural/thermal product, while VC-DG-7 adds a separate fluid method,
-conservation checks, benchmarks, and qualification burden. Requiring that work
-would delay the core and blur the boundary with VibeMechanica's advanced Aero
-program. Optional changes the VibeCAD release gate, not ownership.
+VC-DG-7 is assigned to VibeCAD. VC-DG-7 remains planned post-core; not started
+until accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin
+VC-DG-7; that instruction controls when execution begins, not whether VC-DG-7
+can be omitted.
+VC-DG-7 does not block the VC-DG-0 through VC-DG-6 structural/thermal core
+release and earns no core or Aero completion credit. Full-fork entire-roadmap
+completion may not be declared until VC-DG-7 satisfies its
+controlling embedded-flow acceptance gate. VibeMechanica remains a
+compatibility/status consumer only and has no implementation obligation. This
+sequencing protects the required structural/thermal core from the separate
+fluid method, conservation checks, benchmarks, and qualification burden without
+making that post-core milestone leaveable undone.
 Advanced Aero Steps 12-20 and the broader mechanics/physics product expansion
 are assigned to the
 [VibeMechanica roadmap](https://github.com/halthinks/VibeMechanica/blob/main/docs/vibemechanica/ROADMAP.md);

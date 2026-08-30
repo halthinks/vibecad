@@ -42,9 +42,9 @@ compatibility, tests, documents, or user data.
 **Bounded direct-geometry exception.** The owner has explicitly retained
 VC-DG-0 through VC-DG-6 in VibeCAD as a narrow active lane. The exception covers
 only the direct-geometry structural/thermal core defined by the repository
-specification and the optional VC-DG-7 preview, which may begin only after
-VC-DG-6 is finished and the VibeCAD owner explicitly says to begin. It does not
-make nonlinear/composites/fatigue programs, generalized
+specification and the required post-core VC-DG-7 milestone, which may begin only
+after accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin
+VC-DG-7. It does not make nonlinear/composites/fatigue programs, generalized
 multiphysics, broad solver registries, remote execution, high-fidelity Aero, or
 other advanced engineering expansion part of current VibeCAD completion.
 Shared contracts may be reused without changing this scope; each implementation
@@ -72,7 +72,7 @@ and completion claim still has one named owner.
 | X7-X8 | **RETAIN CURRENT CAPABILITY** | Preserve current Manufacture and Assembly projections; advanced UI expansion is not an active public gate. |
 | X9-X12 | **HISTORICAL / NON-NORMATIVE** | Preserve advanced proposal/sequence/service/Robot UI records without active public completion obligations. |
 | VC-DG-0 through VC-DG-6 | **ACTIVE PUBLIC LANE** | Deliver the bounded structural/thermal direct-geometry core through the existing G1/G2/G4 and Analysis authorities. |
-| VC-DG-7 | **OPTIONAL PUBLIC LANE** | Proposed fixed-boundary incompressible embedded-flow preview after VC-DG-6; non-blocking for VC-DG core and unrelated to historical Aero Steps 12-20. |
+| VC-DG-7 | **REQUIRED POST-CORE PUBLIC LANE; NON-BLOCKING CORE RELEASE** | Deliver the fixed-boundary incompressible embedded-flow milestone after accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7; it does not block the VC-DG-0 through VC-DG-6 structural/thermal core release, earns no core or Aero completion credit, and is required before full-fork entire-roadmap completion. |
 
 ### Active public completion boundary
 
@@ -92,9 +92,14 @@ Current public completion requires:
 7. VC-DG-0 through VC-DG-6 closure under the direct-geometry specification.
 
 The boundary does not require G3, advanced G5, G6, advanced G7/G8, G9-G12,
-X3, advanced X5-X12, historical Aero Steps 12-20, or optional VC-DG-7. Every
+X3, advanced X5-X12, historical Aero Steps 12-20, or the post-core VC-DG-7
+milestone. Every
 already-landed capability and compatibility seam remains protected against
 regression even when its future expansion is historical/non-normative.
+
+That exclusion is limited to the current public and structural/thermal core
+release predicate. It does not permit full-fork entire-roadmap completion
+without accepted VC-DG-7 evidence.
 
 ### Cross-repository accountable assignment checkpoint
 
@@ -132,17 +137,22 @@ it is not a dependency of Steps 14 or 16.
 | `VC-DG-4` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-3 and retained FEM/CalculiX reference capability | Bounded structural and thermal direct-route prototypes publish low-claim results with selectors, balances, diagnostics, persistence, cancellation, staleness, and independent conforming comparison. Plumbing success remains unqualified. |
 | `VC-DG-5` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-4 | An audited open-capable production backend is selected, pinned, packaged, cancellable, replayable, license-inventoried, and integrated without changing existing solver behavior. No candidate name is a dependency commitment. |
 | `VC-DG-6` | VibeCAD | VibeMechanica is a compatibility consumer only | blocked | VC-DG-5 | Qualification begins only after the production direct route exists and closes only with structural and thermal benchmarks, systematic resolution, balance and sensitivity evidence, independent comparisons, context limits, and evidence-bound claim promotion. |
-| `VC-DG-7` | VibeCAD | VibeMechanica is a compatibility consumer only | optional; not started | VC-DG-6 plus the VibeCAD owner explicitly saying to begin | Optional fixed-boundary incompressible embedded-flow preview only. Its owner is already decided. It is non-blocking for the VC-DG core, independent of VibeMechanica Aero, and earns no Aero Steps 12-20 credit. |
+| `VC-DG-7` | VibeCAD | VibeMechanica is a compatibility/status consumer only | planned post-core; not started | accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7 | Required post-core fixed-boundary incompressible embedded-flow milestone. It does not block the VC-DG-0 through VC-DG-6 structural/thermal core release and earns no core or Aero completion credit, but full-fork entire-roadmap completion requires its controlling acceptance gate. VibeMechanica has no implementation obligation. |
 | `VIBEMECHANICA-GENERALIZED-PHYSICS` | VibeMechanica | VibeCAD provides inherited compatibility and accepted source lineage | planned in VibeMechanica; outside VibeCAD | VibeMechanica repository, GUI compatibility, Physics Core, and qualification prerequisites | Generalized Structures, advanced physics, multiphysics, mechanics-domain expansion, remote execution, productization, and governed intelligence close in VibeMechanica and are not VibeCAD release obligations. |
 <!-- VIBECAD-CROSS-REPOSITORY-ASSIGNMENTS:END -->
 
 VC-DG-0 through VC-DG-5 are partial at this checkpoint. VC-DG-6 is blocked by
-VC-DG-5. VC-DG-7 is assigned to VibeCAD. Its optional status does not make its
-owner undecided. It is not started, does not block completion of VC-DG-0 through
-VC-DG-6, and may begin only after VC-DG-6 is finished and the VibeCAD owner
-explicitly says to begin. A status change in one repository must be carried
-through that repository's normal review and guarded synchronization path before
-the other repository may mirror it.
+VC-DG-5. VC-DG-7 is assigned to VibeCAD. VC-DG-7 remains planned post-core; not
+started until accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to
+begin VC-DG-7; that instruction controls when execution begins, not whether
+VC-DG-7 can be omitted. VC-DG-7 does not block the VC-DG-0 through VC-DG-6
+structural/thermal core release and earns no core or Aero completion credit.
+Full-fork entire-roadmap completion may not be declared until VC-DG-7
+satisfies its controlling embedded-flow acceptance gate. VibeMechanica remains
+a compatibility/status consumer only and has no implementation obligation. A
+status change in one repository must be carried through that repository's
+normal review and guarded synchronization path before the other repository may
+mirror it.
 
 ## 1. Purpose
 
@@ -419,7 +429,7 @@ found these foundations:
 | Manufacture/CAM | Jobs, tools, operations, posts, simulation, retained simulation result, templates, outputs | No common Analysis-backed durable manufacturing-task orchestration. |
 | Assembly | occurrences, all current joint kinds, joint graph, solve/diagnosis, simulation/playback, BOM, fasteners, component interfaces, rigid static mechanism checks | Continuous-motion certification, flexible coverage, full interface taxonomy, sequencing, and service planning remain. |
 | Robot | setup, tool shape, home state, trajectory/waypoints/features, simulation, KUKA export | No verified Assembly-step-to-Robot-task projection. |
-| Direct-geometry lane | host/FEM/tessellation/publication foundations only | No unfitted or immersed structural, thermal, or flow route is implemented. VC-DG-0 through VC-DG-5 are partial, VC-DG-6 is blocked by VC-DG-5, and VC-DG-7 is optional, assigned to VibeCAD, and not started; it waits for VC-DG-6 plus an explicit VibeCAD go-ahead. |
+| Direct-geometry lane | host/FEM/tessellation/publication foundations only | No unfitted or immersed structural, thermal, or flow route is implemented. VC-DG-0 through VC-DG-5 are partial, VC-DG-6 is blocked by VC-DG-5, and VC-DG-7 is planned post-core, assigned to VibeCAD, and not started; it waits for accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7 and is required for full-fork entire-roadmap completion. |
 | Aero host plan | canonical Steps 8/8A define durable jobs/artifacts/publication for retained low-order Aero | Those steps are partial and remain active only through the bounded Steps 0-11 public lane. |
 
 ### Post-baseline implementation reconciliation
@@ -468,7 +478,9 @@ from one exact accepted tree.
 ## 6. Dependency graph
 
 The solid graph is the current public completion program. Dashed nodes are
-preserved historical or optional continuation and do not block the solid graph.
+preserved historical or post-core/non-blocking continuation and do not block the
+solid graph; a dashed post-core node may still gate a broader completion
+predicate.
 
 ```mermaid
 flowchart TD
@@ -486,7 +498,7 @@ flowchart TD
     DG3 --> DG4[VC-DG-4 structural and thermal prototype]
     DG4 --> DG5[VC-DG-5 production backend]
     DG5 --> DG6[VC-DG-6 qualification]
-    DG6 -. optional .-> DG7[VC-DG-7 bounded embedded flow]
+    DG6 -. required post-core .-> DG7[VC-DG-7 bounded embedded flow]
     G3[historical G3 remote]:::historical
     G5[retained current G5 workflow]:::historical
     G6[historical G6 optimization]:::historical
@@ -501,8 +513,10 @@ G0, G1, G2, G4, X1, X2, X4, and VC-DG-0 through VC-DG-6 are
 dependency-ordered active public work. G5, G7, and G8 retain landed behavior and
 regression obligations without requiring their generalized advanced closure.
 G3, G6, G9-G12, X3, and advanced X5-X12 remain searchable design provenance.
-VC-DG-7 is assigned to VibeCAD but is optional and not started. It may begin
-only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
+VC-DG-7 is assigned to VibeCAD, planned post-core, and not started. It may begin
+only after accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin
+VC-DG-7. It does not block the solid core-release graph, but it must close before
+full-fork entire-roadmap completion may be declared.
 
 ## 7. Roadmap at a glance
 
@@ -524,7 +538,7 @@ only after VC-DG-6 is finished and the VibeCAD owner explicitly says to begin.
 | X0-X12 — Engineering Experience | **MIXED; X1/X2/X4 ACTIVE** | cross-cutting presentation | **X0 documented; X1/X2/X5/X6/X7/X8 projection foundations partial** | Close only X1/X2/X4 for active public work; preserve every landed projection and keep X3/advanced X5-X12 historical/non-blocking. |
 | VC-DG-0 through VC-DG-5 | **ACTIVE PUBLIC LANE** | direct-geometry specification | **Partial; no package complete** | Close visible development, contracts, selectors, representation, structural/thermal method, and packaged-backend gates in dependency order. |
 | VC-DG-6 | **ACTIVE PUBLIC LANE** | direct-geometry specification | **Blocked by VC-DG-5; no direct-method qualification started** | Begin qualification only after the production backend exists, then close benchmark, refinement, balance, sensitivity, comparison, context, and claim-ceiling gates. |
-| VC-DG-7 | **OPTIONAL PUBLIC LANE; ASSIGNED TO VIBECAD** | direct-geometry specification | **Optional; not started; waits for VC-DG-6 and an explicit VibeCAD go-ahead** | Its owner is decided. The bounded fixed-boundary embedded-flow preview remains non-blocking and earns no core or Aero completion credit. |
+| VC-DG-7 | **REQUIRED POST-CORE PUBLIC LANE; ASSIGNED TO VIBECAD; NON-BLOCKING CORE RELEASE** | direct-geometry specification | **Planned post-core; not started; waits for accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7** | Its owner is decided. The bounded fixed-boundary embedded-flow milestone earns no core or Aero completion credit but is required before full-fork entire-roadmap completion. VibeMechanica has no implementation obligation. |
 
 ## 8. Dependency-ordered implementation roadmap
 
@@ -945,28 +959,31 @@ Allowed claim ceilings remain independent of process success:
 `numerically_benchmarked`, `independently_cross_verified`, and
 `validated_for_context`. A zero exit code never promotes a claim.
 
-#### VC-DG-7 — optional bounded fixed-boundary embedded flow
+#### VC-DG-7 — bounded fixed-boundary embedded flow
 
-**Status: Assigned to VibeCAD; optional; not started; waits for VC-DG-6 and an
-explicit VibeCAD go-ahead; non-blocking for VC-DG core completion.**
+**Preserved source title:** `optional embedded flow`.
 
-Its owner is already decided; VibeMechanica has no implementation obligation.
-After VC-DG-6 is finished and the VibeCAD owner explicitly says to begin,
-VibeCAD may evaluate an open-capable local embedded-flow method
-for simple closed fixed-boundary incompressible domains. The bounded target is a
-straight duct or obstacle channel with pressure, velocity, pressure drop,
-residual history, mass and momentum checks, method/resolution identity, and an
-independent OpenFOAM comparison. It remains `preview_unqualified` until its own
-benchmark, refinement, conservation, sensitivity, and reference evidence
-supports a higher ceiling.
+**Status: Assigned to VibeCAD; planned post-core; not started; waits for accepted
+VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7; non-blocking
+for VC-DG core completion; required before full-fork entire-roadmap completion.**
 
-**Why optional:** the accepted required VC-DG product is the structural and
-thermal core closed by VC-DG-0 through VC-DG-6. VC-DG-7 adds a separate fluid
-method, conservation problem, benchmark set, and qualification burden; none is
-needed to prove the structural/thermal core. Requiring it would delay that core
-and blur the boundary with VibeMechanica's advanced Aero program. Optional
-changes the VibeCAD release gate, not ownership: VibeCAD still owns and tracks
-the package.
+Its owner and required post-core scope are already decided. VibeMechanica has no
+implementation obligation. After accepted VC-DG-6 plus an explicit
+VibeCAD-owner instruction to begin VC-DG-7, VibeCAD may evaluate an open-capable
+local embedded-flow method for simple closed fixed-boundary incompressible
+domains. The bounded target is a straight duct or obstacle channel with
+pressure, velocity, pressure drop, residual history, mass and momentum checks,
+method/resolution identity, and an independent OpenFOAM comparison. It remains
+`preview_unqualified` until its own benchmark, refinement, conservation,
+sensitivity, and reference evidence supports a higher ceiling.
+
+**Why post-core and non-blocking for the core release:** the accepted required
+VC-DG structural/thermal core comprises VC-DG-0 through VC-DG-6. VC-DG-7 adds a
+separate fluid method, conservation problem, benchmark set, and qualification
+burden; none is needed to prove that core. Scheduling it after core closure
+prevents it from delaying the core or blurring the boundary with VibeMechanica's
+advanced Aero program. That sequencing does not make VC-DG-7 leaveable undone
+for full-fork entire-roadmap completion.
 
 VC-DG-7 excludes turbulence/high-Re automation, compressibility, moving
 boundaries, propulsion interaction, unsteady or six-degree-of-freedom dynamics,
@@ -974,10 +991,12 @@ fluid-structure interaction, general multiphysics, remote compute, autonomous
 routing, and the advanced common CFD viewer. It neither reactivates nor earns
 completion credit for historical VibeCADAero Steps 12-20.
 
-#### VC-DG closure invariants
+#### VC-DG core-release and full-fork closure invariants
 
-The direct-geometry initiative closes only when the technical specification's
-full definition of done is evidenced in the exact package. At minimum:
+The structural/thermal direct-geometry core release closes only when the
+applicable core requirements in the technical specification's definition of
+done are evidenced in the exact package and VC-DG-0 through VC-DG-6 are closed.
+At minimum:
 
 - structural and thermal examples run without user-managed body-fitted meshing;
 - selectors, representations, method, solver, provider, artifacts, results,
@@ -992,6 +1011,13 @@ full definition of done is evidenced in the exact package. At minimum:
 - the required core uses no paid or noncommercial-only dependency and records
   its license obligations; and
 - no unresolved issue remains inside the declared VC-DG core scope.
+
+VC-DG-7 does not block that structural/thermal core-release predicate. The
+full-fork entire-roadmap completion predicate is broader: in addition to every
+other controlling roadmap requirement, it requires VC-DG-7 to satisfy its own
+embedded-flow acceptance gate. Accepted VC-DG-6 plus an explicit VibeCAD-owner
+instruction to begin VC-DG-7 controls when that work begins and cannot dispose
+of or waive the milestone.
 
 ### G5 — durable workflow DAG
 
@@ -1834,9 +1860,10 @@ The active public work remains small, reversible, and dependency-ordered:
    thermal prototype, audited open backend, exact packaging, resolution studies,
    balance/sensitivity evidence, conforming comparisons, UI/persistence, and
    evidence-bound qualification.
-8. **Evaluate VC-DG-7 only after VC-DG-6 is finished and the VibeCAD owner says
-   to begin:** optional fixed-boundary incompressible embedded-flow preview;
-   never use it as Aero Steps 12-20 credit.
+8. **Begin VC-DG-7 only after accepted VC-DG-6 plus an explicit VibeCAD-owner
+   instruction to begin VC-DG-7:** deliver the planned post-core fixed-boundary
+   incompressible embedded-flow milestone before full-fork entire-roadmap
+   completion; never use it as core or Aero Steps 12-20 credit.
 
 G3, advanced G5, G6, advanced G7/G8, G9-G12, X3, advanced X5-X12, and
 historical Aero Steps 12-20 are not active public completion tranches. Their
