@@ -1278,11 +1278,20 @@ def test_vibecad_bootstrap_repairs_only_vibecad_disabled_lists(monkeypatch) -> N
     monkeypatch.setitem(sys.modules, "FreeCAD", app)
     monkeypatch.setitem(sys.modules, "PySide", SimpleNamespace(QtCore=qt_core))
     monkeypatch.setitem(sys.modules, "VibeCADGui", gui)
+    monkeypatch.setitem(
+        sys.modules,
+        "VibeCADAnalyzeStudyGui",
+        SimpleNamespace(
+            ensure_command_registered=lambda: startup_events.append("analyze")
+        ),
+    )
 
     namespace = runpy.run_path(str(ROOT / "src/Mod/VibeCAD/InitGui.py"))
     assert preferences.disabled == "TestWorkbench,NoneWorkbench"
     assert startup_events == [
         "commands",
+        "analyze",
+        "scheduled:_setup_development_identity",
         "scheduled:_setup_always_on_grid",
         "scheduled:_setup_agent_control",
         "scheduled:_setup_aero_ribbon",
@@ -1356,6 +1365,13 @@ def test_vibecad_bootstrap_helpers_survive_freecad_exec_namespace(monkeypatch) -
             ensure_commands_registered=lambda: startup_events.append("fasteners")
         ),
     )
+    monkeypatch.setitem(
+        sys.modules,
+        "VibeCADAnalyzeStudyGui",
+        SimpleNamespace(
+            ensure_command_registered=lambda: startup_events.append("analyze")
+        ),
+    )
 
     init_gui = ROOT / "src/Mod/VibeCAD/InitGui.py"
     loader_globals = {"App": app}
@@ -1367,7 +1383,9 @@ def test_vibecad_bootstrap_helpers_survive_freecad_exec_namespace(monkeypatch) -
     )
 
     assert "assistant" in startup_events
+    assert "analyze" in startup_events
     assert "fasteners" in startup_events
+    assert "scheduled:_setup_development_identity" in startup_events
     assert "scheduled:_setup_always_on_grid" in startup_events
     assert "scheduled:_setup_agent_control" in startup_events
     assert "scheduled:_setup_aero_ribbon" in startup_events
