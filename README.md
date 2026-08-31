@@ -322,15 +322,16 @@ for current platform-specific details.
 On Windows, launch and visibly test the exact current checkout by
 double-clicking `RUN-VIBECAD-DEV.cmd`. The repo-local build, visible commit
 identity, checkout-scoped authenticated control endpoint, screenshot/receipt
-evidence loop, and `-SkipRebuild` reopen path are documented in
+evidence loop, native file save/open round trips, and `-SkipRebuild` reopen
+path are documented in
 [docs/developer-launch-windows.md](docs/developer-launch-windows.md).
 
 For a watchable UI tour, run `Invoke-VibeCAD-VisibleTour.ps1` after the launcher
 reports agent-control readiness. It moves a plain cyan virtual cursor of its
 own across live semantic menu and ribbon targets; it never moves or clicks the
-user's Windows cursor. The default tour covers File, Tools, Macro, Aero, and the
-other visible top-level menus and ribbon tabs, then writes a JSON receipt under
-the ignored `.vibecad-dev\tours` directory.
+user's Windows cursor. The default tour covers File, Tools, Macro, and every
+currently visible and enabled ribbon tab (including Aero when enabled), then
+writes a JSON receipt under the ignored `.vibecad-dev\tours` directory.
 
 Run the standalone Aero and 3D-printing component suites with one command:
 

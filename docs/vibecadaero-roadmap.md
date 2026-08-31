@@ -45,37 +45,48 @@ Each entry below means the exact blob at the accepted baseline path, not any
 same-named file modified in a concurrent working tree.
 
 <!-- VIBECADAERO-BASELINE-EVIDENCE:BEGIN -->
-- `Launch-VibeCAD-Dev.ps1`;
-- `docs/developer-launch-windows.md`;
-- `src/Mod/VibeCAD/VibeCADAgentControl.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_lifecycle_integration.py`;
-- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_publication_integration.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py`.
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_publication_integration.py`.
 <!-- VIBECADAERO-BASELINE-EVIDENCE:END -->
 
-Concurrent working-tree report receives **zero integrated completion credit**.
+Concurrent post-baseline report receives **zero integrated completion credit**.
 The reported paths are not accepted implementation evidence; they remain a
-provenance-preserving audit record until committed and their claimed acceptance
-is rerun from the exact committed and packaged tree. At this audit that reported
-category includes:
+provenance-preserving audit record until reviewed into a new accepted baseline
+and their claimed acceptance is rerun from the exact committed and packaged
+tree. At this audit that reported category includes:
 
 <!-- VIBECADAERO-CONCURRENT-REPORT:BEGIN -->
 - `Invoke-VibeCAD-VisibleTour.ps1`;
+- `Launch-VibeCAD-Dev.cmd`;
+- `Launch-VibeCAD-Dev.ps1`;
+- `README.md`;
+- `RUN-VIBECAD-DEV.cmd`;
+- `docs/developer-launch-windows.md`;
+- `docs/vibecad-agent-control.md`;
+- `src/Mod/VibeCAD/CMakeLists.txt`;
+- `src/Mod/VibeCAD/InitGui.py`;
+- `src/Mod/VibeCAD/VibeCADAgentCli.py`;
+- `src/Mod/VibeCAD/VibeCADAgentControl.py`;
 - `src/Mod/VibeCAD/VibeCADAnalysisFEMPublication.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_active_close_integration.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_physical_calculix_integration.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_verified_publication_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_agent_control.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_agent_control_grok_bot.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_branding_contract.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py`;
 - `src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py`;
 - `tools/run_analysis_fem_installed_active_close.py`;
 - `tools/run_analysis_fem_installed_physical_calculix.py`;
 - `tools/run_analysis_fem_installed_verified_publication.py`.
 <!-- VIBECADAERO-CONCURRENT-REPORT:END -->
 
-Concurrent physical CalculiX, active-close, durable FEM publication,
-visible-tour, and packaging work remains uncommitted at this accepted baseline.
-It may be integrated later without losing its evidence lineage, but no roadmap
-status advances until review and exact-tree rerun establish the corresponding
-acceptance gate.
+Post-baseline tester and physical CalculiX work remains outside the accepted
+baseline. Some tester paths are committed on this integration branch while
+other report-only FEM paths may still be uncommitted; none advances roadmap
+status until review and an exact-tree rerun establish the corresponding
+acceptance gate. The visible tester specifically earns no physics, FEM, Aero,
+or direct-geometry completion credit.
 <!-- VIBECADAERO-LIVE-RECONCILIATION:END -->
 
 This is the repository's real implementation roadmap for the recovered Advanced VibeCAD / VibeCADAero program. It converts the recovered research and design package into one dependency-ordered, evidence-bounded plan tied to the current source tree.

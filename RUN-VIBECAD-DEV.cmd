@@ -1,3 +1,4 @@
+@rem SPDX-License-Identifier: LGPL-2.1-or-later
 @echo off
 setlocal
 cd /d "%~dp0"

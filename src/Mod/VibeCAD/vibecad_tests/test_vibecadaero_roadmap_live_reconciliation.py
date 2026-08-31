@@ -58,9 +58,6 @@ EXPECTED_METADATA = {
 }
 
 INTEGRATED_EVIDENCE = (
-    "Launch-VibeCAD-Dev.ps1",
-    "docs/developer-launch-windows.md",
-    "src/Mod/VibeCAD/VibeCADAgentControl.py",
     (
         "src/Mod/VibeCAD/vibecad_tests/"
         "analysis_fem_installed_lifecycle_integration.py"
@@ -69,11 +66,28 @@ INTEGRATED_EVIDENCE = (
         "src/Mod/VibeCAD/vibecad_tests/"
         "analysis_fem_installed_publication_integration.py"
     ),
-    "src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py",
 )
 
-CONCURRENT_ZERO_CREDIT_EVIDENCE = (
+POST_BASELINE_TRACKED_EVIDENCE = (
     "Invoke-VibeCAD-VisibleTour.ps1",
+    "Launch-VibeCAD-Dev.cmd",
+    "Launch-VibeCAD-Dev.ps1",
+    "README.md",
+    "RUN-VIBECAD-DEV.cmd",
+    "docs/developer-launch-windows.md",
+    "docs/vibecad-agent-control.md",
+    "src/Mod/VibeCAD/CMakeLists.txt",
+    "src/Mod/VibeCAD/InitGui.py",
+    "src/Mod/VibeCAD/VibeCADAgentCli.py",
+    "src/Mod/VibeCAD/VibeCADAgentControl.py",
+    "src/Mod/VibeCAD/vibecad_tests/test_agent_control.py",
+    "src/Mod/VibeCAD/vibecad_tests/test_agent_control_grok_bot.py",
+    "src/Mod/VibeCAD/vibecad_tests/test_branding_contract.py",
+    "src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py",
+    "src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py",
+)
+
+REPORTED_ONLY_FEM_EVIDENCE = (
     "src/Mod/VibeCAD/VibeCADAnalysisFEMPublication.py",
     (
         "src/Mod/VibeCAD/vibecad_tests/"
@@ -87,10 +101,13 @@ CONCURRENT_ZERO_CREDIT_EVIDENCE = (
         "src/Mod/VibeCAD/vibecad_tests/"
         "analysis_fem_installed_verified_publication_integration.py"
     ),
-    "src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py",
     "tools/run_analysis_fem_installed_active_close.py",
     "tools/run_analysis_fem_installed_physical_calculix.py",
     "tools/run_analysis_fem_installed_verified_publication.py",
+)
+
+CONCURRENT_ZERO_CREDIT_EVIDENCE = tuple(
+    sorted((*POST_BASELINE_TRACKED_EVIDENCE, *REPORTED_ONLY_FEM_EVIDENCE))
 )
 
 ROADMAP_CI_TESTS = (
@@ -264,11 +281,21 @@ def test_only_tracked_baseline_files_receive_integrated_evidence_credit() -> Non
             "rev-parse", f"{BASELINE_SHA}:{relative_path}"
         ), relative_path
 
-    for relative_path in CONCURRENT_ZERO_CREDIT_EVIDENCE:
+    for relative_path in POST_BASELINE_TRACKED_EVIDENCE:
+        assert (REPO_ROOT / relative_path).is_file(), relative_path
+        if relative_path in baseline_paths:
+            assert _git("hash-object", "--", relative_path) != _git(
+                "rev-parse", f"{BASELINE_SHA}:{relative_path}"
+            ), relative_path
+        else:
+            assert relative_path not in baseline_paths, relative_path
+
+    for relative_path in REPORTED_ONLY_FEM_EVIDENCE:
+        assert not (REPO_ROOT / relative_path).exists(), relative_path
         assert relative_path not in baseline_paths, relative_path
 
     normalized = " ".join(section.split())
-    assert "Concurrent working-tree report" in normalized
+    assert "Concurrent post-baseline report" in normalized
     assert "means the exact blob at the accepted baseline path" in normalized
     assert "reported paths are not accepted implementation evidence" in normalized
     assert "zero integrated completion credit" in normalized
@@ -284,10 +311,8 @@ def test_historical_and_concurrent_checkpoints_are_not_presented_as_current() ->
     assert "**Historical roadmap execution record:**" in aero
     assert "**Concurrent stabilization report; zero integrated credit:**" in aero
     assert "The historical audit of `main@31ea810db`" in normalized
-    assert (
-        "Concurrent physical CalculiX, active-close, durable FEM publication, "
-        "visible-tour, and packaging work remains uncommitted"
-    ) in normalized
+    assert "Post-baseline tester and physical CalculiX work" in normalized
+    assert "remains outside the accepted baseline" in normalized
 
 
 def test_roadmaps_do_not_embed_common_machine_local_absolute_paths() -> None:
