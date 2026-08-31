@@ -13,19 +13,25 @@ fork checkpoint. It is preserved as source lineage, not used as the accepted
 current implementation baseline, and receives no completion credit by itself.
 
 **Accepted implementation baseline:**
-`halthinks/vibecad@8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29,
-from `origin/main`. The machine-checked evidence inventory and credit rule live
-in [the canonical Aero roadmap](vibecadaero-roadmap.md#2026-08-29-live-implementation-reconciliation).
+`halthinks/vibecad@d8bde1ba3f97a861b096ca8bb92a86b5306551e3` on 2026-08-31,
+from `origin/codex/vibecad-full-roadmap-20260830`. The machine-checked evidence
+inventory and credit rule live in
+[the canonical Aero roadmap](vibecadaero-roadmap.md#2026-08-31-live-implementation-reconciliation),
+with the complete source/dependency/owner record in
+[the G0 freeze](vibecad-g0-freeze-20260831.md).
 
-**Concurrent stabilization report; zero integrated credit:** a 2026-08-28
-working tranche based on `75917cf660cf100a09fc2d7cae033145b4661bea` reports a
-repo-local GUI/control/file tour, physical CalculiX burn-ins, exact-source and
-active-close refusal, package-lock repair, and a durable production FEM
-publication cycle. That tranche lies outside the exact accepted implementation
-tree and combines tracked-file modifications, untracked additions, and ignored
-run evidence. None advances a milestone yet. It must be committed, reviewed,
-built into the exact package, and rerun before receiving integrated evidence
-credit. The
+**Concurrent stabilization report; zero integrated domain credit:** a
+2026-08-28 working tranche based on
+`75917cf660cf100a09fc2d7cae033145b4661bea` reported a repo-local
+GUI/control/file tour, physical CalculiX burn-ins, exact-source and active-close
+refusal, package-lock repair, and a durable production FEM publication cycle.
+The reusable tester source later landed through independently reviewed history,
+but its parent-bound package receipt does not qualify the merged accepted tree.
+The reported physical FEM and publication work remains outside the accepted
+tree as tracked modifications, untracked additions, or ignored run evidence.
+None advances a domain milestone yet. It must be committed, reviewed, built
+into the exact package, and rerun before receiving integrated evidence credit.
+The
 [FEM compatibility report](vibecad-analysis-fem-compatibility-report.md)
 preserves the intended detailed boundary without converting concurrent work
 into a completion claim.
@@ -106,7 +112,7 @@ without accepted VC-DG-7 evidence.
 This checkpoint makes the current VibeCAD/VibeMechanica cutline executable for
 planning without replacing any detailed domain roadmap. It reflects the
 VibeCAD state reviewed at
-`8611ac881a67b77b777c38f1749880527d2cc956`; a downstream mirror or support role
+`d8bde1ba3f97a861b096ca8bb92a86b5306551e3`; a downstream mirror or support role
 does not transfer implementation ownership or accept a synchronization receipt.
 Each row has exactly one accountable owner. The supporting or consuming owner
 may review compatibility, provide source lineage, or consume an accepted
@@ -122,16 +128,17 @@ it is not a dependency of Steps 14 or 16.
 <!-- VIBECAD-CROSS-REPOSITORY-ASSIGNMENTS:BEGIN -->
 | Item ID | Accountable owner | Supporting or consuming owner | Status | Dependency or start condition | Acceptance and claim boundary |
 | --- | --- | --- | --- | --- | --- |
-| `REUSABLE-VISIBLE-TESTER` | Reusable tester tooling | VibeCAD and VibeMechanica | partial | Independent root tool; product profiles consume it | Exact-checkout one-click launch, authenticated checkout-bound control, semantic UI discovery, plain cyan in-app pointer, native file lifecycle, screenshots, collision-safe receipts, and bounded timeouts pass. Generic success is infrastructure evidence only and earns no physics credit. |
-| `VIBECAD-NATIVE-HOST` | VibeCAD | Reusable tester tooling; VibeMechanica consumes only accepted compatibility | partial | G0, G1, G2, G4 and exact-package tester evidence | Current Native authority, preview/apply/refuse behavior, document-thread mutation, persistence, packaging, and visible acceptance close without a second CAD mutation owner. |
-| `VIBECAD-FEM-CALCULIX-RETAINED` | VibeCAD | VibeMechanica consumes only an accepted compatibility handoff | partial | VIBECAD-NATIVE-HOST and package-contained solver availability | Existing FEM and CalculiX behavior, normal production verification/publication, save/reopen, recovery, cancellation, package registration, and installed cross-platform acceptance pass. This does not assign generalized Structures or Physics expansion to VibeCAD. |
+| `REUSABLE-VISIBLE-TESTER` | Reusable tester tooling | VibeCAD and VibeMechanica | partial; source integrated, exact merged-package acceptance open | Independent root tool; product profiles consume it | Exact-checkout one-click launch, authenticated checkout-bound control, semantic UI discovery, plain cyan in-app pointer, native file lifecycle, screenshots, collision-safe receipts, and bounded timeouts pass from the exact consuming tree. Generic tester success is infrastructure evidence only. It earns zero domain completion credit and zero physics, solver, numerical, verification, qualification, or domain-result-publication credit. |
+| `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` | VibeCAD | Reusable tester tooling may observe it; VibeMechanica consumes only accepted compatibility | partial bounded prerequisite | G0 and G1, with current G4 authority contracts retained | One document-thread owner provides exact document identity/revision/currentness, authorization, preview/apply/refuse behavior, and the sole Native mutation/publication seam needed by current FEM integration. This bounded foundation does not claim durable G2 recovery, complete packaging, or full Native-host closure. |
+| `VIBECAD-NATIVE-HOST` | VibeCAD | Reusable tester tooling; VibeMechanica consumes only accepted compatibility | partial | VIBECAD-NATIVE-AUTHORITY-FOUNDATION, completed current G2 and G4 dependencies, and exact-package tester evidence | Current Native authority, persistence, recovery, verification/publication, preview/apply/refuse behavior, packaging, rollback, and visible acceptance close without a second CAD mutation owner. |
+| `VIBECAD-FEM-CALCULIX-RETAINED` | VibeCAD | VibeMechanica consumes only an accepted compatibility handoff | partial | VIBECAD-NATIVE-AUTHORITY-FOUNDATION and package-contained solver availability; full VIBECAD-NATIVE-HOST closure is not a prerequisite | Existing FEM and CalculiX behavior, normal production verification/publication, save/reopen, recovery, cancellation, package registration, and installed cross-platform acceptance pass. This does not assign generalized Structures or Physics expansion to VibeCAD. |
 | `VIBECAD-MCMASTERINSERT-RETAINED` | VibeCAD | VibeMechanica has no implementation obligation | partial | VIBECAD-NATIVE-HOST | Existing browse, import, cache, component metadata, and placement behavior finishes already-started package, runtime, and visible acceptance work. It creates no procurement, sourcing, supplier-comparison, or purchasing authority. |
 | `VIBECAD-ENGINEERING-PRESENTATION` | VibeCAD | VibeMechanica consumes compatible presentation contracts after accepted sync | partial | X1, X2 and X4 current public dependencies | Actual current result, activity, artifact, and preview evidence is rendered through its existing domain owners without creating a second scientific renderer or mutation authority. |
 | `AERO-STEP-00-11` | VibeCAD | VibeMechanica consumes only an accepted compatibility handoff | partial | VIBECAD-NATIVE-HOST and current G2 dependencies | Close the canonical low-order Aero Steps 0-11 package with installed visible persistence, cancellation, currentness, verification, publication, and honest claim ceilings. |
 | `AERO-STEP-12-20` | VibeMechanica | VibeCAD provides preserved source and compatibility lineage | planned in VibeMechanica; Step 13 optional; historical in VibeCAD | VibeMechanica VM-0 through VM-3 prerequisites and its own Aero dependency order | Production CFD, fields, remote compute, qualification, propulsion, unsteady and 6DOF work, FSI, and advanced diagnostics close only in VibeMechanica. Optional restricted-use FluidX3D Step 13 is non-blocking and is not a dependency of Steps 14 or 16. No current VibeCAD compatibility repair claims this work. |
 | `VIBECAD-CFDOF-COMPATIBILITY` | VibeCAD | VibeMechanica may consume an independently accepted comparison interface | partial compatibility | VIBECAD-NATIVE-HOST; no dependency on VC-DG-7 | Preserve or repair generic FreeCAD CfdOF compatibility as a reference, fallback, or comparison surface. Presence, importability, packaging, or a conforming solve earns no Aero Step 12 or direct-geometry method credit. |
-| `VC-DG-0` | VibeCAD | Reusable tester tooling supplies the independent generic prerequisite; VibeMechanica is a compatibility consumer only | partial | REUSABLE-VISIBLE-TESTER | Register and pass the VC-DG exact-package visible acceptance profile without forking the tester or claiming numerical capability. |
-| `VC-DG-1` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-0 | Versioned terminology, identity, representation, selector, method, preparation, qualification, and result contracts serialize, reopen, fail closed, and remain authority-separated. |
+| `VC-DG-0` | VibeCAD | Reusable tester tooling supplies the independent generic prerequisite; VibeMechanica is a compatibility consumer only | partial | REUSABLE-VISIBLE-TESTER | Register and pass the VC-DG exact-package visible acceptance profile without forking the tester. A pass earns VC-DG-0 visible-profile credit only and no later direct-geometry, domain, physics, solver, numerical, verification, qualification, or publication credit. |
+| `VC-DG-1` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-0 and current G4 authority/preview closure | Versioned terminology, identity, representation, selector, method, preparation, qualification, and result contracts serialize, reopen, fail closed, and remain authority-separated. |
 | `VC-DG-2` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-1 | Persistent semantic selectors preview, accept where required, save, reopen, re-resolve, and report resolved, empty, ambiguous, and stale outcomes without silently choosing geometry. |
 | `VC-DG-3` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-2 | The immutable source-revision-bound representation pipeline proves geometry identity, units, placement, deterministic derivation, quality findings, artifacts, cancellation, cache, replay, and currentness. |
 | `VC-DG-4` | VibeCAD | VibeMechanica is a compatibility consumer only | partial | VC-DG-3 and retained FEM/CalculiX reference capability | Bounded structural and thermal direct-route prototypes publish low-claim results with selectors, balances, diagnostics, persistence, cancellation, staleness, and independent conforming comparison. Plumbing success remains unqualified. |
@@ -140,6 +147,54 @@ it is not a dependency of Steps 14 or 16.
 | `VC-DG-7` | VibeCAD | VibeMechanica is a compatibility/status consumer only | planned post-core; not started | accepted VC-DG-6 plus an explicit VibeCAD-owner instruction to begin VC-DG-7 | Required post-core fixed-boundary incompressible embedded-flow milestone. It does not block the VC-DG-0 through VC-DG-6 structural/thermal core release and earns no core or Aero completion credit, but full-fork entire-roadmap completion requires its controlling acceptance gate. VibeMechanica has no implementation obligation. |
 | `VIBEMECHANICA-GENERALIZED-PHYSICS` | VibeMechanica | VibeCAD provides inherited compatibility and accepted source lineage | planned in VibeMechanica; outside VibeCAD | VibeMechanica repository, GUI compatibility, Physics Core, and qualification prerequisites | Generalized Structures, advanced physics, multiphysics, mechanics-domain expansion, remote execution, productization, and governed intelligence close in VibeMechanica and are not VibeCAD release obligations. |
 <!-- VIBECAD-CROSS-REPOSITORY-ASSIGNMENTS:END -->
+
+### Normative active direct-prerequisite graph
+
+The table below is the machine-checked dependency authority for active VibeCAD
+closure. Each cell lists direct prerequisites only; transitive prerequisites
+must not be copied into a downstream row and then reversed elsewhere. External
+start conditions, including the explicit owner instruction before VC-DG-7, do
+not add a reverse dependency. Historical VibeMechanica work is deliberately
+outside this VibeCAD graph.
+
+<!-- VIBECAD-NORMATIVE-DEPENDENCIES:BEGIN -->
+| Node | Direct prerequisites |
+| --- | --- |
+| `G0` | none |
+| `G1` | `G0` |
+| `PACKAGE-CONTAINED-CALCULIX` | none |
+| `REUSABLE-VISIBLE-TESTER` | none |
+| `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` | `G0`; `G1` |
+| `VIBECAD-FEM-CALCULIX-RETAINED` | `PACKAGE-CONTAINED-CALCULIX`; `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` |
+| `G2` | `VIBECAD-FEM-CALCULIX-RETAINED`; `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` |
+| `G4` | `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` |
+| `VIBECAD-NATIVE-HOST` | `G2`; `G4`; `REUSABLE-VISIBLE-TESTER`; `VIBECAD-NATIVE-AUTHORITY-FOUNDATION` |
+| `X1` | `G1` |
+| `X2` | `G2` |
+| `X4` | `G4` |
+| `VIBECAD-ENGINEERING-PRESENTATION` | `X1`; `X2`; `X4` |
+| `VIBECAD-MCMASTERINSERT-RETAINED` | `VIBECAD-NATIVE-HOST` |
+| `AERO-STEP-00-11` | `G2`; `VIBECAD-NATIVE-HOST` |
+| `VIBECAD-CFDOF-COMPATIBILITY` | `VIBECAD-NATIVE-HOST` |
+| `VC-DG-0` | `REUSABLE-VISIBLE-TESTER` |
+| `VC-DG-1` | `G4`; `VC-DG-0` |
+| `VC-DG-2` | `VC-DG-1` |
+| `VC-DG-3` | `VC-DG-2` |
+| `VC-DG-4` | `G2`; `VC-DG-3`; `VIBECAD-FEM-CALCULIX-RETAINED` |
+| `VC-DG-5` | `VC-DG-4` |
+| `VC-DG-6` | `VC-DG-5` |
+| `VC-DG-7` | `VC-DG-6` |
+<!-- VIBECAD-NORMATIVE-DEPENDENCIES:END -->
+
+The full `VIBECAD-NATIVE-HOST` closure is not a prerequisite for the FEM
+tranche. FEM/CalculiX G2 consumes the bounded
+`VIBECAD-NATIVE-AUTHORITY-FOUNDATION`; accepted G2 and G4 evidence then closes
+the broader Native host. This distinction removes the prior circular reading
+without introducing a second mutation, authorization, or publication owner.
+VC-DG-0 depends on the reusable tester, not on completed G2. Generic tester
+success is infrastructure evidence only. It earns zero domain completion credit
+and zero physics, solver, numerical, verification, qualification, or
+domain-result-publication credit.
 
 VC-DG-0 through VC-DG-5 are partial at this checkpoint. VC-DG-6 is blocked by
 VC-DG-5. VC-DG-7 is assigned to VibeCAD. VC-DG-7 remains planned post-core; not
@@ -485,17 +540,28 @@ predicate.
 ```mermaid
 flowchart TD
     G0[G0 live reconciliation] --> G1[G1 active common contracts]
-    G1 --> G2[G2 current FEM/Aero/DG durability and publication]
-    G1 --> G4[G4 current authority and preview closure]
+    G1 --> N0[Bounded Native authority foundation]
+    G0 --> N0
+    PKG[Package-contained CalculiX] --> FEM[Retained FEM/CalculiX]
+    N0 --> FEM
+    FEM --> G2[G2 current FEM/Aero/DG durability and publication]
+    N0 --> G2
+    N0 --> G4[G4 current authority and preview closure]
+    G2 --> NH[Full Native-host durability and package closure]
+    G4 --> NH
+    T[Reusable visible tester] --> NH
     G0 --> X0[X0 retained GUI inventory]
     G1 --> X1[X1 common engineering presentation]
     G2 --> X2[X2 current durable activity and artifacts]
     G4 --> X4[X4 governed preview evidence]
-    G2 --> DG0[VC-DG-0 exact visible development gate]
-    G4 --> DG1[VC-DG-1 contracts and VC-DG-2 selectors]
+    T --> DG0[VC-DG-0 exact visible development gate]
+    G4 --> DG1[VC-DG-1 contracts]
     DG0 --> DG1
-    DG1 --> DG3[VC-DG-3 sealed representation]
-    DG3 --> DG4[VC-DG-4 structural and thermal prototype]
+    DG1 --> DG2[VC-DG-2 selectors]
+    DG2 --> DG3[VC-DG-3 sealed representation]
+    G2 --> DG4[VC-DG-4 structural and thermal prototype]
+    FEM --> DG4
+    DG3 --> DG4
     DG4 --> DG5[VC-DG-5 production backend]
     DG5 --> DG6[VC-DG-6 qualification]
     DG6 -. required post-core .-> DG7[VC-DG-7 bounded embedded flow]
@@ -509,8 +575,12 @@ flowchart TD
     classDef historical stroke-dasharray: 5 5,color:#666;
 ```
 
-G0, G1, G2, G4, X1, X2, X4, and VC-DG-0 through VC-DG-6 are
-dependency-ordered active public work. G5, G7, and G8 retain landed behavior and
+G0, the reusable tester, G1, the bounded Native authority foundation, G2, G4,
+full Native-host closure, X1, X2, X4, and VC-DG-0 through VC-DG-6 are
+dependency-ordered active public work. The tester can close its consuming
+VC-DG-0 profile before completed G2. G2 consumes the bounded Native foundation;
+G2 does not wait for the full Native host that its own accepted durability and
+publication evidence helps close. G5, G7, and G8 retain landed behavior and
 regression obligations without requiring their generalized advanced closure.
 G3, G6, G9-G12, X3, and advanced X5-X12 remain searchable design provenance.
 VC-DG-7 is assigned to VibeCAD, planned post-core, and not started. It may begin
@@ -522,7 +592,7 @@ full-fork entire-roadmap completion may be declared.
 
 | Milestone | Public classification | Whitepaper mapping | Current status | What remains before closure |
 | --- | --- | --- | --- | --- |
-| G0 — live reconciliation | **STAYS PUBLIC / SHARED LINEAGE** | prerequisite | **Verified complete for accepted source baseline `8611ac88` on 2026-08-29; repeat per tranche** | Repeat at the start of every implementation tranche and record drift. |
+| G0 — live reconciliation | **STAYS PUBLIC / SHARED LINEAGE** | prerequisite | **Verified complete for accepted source baseline `d8bde1ba` on 2026-08-31; repeat per tranche** | Repeat at the start of every implementation tranche and record drift. The current record is [the 2026-08-31 G0 freeze](vibecad-g0-freeze-20260831.md). |
 | G1 — common engineering contracts | **STAYS PUBLIC / SHARED LINEAGE** | C, D, E | **Partial** | Define versioned identities, result envelope, finding taxonomy/profile, provenance graph, compatibility rules, and cross-domain fixtures. |
 | G2 — durable Analysis and publication | **COMPLETE CURRENT PUBLIC DEPENDENCIES** | A plus C/E | **Partial** | Generic persistence/reconnect/admission/verification/publication foundations are tracked; the reported physical production-FEM cycle remains concurrent with zero integrated credit. Active closure is limited to exact-package normal-route current FEM, retained low-order Aero, VC-DG support, true process-crash reconstruction, governed cleanup/compact references/corruption restore, and applicable installed cross-platform acceptance. Production remote transport and generalized expansion are non-blocking historical continuations. |
 | G3 — remote provider | **HISTORICAL / NON-NORMATIVE** | B | **Preserved design; prior production plan blocked by G2** | No active public closure obligation. Preserve the real-target/reconnect/credential/transport/restart design record for any separately authorized future work. |
@@ -546,7 +616,12 @@ full-fork entire-roadmap completion may be declared.
 
 **Public classification: STAYS PUBLIC / SHARED LINEAGE.**
 
-**Status: Verified complete for accepted source baseline `8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29; repeat per tranche.**
+**Status: Verified complete for accepted source baseline `d8bde1ba3f97a861b096ca8bb92a86b5306551e3` on 2026-08-31; repeat per tranche.**
+
+The reviewable source/dependency/owner/drift record for this iteration is the
+[2026-08-31 G0 freeze](vibecad-g0-freeze-20260831.md). It accepts the merged
+source tree as the next implementation baseline while keeping exact-package
+runtime, domain, physics, qualification, and cross-platform gates separate.
 
 Before each implementation tranche:
 
@@ -835,21 +910,34 @@ The generic tester is versioned independently from every domain profile; no
 VC-DG algorithm, roadmap rule, product boundary, or profile-specific physics
 requirement belongs in its reusable core.
 
-VC-DG-0 closes when one deterministic exact-checkout package and one-click launch
-use the frozen dependency graph, visibly identify the source revision, refuse
-installed fallback, expose authenticated readiness, and register a versioned
-VC-DG profile against the generic tester. The generic layer discovers semantic
-menus and tabs; the VibeCAD profile requires File/Tools/Macro and the currently
-installed Aero/Model/McMaster surfaces without hard-coding those profile-specific
-names as requirements for the reusable generic tester. The same profile contract
-must require a real save-as/save/close/reopen round trip, overwrite/discard refusal,
-bounded cancel/result/currentness behavior, screenshot receipts, no unintended
-open documents, and zero physical pointer or keyboard injection. Later VC-DG
-packages add their own selector, solve, result, persistence, and currentness cases
-to this profile and cannot close until those cases pass. Focused contracts,
-package evidence, and direct visual inspection are all required; source-only or
-headless evidence is insufficient. Closing the generic tester alone does not
-claim any direct-geometry numerical capability.
+The accepted source baseline contains the merged generic tester implementation
+and focused contracts. Its prior cold-package and visible receipt remain bound
+to the independent tester parent; they do not automatically qualify the merged
+roadmap tree. VC-DG-0 therefore remains open until the consumer profile and the
+exact merged-tree package pass together.
+
+VC-DG-0 closes only the exact-package registration and execution of the VC-DG
+base profile against the independently accepted reusable tester. Its gate covers
+exact checkout and source identity, installed-fallback refusal, authenticated
+readiness, semantic navigation, generic native create/open/save-as/save/close/
+reopen behavior, overwrite and unsaved-discard refusal, screenshots, bounded
+receipts and timeouts, no unintended open documents, and zero physical pointer
+or keyboard injection. The generic layer discovers semantic menus and tabs; the
+VibeCAD profile requires File/Tools/Macro and the currently installed
+Aero/Model/McMaster surfaces without hard-coding those profile-specific names as
+requirements for the reusable generic tester. Focused contracts, exact-package
+evidence, and direct visual inspection are all required; source-only or headless
+evidence is insufficient.
+
+Selector, solve, domain cancellation, result, persistence, currentness, physics,
+numerical, verification, and qualification cases belong to the later package
+that introduces them. Appending such cases to the shared profile gates only that
+later package; it neither blocks nor reopens VC-DG-0. Passing the consumer
+profile earns VC-DG-0 visible-profile credit only; it earns no VC-DG-1 through
+VC-DG-7, FEM, Aero, physics, solver, numerical, verification, qualification, or
+domain-result-publication credit. Generic tester success is infrastructure
+evidence only. It earns zero domain completion credit and zero physics, solver,
+numerical, verification, qualification, or domain-result-publication credit.
 
 #### VC-DG-1 — terminology and contracts
 
@@ -1831,12 +1919,18 @@ Stop the affected tranche and resolve explicitly if:
 
 The active public work remains small, reversible, and dependency-ordered:
 
-1. **Close the reusable tester and VC-DG-0 acceptance profile:** finish the
-   frozen-lock exact package, one-click launcher, authenticated exact-process
-   control, semantic discovered-tab and configured VibeCAD cyan-pointer tours,
-   native file round trip, screenshots, collision-safe receipts, and zero
-   physical pointer/keyboard control. Register VC-DG as a consumer profile; do
-   not create a second tester or treat generic tester success as physics credit.
+1. **Close the exact merged-tree tester package and VC-DG-0 acceptance
+   profile:** the reusable tester source and its focused contracts are integrated
+   at the accepted baseline, while the prior exact-package runtime receipt is
+   bound to the tester parent rather than the merged roadmap tree. Rebuild the
+   frozen-lock merged tree, repeat one-click launch and authenticated
+   exact-process control, run semantic discovered-tab and configured VibeCAD
+   cyan-pointer tours, complete the native file round trip, screenshots,
+   collision-safe receipts, and zero physical pointer/keyboard control, and
+   register VC-DG as a consumer profile without creating a second tester.
+   Generic tester success is infrastructure evidence only. It earns zero domain
+   completion credit and zero physics, solver, numerical, verification,
+   qualification, or domain-result-publication credit.
 2. **Close current FEM/CalculiX G2 dependencies:** promote the production FEM
    verifier/publisher into the normal route, rebuild and repeat package-contained
    Windows/Linux gates, prove true process-crash recovery and publish-once

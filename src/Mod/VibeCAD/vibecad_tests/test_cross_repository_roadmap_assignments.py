@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[4]
 ROADMAP = REPO_ROOT / "docs" / "vibecad-governed-engineering-roadmap.md"
 AERO_ROADMAP = REPO_ROOT / "docs" / "vibecadaero-roadmap.md"
@@ -17,6 +16,14 @@ DG_ADDENDUM = (
 README = REPO_ROOT / "README.md"
 BEGIN = "<!-- VIBECAD-CROSS-REPOSITORY-ASSIGNMENTS:BEGIN -->"
 END = "<!-- VIBECAD-CROSS-REPOSITORY-ASSIGNMENTS:END -->"
+DEPENDENCY_BEGIN = "<!-- VIBECAD-NORMATIVE-DEPENDENCIES:BEGIN -->"
+DEPENDENCY_END = "<!-- VIBECAD-NORMATIVE-DEPENDENCIES:END -->"
+
+GENERIC_TESTER_CLAIM_CEILING = (
+    "Generic tester success is infrastructure evidence only. It earns zero "
+    "domain completion credit and zero physics, solver, numerical, verification, "
+    "qualification, or domain-result-publication credit."
+)
 
 DG7_STATUS = "planned post-core; not started"
 DG7_START_CONDITION = (
@@ -40,6 +47,7 @@ NO_VIBEMECHANICA_IMPLEMENTATION = "has no implementation obligation"
 
 EXPECTED_OWNERS = {
     "REUSABLE-VISIBLE-TESTER": "Reusable tester tooling",
+    "VIBECAD-NATIVE-AUTHORITY-FOUNDATION": "VibeCAD",
     "VIBECAD-NATIVE-HOST": "VibeCAD",
     "VIBECAD-FEM-CALCULIX-RETAINED": "VibeCAD",
     "VIBECAD-MCMASTERINSERT-RETAINED": "VibeCAD",
@@ -59,7 +67,10 @@ EXPECTED_OWNERS = {
 }
 
 EXPECTED_STATUSES = {
-    "REUSABLE-VISIBLE-TESTER": "partial",
+    "REUSABLE-VISIBLE-TESTER": (
+        "partial; source integrated, exact merged-package acceptance open"
+    ),
+    "VIBECAD-NATIVE-AUTHORITY-FOUNDATION": "partial bounded prerequisite",
     "VIBECAD-NATIVE-HOST": "partial",
     "VIBECAD-FEM-CALCULIX-RETAINED": "partial",
     "VIBECAD-MCMASTERINSERT-RETAINED": "partial",
@@ -76,6 +87,52 @@ EXPECTED_STATUSES = {
     "VC-DG-6": "blocked",
     "VC-DG-7": DG7_STATUS,
     "VIBEMECHANICA-GENERALIZED-PHYSICS": "planned in VibeMechanica; outside VibeCAD",
+}
+
+EXPECTED_ACTIVE_PREREQUISITES = {
+    "G0": frozenset(),
+    "G1": frozenset({"G0"}),
+    "PACKAGE-CONTAINED-CALCULIX": frozenset(),
+    "REUSABLE-VISIBLE-TESTER": frozenset(),
+    "VIBECAD-NATIVE-AUTHORITY-FOUNDATION": frozenset({"G0", "G1"}),
+    "VIBECAD-FEM-CALCULIX-RETAINED": frozenset(
+        {
+            "PACKAGE-CONTAINED-CALCULIX",
+            "VIBECAD-NATIVE-AUTHORITY-FOUNDATION",
+        }
+    ),
+    "G2": frozenset(
+        {
+            "VIBECAD-FEM-CALCULIX-RETAINED",
+            "VIBECAD-NATIVE-AUTHORITY-FOUNDATION",
+        }
+    ),
+    "G4": frozenset({"VIBECAD-NATIVE-AUTHORITY-FOUNDATION"}),
+    "VIBECAD-NATIVE-HOST": frozenset(
+        {
+            "G2",
+            "G4",
+            "REUSABLE-VISIBLE-TESTER",
+            "VIBECAD-NATIVE-AUTHORITY-FOUNDATION",
+        }
+    ),
+    "X1": frozenset({"G1"}),
+    "X2": frozenset({"G2"}),
+    "X4": frozenset({"G4"}),
+    "VIBECAD-ENGINEERING-PRESENTATION": frozenset({"X1", "X2", "X4"}),
+    "VIBECAD-MCMASTERINSERT-RETAINED": frozenset({"VIBECAD-NATIVE-HOST"}),
+    "AERO-STEP-00-11": frozenset({"G2", "VIBECAD-NATIVE-HOST"}),
+    "VIBECAD-CFDOF-COMPATIBILITY": frozenset({"VIBECAD-NATIVE-HOST"}),
+    "VC-DG-0": frozenset({"REUSABLE-VISIBLE-TESTER"}),
+    "VC-DG-1": frozenset({"G4", "VC-DG-0"}),
+    "VC-DG-2": frozenset({"VC-DG-1"}),
+    "VC-DG-3": frozenset({"VC-DG-2"}),
+    "VC-DG-4": frozenset(
+        {"G2", "VC-DG-3", "VIBECAD-FEM-CALCULIX-RETAINED"}
+    ),
+    "VC-DG-5": frozenset({"VC-DG-4"}),
+    "VC-DG-6": frozenset({"VC-DG-5"}),
+    "VC-DG-7": frozenset({"VC-DG-6"}),
 }
 
 
@@ -111,6 +168,53 @@ def _assignment_rows(text: str) -> dict[str, dict[str, str]]:
     return rows
 
 
+def _dependency_rows(text: str) -> dict[str, frozenset[str]]:
+    assert text.count(DEPENDENCY_BEGIN) == 1
+    assert text.count(DEPENDENCY_END) == 1
+    section = text.split(DEPENDENCY_BEGIN, 1)[1].split(DEPENDENCY_END, 1)[0]
+    table_lines = [line.strip() for line in section.splitlines() if line.startswith("|")]
+    assert len(table_lines) >= 3
+
+    header = [cell.strip() for cell in table_lines[0].strip("|").split("|")]
+    assert header == ["Node", "Direct prerequisites"]
+
+    rows: dict[str, frozenset[str]] = {}
+    for line in table_lines[2:]:
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        assert len(cells) == len(header), line
+        node = cells[0].strip("`")
+        assert node and node not in rows, node
+        if cells[1] == "none":
+            dependencies = frozenset()
+        else:
+            dependencies = frozenset(
+                value.strip().strip("`") for value in cells[1].split(";")
+            )
+        rows[node] = dependencies
+    return rows
+
+
+def _assert_acyclic(graph: dict[str, frozenset[str]]) -> None:
+    for node, dependencies in graph.items():
+        assert dependencies <= graph.keys(), (node, dependencies - graph.keys())
+
+    visiting: set[str] = set()
+    visited: set[str] = set()
+
+    def visit(node: str, path: tuple[str, ...]) -> None:
+        assert node not in visiting, " -> ".join((*path, node))
+        if node in visited:
+            return
+        visiting.add(node)
+        for dependency in sorted(graph[node]):
+            visit(dependency, (*path, node))
+        visiting.remove(node)
+        visited.add(node)
+
+    for node in sorted(graph):
+        visit(node, ())
+
+
 def test_cross_repository_assignment_matrix_is_complete_and_singly_owned() -> None:
     rows = _assignment_rows(_text(ROADMAP))
 
@@ -133,6 +237,66 @@ def test_cross_repository_assignment_matrix_is_complete_and_singly_owned() -> No
         assert row["Supporting or consuming owner"].strip(), item_id
         assert row["Dependency or start condition"].strip(), item_id
         assert row["Acceptance and claim boundary"].strip(), item_id
+
+
+def test_active_closure_graph_is_exact_acyclic_and_consistent() -> None:
+    roadmap = _text(ROADMAP)
+    rows = _assignment_rows(roadmap)
+    graph = _dependency_rows(roadmap)
+
+    assert graph == EXPECTED_ACTIVE_PREREQUISITES
+    _assert_acyclic(graph)
+
+    assert graph["VC-DG-0"] == {"REUSABLE-VISIBLE-TESTER"}
+    assert "VIBECAD-NATIVE-HOST" not in graph["VIBECAD-FEM-CALCULIX-RETAINED"]
+    assert "VIBECAD-FEM-CALCULIX-RETAINED" in graph["G2"]
+    assert "G2" in graph["VIBECAD-NATIVE-HOST"]
+    assert rows["VC-DG-0"]["Dependency or start condition"] == (
+        "REUSABLE-VISIBLE-TESTER"
+    )
+    assert (
+        rows["VIBECAD-FEM-CALCULIX-RETAINED"][
+            "Dependency or start condition"
+        ]
+        == "VIBECAD-NATIVE-AUTHORITY-FOUNDATION and package-contained solver "
+        "availability; full VIBECAD-NATIVE-HOST closure is not a prerequisite"
+    )
+    assert "G2 --> DG0" not in roadmap
+    assert "T --> DG0" in roadmap
+    assert "FEM --> G2" in roadmap
+    assert "G2 --> NH" in roadmap
+
+
+def test_tester_credit_and_profile_lifecycle_cutlines_are_uniform() -> None:
+    normative_documents = {
+        "governed roadmap": _text(ROADMAP),
+        "Aero roadmap": _text(AERO_ROADMAP),
+        "direct-geometry addendum": _text(DG_ADDENDUM),
+    }
+
+    for name, text in normative_documents.items():
+        normalized = " ".join(text.split())
+        assert GENERIC_TESTER_CLAIM_CEILING in normalized, name
+
+    governed = " ".join(normative_documents["governed roadmap"].split())
+    addendum = " ".join(normative_documents["direct-geometry addendum"].split())
+    for text in (governed, addendum):
+        assert "gates only that later package" in text
+        assert "neither blocks nor reopens VC-DG-0" in text
+    assert "VC-DG-0 visible-profile credit only" in governed
+
+
+def test_aero_graph_defers_vc_dg_dependencies_and_namespaces_local_gates() -> None:
+    aero = _text(AERO_ROADMAP)
+    normalized = " ".join(aero.split())
+    folded = normalized.casefold()
+
+    assert "C --> DG" not in aero
+    assert "this diagram declares no vc-dg dependency edge" in folded
+    assert "does not gate vc-dg-0" in folded
+    assert "`AERO-G0` through `AERO-G12`" in normalized
+    assert "governed G0 through G12 milestone IDs" in normalized
+    assert "**AERO-G2 — Pure state machine**" in aero
 
 
 def test_vc_dg_states_and_cross_product_cutlines_are_not_flattened() -> None:

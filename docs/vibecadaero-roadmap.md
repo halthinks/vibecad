@@ -25,17 +25,22 @@ tree. The detailed intended boundary remains preserved in
 
 **Scope:** retained low-order Aero, current Native/FEM/Analysis dependencies, exact evidence and publication, and Steps 0-11 closure; later advanced solver/remote/dynamics/coupling material is preserved but non-blocking
 
-## 2026-08-29 live implementation reconciliation
+## 2026-08-31 live implementation reconciliation
 
 <!-- VIBECADAERO-LIVE-RECONCILIATION:BEGIN -->
 | Field | Value |
 | --- | --- |
-| Accepted implementation baseline | `halthinks/vibecad@8611ac881a67b77b777c38f1749880527d2cc956` |
-| Baseline source ref at audit | `origin/main` |
-| Baseline commit time | `2026-08-29T18:18:57-07:00` |
-| Audit date | `2026-08-29` |
-| Last revalidated | `2026-08-30` |
-| Roadmap audit branch | `docs/vibecad-roadmap-additive-audit-20260829` |
+| Accepted implementation baseline | `halthinks/vibecad@d8bde1ba3f97a861b096ca8bb92a86b5306551e3` |
+| Baseline source ref at audit | `origin/codex/vibecad-full-roadmap-20260830` |
+| Baseline tree | `a6fa0ec77dd4b36aadd2f7bdd32576046124af82` |
+| Baseline commit time | `2026-08-31T08:23:49-07:00` |
+| Audit date | `2026-08-31` |
+| Last revalidated | `2026-08-31` |
+| Roadmap audit branch | `codex/g0-native-fem-clarification-20260831` |
+| Previous accepted baseline | `8611ac881a67b77b777c38f1749880527d2cc956` |
+| Accepted-baseline drift | `26` paths; canonical path-manifest SHA-256 `2ad30026c41466f2720381dff936bd5643cd2409f34b0fe0bec6ca4529f0884a` |
+| Dependency freeze | root `pixi.lock` SHA-256 `45cb657fc0d8d7e320673c559918ffabae582ffdfb2ab69e4ade271eada568b2`; package lock SHA-256 `f5cf92da6ec353ae450cdf613180a3fb7e7d74418a337577602f30d14c94d48d`; recipe SHA-256 `c0e7a45efeef5e43f9e551aeaeeb0429aa5bc0cf0568782ad13406981757c287`; Fasteners gitlink `033225ae84d65cfde0a39c2750dfa8e549a10cab` |
+| Parallel-work census | `17` registered worktrees: `12` clean, `5` dirty, `5` with committed heads not reachable from the accepted baseline; all preserved pending separate reconciliation |
 | CI event-base rule | Pull-request runs require the recorded baseline to equal the event base SHA; pushes to main require it to equal the event before SHA. Manual dispatch and local runs are explicitly skipped as event-base enforcement unavailable. |
 | Credit rule | Only exact blobs and behavior in the accepted implementation commit receive integrated completion credit; every tracked modification, untracked addition, or ignored artifact outside that tree receives zero credit until committed, reviewed, packaged, and rerun. |
 
@@ -45,17 +50,7 @@ Each entry below means the exact blob at the accepted baseline path, not any
 same-named file modified in a concurrent working tree.
 
 <!-- VIBECADAERO-BASELINE-EVIDENCE:BEGIN -->
-- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_lifecycle_integration.py`;
-- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_publication_integration.py`.
-<!-- VIBECADAERO-BASELINE-EVIDENCE:END -->
-
-Concurrent post-baseline report receives **zero integrated completion credit**.
-The reported paths are not accepted implementation evidence; they remain a
-provenance-preserving audit record until reviewed into a new accepted baseline
-and their claimed acceptance is rerun from the exact committed and packaged
-tree. At this audit that reported category includes:
-
-<!-- VIBECADAERO-CONCURRENT-REPORT:BEGIN -->
+- `.github/workflows/c-cpp.yml`;
 - `Invoke-VibeCAD-VisibleTour.ps1`;
 - `Launch-VibeCAD-Dev.cmd`;
 - `Launch-VibeCAD-Dev.ps1`;
@@ -67,26 +62,54 @@ tree. At this audit that reported category includes:
 - `src/Mod/VibeCAD/InitGui.py`;
 - `src/Mod/VibeCAD/VibeCADAgentCli.py`;
 - `src/Mod/VibeCAD/VibeCADAgentControl.py`;
+- `src/Mod/VibeCAD/tool_impl/analysis_persistence.py`;
+- `src/Mod/VibeCAD/tool_impl/engineering_contracts.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_lifecycle_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_publication_integration.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_agent_control.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_agent_control_grok_bot.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_analysis_persistence.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_branding_contract.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_engineering_contracts.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py`.
+<!-- VIBECADAERO-BASELINE-EVIDENCE:END -->
+
+Concurrent post-baseline report receives **zero integrated completion credit**.
+The reported paths are not accepted implementation evidence; they remain a
+provenance-preserving audit record until reviewed into a new accepted baseline
+and their claimed acceptance is rerun from the exact committed and packaged
+tree. At this audit that reported category includes:
+
+<!-- VIBECADAERO-CONCURRENT-REPORT:BEGIN -->
+- `docs/direct-geometry/VIBECAD_DIRECT_GEOMETRY_RECONCILIATION_ADDENDUM.md`;
+- `docs/vibecad-g0-freeze-20260831.md`;
+- `docs/vibecad-governed-engineering-roadmap.md`;
+- `docs/vibecadaero-roadmap.md`;
 - `src/Mod/VibeCAD/VibeCADAnalysisFEMPublication.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_active_close_integration.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_physical_calculix_integration.py`;
 - `src/Mod/VibeCAD/vibecad_tests/analysis_fem_installed_verified_publication_integration.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_agent_control.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_agent_control_grok_bot.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_branding_contract.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_dev_launcher_contract.py`;
-- `src/Mod/VibeCAD/vibecad_tests/test_visible_operator_contract.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_cross_repository_roadmap_assignments.py`;
+- `src/Mod/VibeCAD/vibecad_tests/test_vibecadaero_roadmap_live_reconciliation.py`;
 - `tools/run_analysis_fem_installed_active_close.py`;
 - `tools/run_analysis_fem_installed_physical_calculix.py`;
 - `tools/run_analysis_fem_installed_verified_publication.py`.
 <!-- VIBECADAERO-CONCURRENT-REPORT:END -->
 
-Post-baseline tester and physical CalculiX work remains outside the accepted
-baseline. Some tester paths are committed on this integration branch while
-other report-only FEM paths may still be uncommitted; none advances roadmap
-status until review and an exact-tree rerun establish the corresponding
-acceptance gate. The visible tester specifically earns no physics, FEM, Aero,
-or direct-geometry completion credit.
+The reusable tester source is integrated at the accepted baseline, including
+the merged focused contract suite. Its earlier cold-package and visible runtime
+receipt is bound to the independent tester parent, so its exact merged-tree
+package acceptance remains open. Generic tester success is infrastructure
+evidence only. It earns zero domain completion credit and zero physics, solver,
+numerical, verification, qualification, or domain-result-publication credit.
+
+Reported physical CalculiX work remains outside the accepted baseline. The
+report-only paths above may still be uncommitted elsewhere and receive zero
+integrated credit. The post-baseline G0 roadmap, freeze record, and enforcing
+test also remain review changes rather than implementation completion evidence.
+No status advances until the corresponding work is accepted and any package or
+runtime claim is rerun from the exact committed tree.
 <!-- VIBECADAERO-LIVE-RECONCILIATION:END -->
 
 This is the repository's real implementation roadmap for the recovered Advanced VibeCAD / VibeCADAero program. It converts the recovered research and design package into one dependency-ordered, evidence-bounded plan tied to the current source tree.
@@ -373,7 +396,7 @@ No current integrated implementation was found for Aero FluidX3D, Aero CfdOF/Ope
 The table above is historical evidence from `main@31ea810db`; it is not
 rewritten to attribute later work to that revision. The following capabilities
 are tracked in the accepted implementation baseline
-`8611ac881a67b77b777c38f1749880527d2cc956`:
+`d8bde1ba3f97a861b096ca8bb92a86b5306551e3`:
 
 - all public Analysis facades are registered in `VibeCAD_Scripts`, the existing default `Unspecified` install-component behavior is retained, and isolated build-tree and component-installed import coverage exists;
 - artifact descriptors, manifests, canonical hashing, bounded archive admission, quota-enforced content-addressed storage, protected idempotent cleanup, and exact live publication-artifact references are implemented and tested;
@@ -420,19 +443,21 @@ flowchart TD
     D --> E[10: low-order evidence, frames, and correspondence]
     E --> F[11: complete low-order Analysis Runtime client]
     F -. accepted compatibility handoff .-> H[12-20: VibeMechanica-owned advanced roadmap]:::historical
-    C --> DG[VC-DG status is owned by governed roadmap]
     classDef historical stroke-dasharray: 5 5,color:#666;
 ```
 
 VC-DG-0 through VC-DG-6 are a separate public structural/thermal lane in the
 governed engineering roadmap. The required post-core VC-DG-7 milestone does not
 block that structural/thermal core release and earns no completion credit here.
+Aero Step 8A contributes evidence to the bounded Native authority foundation;
+it does not gate VC-DG-0. This diagram declares no VC-DG dependency edge because
+the governed engineering roadmap owns the normative VC-DG graph.
 
 ### Roadmap at a glance
 
 | Step | Public scope | Current status | What remains before the step is closed |
 | --- | --- | --- | --- |
-| 0 — live reconciliation | **ACTIVE** | **Verified complete at accepted baseline `8611ac88`; repeat per tranche** | Repeat on a newer accepted `main` before implementation and record branch, commit, date, dependency, evidence, and concurrent-work drift. |
+| 0 — live reconciliation | **ACTIVE** | **Verified complete at accepted baseline `d8bde1ba`; repeat per tranche** | Repeat on a newer accepted source before implementation and record branch, commit, date, dependency, evidence, and concurrent-work drift. The current source/owner record is [the 2026-08-31 G0 freeze](vibecad-g0-freeze-20260831.md). |
 | 1 — characterization | **ACTIVE** | **Partial** | The tracked four-solver process-lifecycle oracle and installed synthetic-publication harnesses are executable. Reported physical CalculiX, exact-source, active-close/refusal, and visible-file traces remain concurrent with zero integrated credit; commit and rerun them from the exact package, then complete applicable Windows/Linux/macOS and remaining-backend runtime traces. |
 | 2 — host contracts/facades | **ACTIVE** | **Verified complete for the domain-neutral packaging/compatibility foundation** | Durable persistence remains a later active milestone; production remote providers and advanced qualification are preserved non-blocking design records and are not implied by this closure. |
 | 3 — local process mechanics | **ACTIVE** | **Verified complete for the shared process primitive** | Keep the Windows/POSIX parity, timeout, cancellation, cleanup, output-bound, and redaction matrix required by the current local/package providers; repeated lifecycle and leak burn-in remains Step 7. Future provider changes must repeat the same gate if separately authorized. |
@@ -459,9 +484,15 @@ block that structural/thermal core release and earns no completion credit here.
 
 ### Step 0 — live re-reconciliation
 
-**Status: Verified complete for accepted source baseline `8611ac881a67b77b777c38f1749880527d2cc956` on 2026-08-29; repeat at every implementation tranche.**
+**Status: Verified complete for accepted source baseline `d8bde1ba3f97a861b096ca8bb92a86b5306551e3` on 2026-08-31; repeat at every implementation tranche.**
 
-The current tree, merged host-runtime history, Native Aero runtime, process helper, FEM adapter, tests, build registration, and recovered source package were compared. Newer host ownership was adopted where it already controls a seam; the frozen overlay remains reference evidence only.
+The current tree, merged host-runtime history, reusable visible tester, Native
+Aero runtime, process helper, FEM adapter, tests, build registration, dependency
+locks, registered worktrees, and recovered source package were compared. The
+[2026-08-31 G0 freeze](vibecad-g0-freeze-20260831.md) records the exact source,
+tree, dependency hashes, drift, owner map, compatibility surfaces, and preserved
+parallel work. Newer host ownership was adopted where it already controls a
+seam; the frozen overlay remains reference evidence only.
 
 Exit evidence:
 
@@ -1030,27 +1061,33 @@ retaining compatibility until migration is proven.
 
 ## 9. Active release gates and preserved historical gates
 
+The gate IDs below are namespaced `AERO-G0` through `AERO-G12`. They are
+Aero-local release gates, not the governed G0 through G12 milestone IDs in the
+cross-domain engineering roadmap; an unqualified `G2` elsewhere in the governed
+roadmap always means governed durable Analysis/publication G2, never
+`AERO-G2`.
+
 | Gate | Public scope | Required proof |
 | --- | --- | --- |
-| **G0 Fresh source freeze** | **ACTIVE** | Exact live SHA, drift record, code/test/build reread, owner map, and updated roadmap status. |
-| **G0A Observable exact-checkout loop** | **ACTIVE** | Repo-local one-click build/launch with Python user-site quarantine, visible source-SHA identity, checkout-scoped authenticated control readiness, a human-watchable real GUI workflow, independent plain cyan semantic cursor where needed, no physical-cursor control, real file round trip where applicable, before/after capture, and the owning route's receipts/artifacts plus automated evidence. No installed fallback, headless proxy, or screenshot-only substitution. |
-| **G1 Characterization** | **ACTIVE** | Public APIs, exact process/inputs/digests, result graph/History/receipts, errors, timeout/cancel, document lifecycle, and platform traces. |
-| **G1A Cancellation/commit race** | **ACTIVE** | Concurrent stress proves an accepted cancellation and later CAD mutation cannot coexist. Current in-memory path has this proof; durable path must repeat it. |
-| **G1B Process-tree ownership** | **ACTIVE** | Child-spawning tests on Windows and POSIX prove timeout/cancel/cleanup terminate descendants. |
-| **G2 Pure state machine** | **ACTIVE** | Linearizable publication ownership, monotonic terminal state, replay safety, idempotent cleanup, and independent state axes. |
-| **G3 Local provider** | **ACTIVE** | Direct argv/no shell, cwd/environment preservation, bounded logs, timeout/cancel, tree cleanup, output sealing, unsafe-path rejection, and redaction. |
-| **G4 Document lifecycle** | **ACTIVE** | Exact source publishes; switched/closed/replaced/same-name wrong source does not; reopened exact source is rebound and revalidated; stale output remains attributable history. |
-| **G5 FEM A/B parity** | **ACTIVE** | Solver files/hashes, command/environment, return behavior, result object graph/membership/History, hashes/receipts, public JSON/errors, and cleanup. |
-| **G6 Persistence/recovery** | **ACTIVE** | Fault injection at queued, submitted-before-ID, running, output-sealed, waiting-to-publish, and receipt-written-before-terminal-success boundaries. |
-| **G6A Publication authority** | **ACTIVE** | UID semantics, inert persistence, awaiting-source/publication states, domain drift quarantine, fresh authorization, one receipt, rollback, replay, and incompatible-adapter refusal. |
-| **G7 Rollback exercise** | **ACTIVE** | Representative cases run through the extracted path, switch back to legacy, and prove no schema/CAD state prevents fallback. |
-| **G8 Aero adoption** | **ACTIVE FOR LOW-ORDER ADOPTION** | Aero uses shared execution only after FEM parity/burn-in while domain authority remains in Aero and physics stays out of the host. The current low-order adoption and its remaining Steps 10-11 acceptance evidence define this gate; advanced solver adoption does not. |
-| **G9 Aero domain contracts** | **ACTIVE** | Frames, readiness, source correspondence, dependencies, artifact/evidence taxonomy, currentness, publication draft, and claim ceilings. |
-| **G10 Solver baseline** | **HISTORICAL / NON-NORMATIVE** | Reproducible real benchmark, exact toolchain/case manifests, fields/forces, cancellation/failure behavior, publication, and honest qualification for each high-fidelity solver. |
-| **G11 Remote provider** | **HISTORICAL / NON-NORMATIVE** | Live capability/quota checks, immutable upload, persisted remote identity, restart reconnect, bounded logs/artifacts, hash verification, fresh publication, and deterministic routing explanation. |
-| **G12 Dynamics/coupling** | **HISTORICAL / NON-NORMATIVE** | Validated timestep/frame/feedback/mapping behavior, convergence and sensitivity evidence, rollback/failure semantics, and complete cross-domain provenance. |
+| **AERO-G0 — Fresh source freeze** | **ACTIVE** | Exact live SHA, drift record, code/test/build reread, owner map, and updated roadmap status. |
+| **AERO-G0A — Observable exact-checkout loop** | **ACTIVE** | Repo-local one-click build/launch with Python user-site quarantine, visible source-SHA identity, checkout-scoped authenticated control readiness, a human-watchable real GUI workflow, independent plain cyan semantic cursor where needed, no physical-cursor control, real file round trip where applicable, before/after capture, and the owning route's receipts/artifacts plus automated evidence. No installed fallback, headless proxy, or screenshot-only substitution. |
+| **AERO-G1 — Characterization** | **ACTIVE** | Public APIs, exact process/inputs/digests, result graph/History/receipts, errors, timeout/cancel, document lifecycle, and platform traces. |
+| **AERO-G1A — Cancellation/commit race** | **ACTIVE** | Concurrent stress proves an accepted cancellation and later CAD mutation cannot coexist. Current in-memory path has this proof; durable path must repeat it. |
+| **AERO-G1B — Process-tree ownership** | **ACTIVE** | Child-spawning tests on Windows and POSIX prove timeout/cancel/cleanup terminate descendants. |
+| **AERO-G2 — Pure state machine** | **ACTIVE** | Linearizable publication ownership, monotonic terminal state, replay safety, idempotent cleanup, and independent state axes. |
+| **AERO-G3 — Local provider** | **ACTIVE** | Direct argv/no shell, cwd/environment preservation, bounded logs, timeout/cancel, tree cleanup, output sealing, unsafe-path rejection, and redaction. |
+| **AERO-G4 — Document lifecycle** | **ACTIVE** | Exact source publishes; switched/closed/replaced/same-name wrong source does not; reopened exact source is rebound and revalidated; stale output remains attributable history. |
+| **AERO-G5 — FEM A/B parity** | **ACTIVE** | Solver files/hashes, command/environment, return behavior, result object graph/membership/History, hashes/receipts, public JSON/errors, and cleanup. |
+| **AERO-G6 — Persistence/recovery** | **ACTIVE** | Fault injection at queued, submitted-before-ID, running, output-sealed, waiting-to-publish, and receipt-written-before-terminal-success boundaries. |
+| **AERO-G6A — Publication authority** | **ACTIVE** | UID semantics, inert persistence, awaiting-source/publication states, domain drift quarantine, fresh authorization, one receipt, rollback, replay, and incompatible-adapter refusal. |
+| **AERO-G7 — Rollback exercise** | **ACTIVE** | Representative cases run through the extracted path, switch back to legacy, and prove no schema/CAD state prevents fallback. |
+| **AERO-G8 — Aero adoption** | **ACTIVE FOR LOW-ORDER ADOPTION** | Aero uses shared execution only after FEM parity/burn-in while domain authority remains in Aero and physics stays out of the host. The current low-order adoption and its remaining Steps 10-11 acceptance evidence define this gate; advanced solver adoption does not. |
+| **AERO-G9 — Aero domain contracts** | **ACTIVE** | Frames, readiness, source correspondence, dependencies, artifact/evidence taxonomy, currentness, publication draft, and claim ceilings. |
+| **AERO-G10 — Solver baseline** | **HISTORICAL / NON-NORMATIVE** | Reproducible real benchmark, exact toolchain/case manifests, fields/forces, cancellation/failure behavior, publication, and honest qualification for each high-fidelity solver. |
+| **AERO-G11 — Remote provider** | **HISTORICAL / NON-NORMATIVE** | Live capability/quota checks, immutable upload, persisted remote identity, restart reconnect, bounded logs/artifacts, hash verification, fresh publication, and deterministic routing explanation. |
+| **AERO-G12 — Dynamics/coupling** | **HISTORICAL / NON-NORMATIVE** | Validated timestep/frame/feedback/mapping behavior, convergence and sensitivity evidence, rollback/failure semantics, and complete cross-domain provenance. |
 
-Active G0-G9 gates may be satisfied in a dedicated pull request or by a later pull request with equivalent evidence, but they may not be waived by prose. G10-G12 remain preserved evidence contracts for VibeMechanica-owned advanced continuation and do not block VibeCAD Steps 0-11.
+Active AERO-G0 through AERO-G9 gates may be satisfied in a dedicated pull request or by a later pull request with equivalent evidence, but they may not be waived by prose. AERO-G10 through AERO-G12 remain preserved evidence contracts for VibeMechanica-owned advanced continuation and do not block VibeCAD Steps 0-11.
 
 ## 10. Test and evidence matrix
 

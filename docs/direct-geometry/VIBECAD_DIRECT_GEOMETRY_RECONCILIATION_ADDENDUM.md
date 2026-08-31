@@ -78,10 +78,18 @@ pages. Those names are configuration or profile expectations, not hard-coded
 requirements of the reusable generic core. A profile must distinguish an
 absent optional surface from a failed generic tester invariant.
 
-Generic tester success closes only the reusable infrastructure prerequisite.
-It does **not** prove selector correctness, representation integrity, physics,
-solver integration, numerical convergence, qualification, or any other
-VC-DG-1 through VC-DG-6 requirement.
+Generic tester success is infrastructure evidence only. It earns zero domain
+completion credit and zero physics, solver, numerical, verification,
+qualification, or domain-result-publication credit. A passing VC-DG-0 consumer
+profile earns VC-DG-0 visible-profile credit only; it does not close VC-DG-1
+through VC-DG-7, FEM, Aero, selector correctness, representation integrity,
+physics, solver integration, numerical convergence, verification,
+qualification, or domain-result publication.
+
+Selector, solve, domain cancellation, result, persistence, currentness, physics,
+numerical, verification, and qualification cases belong to the later package
+that introduces them. Appending such cases to the shared profile gates only that
+later package; it neither blocks nor reopens VC-DG-0.
 
 ## 3. Generic CfdOF is not governed Aero Step 12
 
